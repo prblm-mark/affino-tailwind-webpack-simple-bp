@@ -2,23 +2,23 @@
 
 @layer base {
   h1 {
-    @apply text-2xl font-black;
+    @apply text-2xl font-extrabold;
   }
   h2 {
-    @apply text-xl font-black;
+    @apply text-lg font-bold antialiased;
   }
   h3 {
     @apply text-lg;
   }
   a {
-    @apply text-ao-aqua-600 underline; 
+    @apply text-ao-lt-blue underline; 
   }
 }
 
 @tailwind components;
 
 body {
-  @apply bg-gray-200;
+  @apply bg-white;
 }
 
 @tailwind utilities;
