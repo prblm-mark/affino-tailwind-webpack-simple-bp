@@ -2,7 +2,7 @@
 
 @layer base {
   h1 {
-    @apply text-2xl font-extrabold;
+    @apply text-xl font-extrabold text-ao-dk-blue-800;
   }
   h2 {
     @apply text-lg font-bold antialiased;

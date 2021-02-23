@@ -87,7 +87,14 @@ module.exports = {
         900: '#0E422E',
       },
     },
-    extend: {},
+    extend: {
+      gridTemplateColumns: {
+
+        // Complex site-specific column configuration
+        'control-header': '4rem 1fr',
+
+      },
+    },
   },
   variants: {
     extend: {},
