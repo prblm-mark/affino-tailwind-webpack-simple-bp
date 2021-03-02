@@ -14,6 +14,7 @@ module.exports = {
       gray: colors.blueGray,
       blue: colors.lightBlue,
       white: colors.white,
+      red: colors.red,
       'ao-mid-blue': {
         100: '#F3F6F7',
         200: '#E7EDF0',
@@ -89,17 +90,25 @@ module.exports = {
     },
     extend: {
       gridTemplateColumns: {
-
-        // Complex site-specific column configuration
+        // Header grid config
         'control-header': '4rem 1fr',
 
+      },
+      fontSize: {
+        md: '.925rem',
       },
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      ringWidth: ['hover', 'active'],
+      ringColor: ['hover', 'active'],
+      ringOpacity: ['hover', 'active'],
+      cursor: ['hover', 'focus'],
+    },
   },
   plugins: [
     require('@tailwindcss/forms'),
+    require('@tailwindcss/line-clamp'),
   ],
 };

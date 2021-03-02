@@ -16,7 +16,7 @@
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles.css */ \"./src/styles.css\");\n\nvar h1 = document.createElement('h1');\nh1.innerHTML = 'Hello world JS!';\ndocument.appendChild(h1);\nalert('hello');\n\n//# sourceURL=webpack://tailwind-webpack-simple/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles.css */ \"./src/styles.css\");\n // let h1 = document.createElement('h1');\n// h1.innerHTML = 'Hello world!';\n// document.body.appendChild(h1);\n// prompt('Quick Test');\n\n//# sourceURL=webpack://tailwind-webpack-simple/./src/index.js?");
 
 /***/ }),
 
