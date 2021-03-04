@@ -13,11 +13,14 @@
   h4 {
     @apply text-base font-bold tracking-tight  text-ao-dk-blue;
   }
+  h5 {
+    @apply text-sm font-semibold antialiased text-ao-mid-blue-100;
+  }
   h6 {
     @apply text-sm font-medium antialiased text-ao-dk-blue-500;
   }
   a {
-    @apply text-ao-lt-blue underline; 
+    @apply text-ao-lt-blue; 
   }
 }
 
@@ -28,3 +31,4 @@ body {
 }
 
 @tailwind utilities;
+
