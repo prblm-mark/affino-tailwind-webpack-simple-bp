@@ -5,7 +5,7 @@ module.exports = {
     './src/**/*.html',
     './src/**/*.js',
   ],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'class', // or 'media' or 'class'
   theme: {
     colors: {
       // Build your palette here
@@ -87,6 +87,19 @@ module.exports = {
         800: '#146345',
         900: '#0E422E',
       },
+      'ao-dk-bg': {
+        400: '#383838',
+        DEFAULT: '#121212',
+        700: '#232323',
+        800: '#1E1E1E',
+      },
+      'ao-dk-text': {
+        100: '#717171',
+        200: '#888888',
+        400: '#A0A0A0',
+        500: '#ACACAC',
+        DEFAULT: '#ffffff',
+      },
     },
     extend: {
       gridTemplateColumns: {
@@ -94,7 +107,11 @@ module.exports = {
         'control-header': '4rem 1fr',
 
       },
+      boxShadow: {
+        nav: '7px -1px 14px 0 rgba(0, 0, 0, 0.3)',
+      },
       fontSize: {
+        'sm-md': '.825rem',
         md: '.925rem',
       },
     },
@@ -105,6 +122,8 @@ module.exports = {
       ringColor: ['hover', 'active'],
       ringOpacity: ['hover', 'active'],
       cursor: ['hover', 'focus'],
+      fontWeight: ['hover', 'focus'],
+      display: ['dark', 'hover'],
     },
   },
   plugins: [

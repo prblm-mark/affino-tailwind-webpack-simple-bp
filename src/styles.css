@@ -2,33 +2,65 @@
 
 @layer base {
   h1 {
-    @apply text-xl font-extrabold text-ao-dk-blue-800;
+    @apply text-xl font-extrabold text-ao-dk-blue-800 dark:text-ao-dk-text dark:hover:text-ao-dk-text-500;
   }
   h2 {
     @apply text-lg font-bold antialiased;
   }
   h3 {
-    @apply text-lg font-extrabold tracking-tight antialiased text-ao-dk-blue-800;
+    @apply text-lg font-black tracking-tight antialiased text-ao-dk-blue-800 dark:text-ao-dk-text dark:hover:text-ao-dk-text-500;
   }
   h4 {
-    @apply text-base font-bold tracking-tight  text-ao-dk-blue;
+    @apply text-base font-bold tracking-tight  text-ao-dk-blue dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200;
   }
   h5 {
-    @apply text-sm font-semibold antialiased text-ao-mid-blue-100;
+    @apply text-ao-dk-blue-800 hover:text-ao-dk-blue-600 text-md font-bold dark:text-ao-dk-text dark:hover:text-ao-dk-text-500;
   }
   h6 {
-    @apply text-sm font-medium antialiased text-ao-dk-blue-500;
+    @apply text-sm font-medium antialiased text-ao-dk-blue-500 dark:text-ao-dk-text-500;
   }
-  a {
-    @apply text-ao-lt-blue; 
-  }
+
 }
 
 @tailwind components;
 
-body {
-  @apply bg-white;
+@tailwind utilities;
+
+@layer utilities {
+  .dark .tab-selected {
+    @apply bg-ao-dk-bg-400 text-ao-dk-text;
+  }
+  .dark .tab-selected svg {
+    @apply text-ao-lt-blue;
+  }
+  .dark .menu-tab-selected {
+    @apply bg-ao-dk-bg-700;
+  }
 }
 
-@tailwind utilities;
+
+/* Custom */
+
+.nav-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #0F3B53 transparent;
+}
+.dark .nav-scroll {
+  scrollbar-color: #121212 transparent;
+}
+.nav-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+.nav-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.nav-scroll::-webkit-scrollbar-thumb {
+  background-color: #0F3B53;
+  border-radius: 0;
+  border: 3px solid transparent;
+}
+.dark .nav-scroll::-webkit-scrollbar-thumb {
+  background-color: #121212;
+}
+
 

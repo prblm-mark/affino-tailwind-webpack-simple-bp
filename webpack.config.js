@@ -43,9 +43,17 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'src/index.html',
     }), // Generates default index.html
-    new HtmlWebpackPlugin({ // Also generate a test.html
-      filename: 'test.html',
-      template: 'src/template.html',
+    new HtmlWebpackPlugin({
+      filename: 'online-users.html',
+      template: 'src/online-users.html',
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'recent.html',
+      template: 'src/recent.html',
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'favourites.html',
+      template: 'src/favourites.html',
     }),
     new MiniCssExtractPlugin({ filename: 'css/style.css' }),
   ],

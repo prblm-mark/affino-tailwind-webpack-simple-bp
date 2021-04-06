@@ -1,0 +1,1633 @@
+
+<!-- Menu trigger -->
+<button 
+  class="fixed rounded-full bg-ao-dk-blue text-white p-5 bottom-4 right-4 lg:hidden z-50 shadow-xl dark:bg-ao-lt-blue" 
+  @click="open = !open"
+>
+  <svg class="h-6 w-6 text-white" :class="{'opacity-0 invisible': open == true}" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+  </svg>
+
+  <svg class="h-6 w-6 text-white opacity-0 absolute inset-5" :class="{'opacity-100 visible': open == true}" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+  </svg>
+</button>
+
+<div class="fixed w-80 z-10 shadow-nav lg:shadow-none lg:flex lg:flex-col lg:w-72 lg:flex-shrink-0 h-screen bg-ao-mid-blue overflow-y-visible overflow-hidden overscroll-contain lg:sticky lg:top-0 hidden dark:bg-ao-dk-bg-700" :style="open == true ? 'display: block' : ''" @click.away="open = false">
+
+  <!-- x-bind:style="open == true ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''" -->
+  
+
+  <!-- Affino Logo -->
+  <a href="/" class="lg:flex flex-shrink-0 w-full justify-center items-center p-9 sticky top-0 z-50 bg-ao-mid-blue border-b border-ao-mid-blue-700 hidden dark:bg-ao-dk-bg-700 dark:border-ao-dk-bg">
+    <svg class="text-white" width="167" height="39" viewBox="0 0 167 39" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M27.9754 0C32.427 0 36.0356 3.60862 36.0356 8.06025C36.0356 12.5114 32.427 16.1205 27.9749 16.1205H20.6093L28.1902 20.5053C32.7248 23.1268 34.2738 28.9268 31.6523 33.4605C29.0299 37.9951 23.2303 39.5446 18.6961 36.9221C14.162 34.3002 12.6125 28.5006 15.2345 23.9669L19.4325 16.707L12.9131 20.603C8.86595 23.0196 3.62631 21.7001 1.20918 17.6534C-1.20795 13.6067 0.112039 8.36749 4.15829 5.94942C8.20501 3.53181 13.4446 4.85227 15.8622 8.89852L19.9151 15.6824V8.06025C19.9151 3.60862 23.5238 0 27.9754 0ZM3.24463 16.4372C4.98802 19.3546 8.77966 20.3104 11.6975 18.567C14.6148 16.8236 15.5702 13.0315 13.8273 10.1142C12.0839 7.19686 8.29225 6.24101 5.37444 7.98439C2.45662 9.72778 1.50172 13.5199 3.24463 16.4372ZM29.6007 32.2737C31.5636 28.8799 30.3987 24.5202 27.0039 22.5569C23.6091 20.593 19.2499 21.7579 17.287 25.1537C15.3241 28.5475 16.4886 32.9067 19.8834 34.8706C23.2777 36.833 27.6373 35.6685 29.6007 32.2737ZM27.9754 2.37066C24.8381 2.37066 22.2858 4.92292 22.2858 8.06025C22.2858 11.1971 24.8381 13.7498 27.9754 13.7498C31.1127 13.7498 33.665 11.1976 33.665 8.06025C33.665 4.92292 31.1127 2.37066 27.9754 2.37066ZM65.0369 16.1205C64.7861 11.1246 60.6337 7.11202 55.5784 7.11202H43.251C43.251 8.94549 44.9489 10.4309 47.0441 10.4309H55.5784C58.8172 10.4309 61.4748 12.9429 61.718 16.1205H56.5267H48.9406H48.5992V16.1376C44.0632 16.3145 40.4062 19.9662 40.4062 24.4179C40.4062 28.9814 44.2467 32.7152 48.9406 32.7152H56.5267C61.2206 32.7152 65.0611 28.9814 65.0611 24.4179V16.5947V16.1205H65.0369ZM61.7422 24.1813H61.7298C61.7312 24.2063 61.7329 24.2313 61.7347 24.2563L61.7347 24.2564C61.7384 24.3099 61.7422 24.3634 61.7422 24.4183C61.7422 27.1631 59.4023 29.3967 56.5267 29.3967H48.9406C46.065 29.3967 43.7251 27.1631 43.7251 24.4183C43.7251 21.6736 46.065 19.4399 48.9406 19.4399H61.7422V24.1813ZM154.673 10.4309C159.641 10.4309 163.681 14.472 163.681 19.4395V20.3877C163.681 25.3552 159.641 29.3962 154.673 29.3962H153.725C148.757 29.3962 144.716 25.3552 144.716 20.3877V19.4395C144.716 14.472 148.757 10.4309 153.725 10.4309H154.673ZM154.673 7.11202H153.725C146.945 7.11202 141.397 12.6594 141.397 19.4395V20.3877C141.397 27.1674 146.945 32.7152 153.725 32.7152H154.673C161.453 32.7152 167 27.1674 167 20.3877V19.4395C167 12.6594 161.453 7.11202 154.673 7.11202ZM84.0263 10.4309H77.3884C74.1501 10.4309 71.4921 12.9424 71.2489 16.1205H84.5004C84.5004 17.954 82.8026 19.4395 80.7074 19.4395H71.2247V32.7152H67.9058V16.5947C67.9058 11.3792 72.173 7.11202 77.3884 7.11202H87.8193C87.8193 8.94549 86.1215 10.4309 84.0263 10.4309ZM129.069 7.11202H126.225C121.009 7.11202 116.742 11.3792 116.742 16.5947V32.7152H120.061V16.5947C120.061 13.1956 122.826 10.4309 126.225 10.4309H129.069C132.468 10.4309 135.233 13.1956 135.233 16.5947V28.9221C135.233 31.0168 136.719 32.7152 138.552 32.7152V16.5947C138.552 11.3792 134.285 7.11202 129.069 7.11202ZM110.104 32.7152V7.11202C111.937 7.11202 113.423 8.80989 113.423 10.9051V32.7152H110.104ZM96.8281 10.4309H103.466C105.561 10.4309 107.259 8.94549 107.259 7.11202H96.8281C91.6126 7.11202 87.3454 11.3792 87.3454 16.5947V32.7152H90.6643V19.4395H100.147C102.242 19.4395 103.94 17.954 103.94 16.1205H90.689C90.9313 12.9424 93.5897 10.4309 96.8281 10.4309Z" fill="white" />
+    </svg>
+  </a>
+
+  <div class="flex flex-col overflow-y-auto overscroll-contain nav-scroll" x-data="{ tab: 'control' }">
+
+    <!-- Tabs Nav -->
+    <nav class="flex flex-row flex-shrink-0 text-sm w-full items-start text-ao-mid-blue-300 sticky lg:top-0 z-50 bg-ao-mid-blue-700 dark:text-ao-dk-text-500 dark:bg-ao-dk-bg">
+      <button class="flex flex-1 items-center justify-center  hover:text-white p-5 dark:bg-ao-dk-bg" @click="tab = 'control'" :class="{ 'bg-ao-mid-blue text-white menu-tab-selected': tab === 'control' }">
+        <svg class="text-ao-mid-blue-400 flex-shrink-0 w-5 h-5 mr-2 dark:text-ao-dk-text-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M5 4a1 1 0 00-2 0v7.268a2 2 0 000 3.464V16a1 1 0 102 0v-1.268a2 2 0 000-3.464V4zM11 4a1 1 0 10-2 0v1.268a2 2 0 000 3.464V16a1 1 0 102 0V8.732a2 2 0 000-3.464V4zM16 3a1 1 0 011 1v7.268a2 2 0 010 3.464V16a1 1 0 11-2 0v-1.268a2 2 0 010-3.464V4a1 1 0 011-1z" />
+        </svg>
+        Control
+      </button>
+      <button class="flex flex-1 items-center justify-center hover:bg-opacity-80 hover:text-white p-5 group" @click="tab = 'crm'" :class="{ 'bg-ao-mid-blue text-white menu-tab-selected': tab === 'crm' }">
+        <svg class="text-ao-mid-blue-400 flex-shrink-0 w-5 h-5 mr-2 group-hover:text-ao-mid-blue-200 dark:text-ao-dk-text-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M10 2a1 1 0 00-1 1v1a1 1 0 002 0V3a1 1 0 00-1-1zM4 4h3a3 3 0 006 0h3a2 2 0 012 2v9a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2zm2.5 7a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm2.45 4a2.5 2.5 0 10-4.9 0h4.9zM12 9a1 1 0 100 2h3a1 1 0 100-2h-3zm-1 4a1 1 0 011-1h2a1 1 0 110 2h-2a1 1 0 01-1-1z" clip-rule="evenodd" />
+        </svg>
+        CRM
+      </button>
+    </nav>
+
+    <!-- Main scrollable -->
+    <div class="overflow-y-auto overscroll-contain mr-1 nav-scroll">
+
+      <!-- Control Content -->
+      <div class="flex flex-col p-5 pr-4" x-show="tab === 'control'" x-transition:enter="transition ease-out duration-1000" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100">
+        <!-- Search -->
+        <div class="flex flex-row relative w-full flex-wrap items-stretch mb-2">
+          <svg class="z-10 h-full leading-snug font-normal absolute text-center text-ao-mid-blue-400 bg-transparent rounded text-base items-center justify-center w-8 pl-3 py-3 dark:text-ao-dk-text-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+          </svg>
+          <input type="search" id="cc-search" placeholder="Search" class="px-3 py-3 placeholder-ao-mid-blue-400 text-ao-mid-blue-100 relative bg-ao-mid-blue-700 bg-opacity-80 rounded text-sm outline-none focus:outline-none focus:ring-2 focus:ring-ao-mid-blue-600 focus:shadow-md border-0 w-full pl-10 dark:bg-ao-dk-bg dark:focus:ring-ao-dk-bg-400 dark:text-ao-dk-text-500 dark:placeholder-ao-dk-text-200" />
+        </div>
+
+        <!-- Accordion -->
+        <ul>
+          <li class="relative" x-data="{selected:null}">
+            <a 
+              href="#" 
+              class="flex flex-row w-full p-3 rounded cursor-pointer items-center text-sm font-semibold antialiased text-ao-mid-blue-100 leading-snug hover:bg-ao-mid-blue-700 dark:text-ao-dk-text-400 dark:hover:bg-ao-dk-bg" 
+              @click="selected !== 'publish' ? selected = 'publish' : selected = null;" 
+              :class="{ 
+              'bg-ao-mid-blue-700 text-white rounded-b-none': selected === 'publish',
+              'bg-ao-dk-bg bg-opacity-90 text-white rounded-b-none': selected === 'publish' &&  document.documentElement.classList == 'dark',
+              }"
+            >
+              <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-400" :style="selected == 'publish' ? 'color: #ffffff' : ''" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd" />
+              </svg>
+              Publish
+            </a>
+            <div 
+              class="relative overflow-hidden transition-all max-h-0 duration-700 text-sm-md rounded-b" 
+              x-ref="publish" :style="selected == 'publish' ? 'max-height: ' + $refs.publish.scrollHeight + 'px' : ''" 
+              :class="{ 
+                'bg-ao-mid-blue-700 mb-2': selected === 'publish' ,
+                'bg-ao-dk-bg bg-opacity-90 mb-2': selected === 'publish' &&  document.documentElement.classList == 'dark',
+              }"
+              >
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Article Archive
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Article Attributes
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Article Export
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Article Icons
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Article Import
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Article Profiles
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Article Step Export
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Article Step Import
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Article Steps
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Articles
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Comparison Profiles
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Edition Import
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Editions
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Edition Profiles
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Flatplans
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Inbox
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Incoming Feeds
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Index Content
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Outgoing Feeds
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                SEO Import
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Sponsors
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Topic Export
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Topic Import
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200 mb-3">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Topic Lists
+              </a>
+            </div>
+          </li>
+
+          <li class="relative" x-data="{selected:null}">
+            <a 
+              href="#" 
+              class="flex flex-row w-full p-3 rounded cursor-pointer items-center content-center text-sm font-semibold antialiased text-ao-mid-blue-100 leading-snug hover:bg-ao-mid-blue-700 transition-all dark:text-ao-dk-text-400 dark:hover:bg-ao-dk-bg" 
+              @click="selected !== 'promote' ? selected = 'promote' : selected = null" 
+              :class="{ 
+                'bg-ao-mid-blue-700 text-white mt-2': selected === 'promote',
+                'bg-ao-dk-bg bg-opacity-90 text-white rounded-b-none': selected === 'promote' &&  document.documentElement.classList == 'dark',
+              }"
+            >
+              <svg 
+                class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-400" 
+                :style="selected == 'promote' ? 'color: #ffffff' : ''" 
+                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+              >
+                <path fill-rule="evenodd" d="M18 3a1 1 0 00-1.447-.894L8.763 6H5a3 3 0 000 6h.28l1.771 5.316A1 1 0 008 18h1a1 1 0 001-1v-4.382l6.553 3.276A1 1 0 0018 15V3z" clip-rule="evenodd" />
+              </svg>
+              Promote
+            </a>
+            <div 
+              class="relative overflow-hidden transition-all max-h-0 duration-700 bg-opacity-70 text-sm-md rounded-b" 
+              x-ref="promote" 
+              :style="selected == 'promote' ? 'max-height: ' + $refs.promote.scrollHeight + 'px' : ''" 
+              :class="{ 
+                'bg-ao-mid-blue mb-2': selected === 'promote',
+                'bg-ao-dk-bg bg-opacity-90 mb-2': selected === 'promote' &&  document.documentElement.classList == 'dark',
+              }"
+            >
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Advertisers
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Assign Conversion Events
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Bulk Mailing List Subscriptions
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Bulk Mailing List Unsubscribes
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Campaign Analysis
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Campaign Groups
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Campaign Themes
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Campaigns
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Content Subscriptions
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Conversion Event Import
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Conversion Events
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Creatives
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Customer Ladder Profiles
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Default Messages
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Mailing List Subscriber Import
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Mailing Lists
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Message Campaigns
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Message Templates
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Messages
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Search Themes
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200 mb-3">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Share Buttons
+              </a>
+            </div>
+          </li>
+
+          <li class="relative" x-data="{selected:null}">
+            <a 
+              href="#" 
+              class="flex flex-row w-full p-3 rounded cursor-pointer items-center content-center text-sm font-semibold antialiased text-ao-mid-blue-100 leading-snug hover:bg-ao-mid-blue-700 transition-all dark:text-ao-dk-text-400 dark:hover:bg-ao-dk-bg" 
+              @click="selected !== 'social' ? selected = 'social' : selected = null" 
+              :class="{ 
+                'bg-ao-mid-blue-700 text-white mt-2': selected === 'social',
+                'bg-ao-dk-bg bg-opacity-90 text-white rounded-b-none': selected === 'social' &&  document.documentElement.classList == 'dark', 
+              }"
+            >
+              <svg 
+                class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-400" 
+                :style="selected == 'social' ? 'color: #ffffff' : ''" 
+                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+              >
+                <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
+              </svg>
+              Social
+            </a>
+            <div 
+              class="relative overflow-hidden transition-all max-h-0 duration-700 bg-opacity-70 text-sm-md rounded-b" 
+              x-ref="social" 
+              :style="selected == 'social' ? 'max-height: ' + $refs.social.scrollHeight + 'px' : ''" 
+              :class="{ 
+                'bg-ao-mid-blue mb-2': selected === 'social',
+                'bg-ao-dk-bg bg-opacity-90 mb-2': selected === 'social' &&  document.documentElement.classList == 'dark'
+               }"
+            >
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Advertisers
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Assign Conversion Events
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Bulk Mailing List Subscriptions
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Bulk Mailing List Unsubscribes
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Campaign Analysis
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Campaign Groups
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Campaign Themes
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Campaigns
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Content Subscriptions
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Conversion Event Import
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Conversion Events
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Creatives
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Customer Ladder Profiles
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Default Messages
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Mailing List Subscriber Import
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Mailing Lists
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Message Campaigns
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Message Templates
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Messages
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Search Themes
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200 mb-3">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Share Buttons
+              </a>
+            </div>
+          </li>
+
+          <li class="relative" x-data="{selected:null}">
+            <a 
+              href="#" 
+              class="flex flex-row w-full p-3 rounded cursor-pointer items-center content-center text-sm font-semibold antialiased text-ao-mid-blue-100 leading-snug hover:bg-ao-mid-blue-700 transition-all dark:text-ao-dk-text-400 dark:hover:bg-ao-dk-bg" 
+              @click="selected !== 'media' ? selected = 'media' : selected = null" 
+              :class="{ 
+                'bg-ao-mid-blue-700 text-white mt-2': selected === 'media',
+                'bg-ao-dk-bg bg-opacity-90 text-white rounded-b-none': selected === 'media' &&  document.documentElement.classList == 'dark', 
+               }"
+            >
+              <svg 
+                class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-400" 
+                :style="selected == 'media' ? 'color: #ffffff' : ''" 
+                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+              >
+                <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd" />
+              </svg>
+              Media
+            </a>
+            <div 
+              class="relative overflow-hidden transition-all max-h-0 duration-700 bg-opacity-70 text-sm-md rounded-b" 
+              x-ref="media" 
+              :style="selected == 'media' ? 'max-height: ' + $refs.media.scrollHeight + 'px' : ''" 
+              :class="{ 
+                'bg-ao-mid-blue mb-2': selected === 'media',
+                'bg-ao-dk-bg bg-opacity-90 mb-2': selected === 'media' &&  document.documentElement.classList == 'dark'
+               }"
+            >
+              <a 
+                href="#" 
+                class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Advertisers
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Assign Conversion Events
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Bulk Mailing List Subscriptions
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Bulk Mailing List Unsubscribes
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Campaign Analysis
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Campaign Groups
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Campaign Themes
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Campaigns
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Content Subscriptions
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Conversion Event Import
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Conversion Events
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Creatives
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Customer Ladder Profiles
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Default Messages
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Mailing List Subscriber Import
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Mailing Lists
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Message Campaigns
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Message Templates
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Messages
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Search Themes
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200 mb-3">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Share Buttons
+              </a>
+            </div>
+          </li>
+
+          <li class="relative" x-data="{selected:null}">
+            <a 
+              href="#" 
+              class="flex flex-row w-full p-3 rounded cursor-pointer items-center content-center text-sm font-semibold antialiased text-ao-mid-blue-100 leading-snug hover:bg-ao-mid-blue-700 transition-all dark:text-ao-dk-text-400 dark:hover:bg-ao-dk-bg" 
+              @click="selected !== 'structure' ? selected = 'structure' : selected = null" 
+              :class="{ 
+                'bg-ao-mid-blue-700 text-white mt-2': selected === 'structure',
+                'bg-ao-dk-bg bg-opacity-90 text-white rounded-b-none': selected === 'structure' &&  document.documentElement.classList == 'dark', 
+              }"
+            >
+              <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-400" :style="selected == 'structure' ? 'color: #ffffff' : ''" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM14 11a1 1 0 011 1v1h1a1 1 0 110 2h-1v1a1 1 0 11-2 0v-1h-1a1 1 0 110-2h1v-1a1 1 0 011-1z" />
+              </svg>
+              Structure
+            </a>
+            <div 
+              class="relative overflow-hidden transition-all max-h-0 duration-700 bg-opacity-70 text-sm-md rounded-b" 
+              x-ref="structure" 
+              :style="selected == 'structure' ? 'max-height: ' + $refs.structure.scrollHeight + 'px' : ''" 
+              :class="{ 
+                'bg-ao-mid-blue mb-2': selected === 'structure',
+                'bg-ao-dk-bg bg-opacity-90 mb-2': selected === 'structure' &&  document.documentElement.classList == 'dark'
+             }"
+            >
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Advertisers
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Assign Conversion Events
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Bulk Mailing List Subscriptions
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Bulk Mailing List Unsubscribes
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Campaign Analysis
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Campaign Groups
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Campaign Themes
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Campaigns
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Content Subscriptions
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Conversion Event Import
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Conversion Events
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Creatives
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Customer Ladder Profiles
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Default Messages
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Mailing List Subscriber Import
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Mailing Lists
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Message Campaigns
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Message Templates
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Messages
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Search Themes
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200 mb-3">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Share Buttons
+              </a>
+            </div>
+          </li>
+
+          <li class="relative" x-data="{selected:null}">
+            <a 
+              href="#" 
+              class="flex flex-row w-full p-3 rounded cursor-pointer items-center content-center text-sm font-semibold antialiased text-ao-mid-blue-100 leading-snug hover:bg-ao-mid-blue-700 transition-all dark:text-ao-dk-text-400 dark:hover:bg-ao-dk-bg" 
+              @click="selected !== 'design' ? selected = 'design' : selected = null" 
+              :class="{ 
+                'bg-ao-mid-blue-700 text-white mt-2': selected === 'design',
+                'bg-ao-dk-bg bg-opacity-90 text-white rounded-b-none': selected === 'design' &&  document.documentElement.classList == 'dark', 
+               }"
+            >
+              <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-400" :style="selected == 'design' ? 'color: #ffffff' : ''" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M4 2a2 2 0 00-2 2v11a3 3 0 106 0V4a2 2 0 00-2-2H4zm1 14a1 1 0 100-2 1 1 0 000 2zm5-1.757l4.9-4.9a2 2 0 000-2.828L13.485 5.1a2 2 0 00-2.828 0L10 5.757v8.486zM16 18H9.071l6-6H16a2 2 0 012 2v2a2 2 0 01-2 2z" clip-rule="evenodd" />
+              </svg>
+              Design
+            </a>
+            <div 
+              class="relative overflow-hidden transition-all max-h-0 duration-700 bg-opacity-70 text-sm-md rounded-b" 
+              x-ref="design" 
+              :style="selected == 'design' ? 'max-height: ' + $refs.design.scrollHeight + 'px' : ''" 
+              :class="{ 
+                'bg-ao-mid-blue mb-2': selected === 'design',
+                'bg-ao-dk-bg bg-opacity-90 mb-2': selected === 'design' &&  document.documentElement.classList == 'dark'
+               }"
+            >
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Advertisers
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Assign Conversion Events
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Bulk Mailing List Subscriptions
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Bulk Mailing List Unsubscribes
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Campaign Analysis
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Campaign Groups
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Campaign Themes
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Campaigns
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Content Subscriptions
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Conversion Event Import
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Conversion Events
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Creatives
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Customer Ladder Profiles
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Default Messages
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Mailing List Subscriber Import
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Mailing Lists
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Message Campaigns
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Message Templates
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Messages
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Search Themes
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200 mb-3">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Share Buttons
+              </a>
+            </div>
+          </li>
+
+          <li class="relative" x-data="{selected:null}">
+            <a 
+              href="#" 
+              class="flex flex-row w-full p-3 rounded cursor-pointer items-center content-center text-sm font-semibold antialiased text-ao-mid-blue-100 leading-snug hover:bg-ao-mid-blue-700 transition-all dark:text-ao-dk-text-400 dark:hover:bg-ao-dk-bg" 
+              @click="selected !== 'commerce' ? selected = 'commerce' : selected = null" 
+              :class="{ 
+                'bg-ao-mid-blue-700 text-white mt-2': selected === 'commerce',
+                'bg-ao-dk-bg bg-opacity-90 text-white rounded-b-none': selected === 'commerce' &&  document.documentElement.classList == 'dark', 
+               }"
+            >
+              <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-400" :style="selected == 'commerce' ? 'color: #ffffff' : ''" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+              </svg>
+              Commerce
+            </a>
+            <div 
+              class="relative overflow-hidden transition-all max-h-0 duration-700 bg-opacity-70 text-sm-md rounded-b" 
+              x-ref="commerce" 
+              :style="selected == 'commerce' ? 'max-height: ' + $refs.commerce.scrollHeight + 'px' : ''" 
+              :class="{ 
+                'bg-ao-mid-blue mb-2': selected === 'commerce',
+                'bg-ao-dk-bg bg-opacity-90 mb-2': selected === 'commerce' &&  document.documentElement.classList == 'dark'
+              }"
+            >
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Advertisers
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Assign Conversion Events
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Bulk Mailing List Subscriptions
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Bulk Mailing List Unsubscribes
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Campaign Analysis
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Campaign Groups
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Campaign Themes
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Campaigns
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Content Subscriptions
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Conversion Event Import
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Conversion Events
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Creatives
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Customer Ladder Profiles
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Default Messages
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Mailing List Subscriber Import
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Mailing Lists
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Message Campaigns
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Message Templates
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Messages
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Search Themes
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200 mb-3">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Share Buttons
+              </a>
+            </div>
+          </li>
+
+          <li class="relative" x-data="{selected:null}">
+            <a 
+              href="#" 
+              class="flex flex-row w-full p-3 rounded cursor-pointer items-center content-center text-sm font-semibold antialiased text-ao-mid-blue-100 leading-snug hover:bg-ao-mid-blue-700 transition-all dark:text-ao-dk-text-400 dark:hover:bg-ao-dk-bg" 
+              @click="selected !== 'analyse' ? selected = 'analyse' : selected = null" 
+              :class="{ 
+                'bg-ao-mid-blue-700 text-white mt-2': selected === 'analyse',
+                'bg-ao-dk-bg bg-opacity-90 text-white rounded-b-none': selected === 'analyse' &&  document.documentElement.classList == 'dark', 
+               }"
+            >
+              <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-400" :style="selected == 'analyse' ? 'color: #ffffff' : ''" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11 4a1 1 0 10-2 0v4a1 1 0 102 0V7zm-3 1a1 1 0 10-2 0v3a1 1 0 102 0V8zM8 9a1 1 0 00-2 0v2a1 1 0 102 0V9z" clip-rule="evenodd" />
+              </svg>
+              Analyse
+            </a>
+            <div 
+              class="relative overflow-hidden transition-all max-h-0 duration-700 bg-opacity-70 text-sm-md rounded-b" 
+              x-ref="analyse" 
+              :style="selected == 'analyse' ? 'max-height: ' + $refs.analyse.scrollHeight + 'px' : ''" 
+              :class="{ 
+                'bg-ao-mid-blue mb-2': selected === 'analyse',
+                'bg-ao-dk-bg bg-opacity-90 mb-2': selected === 'analyse' &&  document.documentElement.classList == 'dark'
+               }"
+            >
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Advertisers
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Assign Conversion Events
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Bulk Mailing List Subscriptions
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Bulk Mailing List Unsubscribes
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Campaign Analysis
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Campaign Groups
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Campaign Themes
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Campaigns
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Content Subscriptions
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Conversion Event Import
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Conversion Events
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Creatives
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Customer Ladder Profiles
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Default Messages
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Mailing List Subscriber Import
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Mailing Lists
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Message Campaigns
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Message Templates
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Messages
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Search Themes
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200 mb-3">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Share Buttons
+              </a>
+            </div>
+          </li>
+
+          <li class="relative" x-data="{selected:null}">
+            <a 
+              href="#" 
+              class="flex flex-row w-full p-3 rounded cursor-pointer items-center content-center text-sm font-semibold antialiased text-ao-mid-blue-100 leading-snug hover:bg-ao-mid-blue-700 transition-all dark:text-ao-dk-text-400 dark:hover:bg-ao-dk-bg" 
+              @click="selected !== 'security' ? selected = 'security' : selected = null" 
+              :class="{ 
+                'bg-ao-mid-blue-700 text-white mt-2': selected === 'security',
+                'bg-ao-dk-bg bg-opacity-90 text-white rounded-b-none': selected === 'security' &&  document.documentElement.classList == 'dark', 
+               }"
+            >
+              <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-400" :style="selected == 'security' ? 'color: #ffffff' : ''" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              Security
+            </a>
+            <div 
+              class="relative overflow-hidden transition-all max-h-0 duration-700 bg-opacity-70 text-sm-md rounded-b" 
+              x-ref="security" 
+              :style="selected == 'security' ? 'max-height: ' + $refs.security.scrollHeight + 'px' : ''" 
+              :class="{ 
+                'bg-ao-mid-blue mb-2': selected === 'security' ,
+                'bg-ao-dk-bg bg-opacity-90 mb-2': selected === 'security' &&  document.documentElement.classList == 'dark'
+              }"
+                >
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Advertisers
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Assign Conversion Events
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Bulk Mailing List Subscriptions
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Bulk Mailing List Unsubscribes
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Campaign Analysis
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Campaign Groups
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Campaign Themes
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Campaigns
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Content Subscriptions
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Conversion Event Import
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Conversion Events
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Creatives
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Customer Ladder Profiles
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Default Messages
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Mailing List Subscriber Import
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Mailing Lists
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Message Campaigns
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Message Templates
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Messages
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Search Themes
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200 mb-3">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Share Buttons
+              </a>
+            </div>
+          </li>
+
+          <li class="relative" x-data="{selected:null}">
+            <a 
+              href="#" 
+              class="flex flex-row w-full p-3 rounded cursor-pointer items-center content-center text-sm font-semibold antialiased text-ao-mid-blue-100 leading-snug hover:bg-ao-mid-blue-700 transition-all dark:text-ao-dk-text-400 dark:hover:bg-ao-dk-bg" 
+              @click="selected !== 'settings' ? selected = 'settings' : selected = null" 
+              :class="{ 
+                'bg-ao-mid-blue-700 text-white mt-2': selected === 'settings',
+                'bg-ao-dk-bg bg-opacity-90 text-white rounded-b-none': selected === 'settings' &&  document.documentElement.classList == 'dark', 
+               }"
+            >
+              <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-400" :style="selected == 'settings' ? 'color: #ffffff' : ''" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
+              </svg>
+              Settings
+            </a>
+            <div 
+              class="relative overflow-hidden transition-all max-h-0 duration-700 bg-opacity-70 text-sm-md rounded-b" 
+              x-ref="settings" 
+              :style="selected == 'settings' ? 'max-height: ' + $refs.settings.scrollHeight + 'px' : ''" 
+              :class="{ 
+                'bg-ao-mid-blue mb-2': selected === 'settings',
+                'bg-ao-dk-bg bg-opacity-90 mb-2': selected === 'settings' &&  document.documentElement.classList == 'dark'
+              }"
+            >
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Advertisers
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Assign Conversion Events
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Bulk Mailing List Subscriptions
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Bulk Mailing List Unsubscribes
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Campaign Analysis
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Campaign Groups
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Campaign Themes
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Campaigns
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Content Subscriptions
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Conversion Event Import
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Conversion Events
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Creatives
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Customer Ladder Profiles
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Default Messages
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Mailing List Subscriber Import
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Mailing Lists
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Message Campaigns
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Message Templates
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Messages
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Search Themes
+              </a>
+              <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200 mb-3">
+                <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4,6c0,0,0-2,2-2s8,0,8,0s2,0,2,2s0,8,0,8s0,2-2,2s-8,0-8,0s-2,0-2-2S4,6,4,6z" />
+                </svg>
+                Share Buttons
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- CRM Content -->
+      <div class="flex p-5" x-show="tab === 'crm'" x-transition:enter="transition ease-out duration-1000" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100">
+        CRM
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

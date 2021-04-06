@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Who's Online</title>
+</head>
+
+<body class="flex bg-ao-mid-blue-200 dark:bg-ao-dk-bg dark:text-ao-dk-text-500" data-section="Social" x-data="{ open: false }">
+
+  <!-- Sidebar Nav -->
+  <%= require('html-loader!./_cc-nav.html').default %>
+
+
+    <!-- Main Container -->
+    <div class="w-full">
+
+      <!-- Breadcrumb & nav -->
+      <%= require('html-loader!./_cc-breadcrumb.html').default %>
+
+        <!-- Content -->
+        <div class="flex flex-wrap p-4 md:px-6 lg:px-8 container mx-auto">
+
+          <h1 class="w-full mb-2">Who's online</h1> 
+
+          <!-- Whos Online -->
+          <div class="flex flex-col w-full mt-3 bg-white rounded shadow-sm overflow-hidden text-sm font-normal text-ao-dk-blue-500 border border-ao-mid-blue-300 border-opacity-90 dark:text-ao-dk-text-500 dark:bg-ao-dk-bg-700 dark:border-ao-dk-bg">
+            <table class="w-full table-auto border-collapse ">
+              <!-- Table Head -->
+              <tr class="bg-ao-mid-blue-200 dark:bg-ao-dk-bg-400 ">
+                <th class="w-8/12 md:w-5/12 p-3 font-normal text-left">User</th>
+                <th class="hidden md:table-cell w-4/12 font-normal text-left">Account</th>
+                <th class="w-2/12 font-normal">Login</th>
+                <th class="w-2/12 md:w-1/12 font-normal pr-3">Touch</th>
+              </tr>
+
+              <!-- User 1 -->
+              <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
+                <td class="p-3">
+                  <div class="flex flex-row md:items-center">
+                    <a href="#" class="flex-shrink-0"><img src="https://source.unsplash.com/JyVcAIUAcPM/100x100" alt="Julius Metyko" class="w-10 h-10 rounded-full mr-3 hover:ring-2 hover:ring-ao-mid-blue-400 dark:hover:ring-ao-dk-bg-400"></a>
+                    <div>
+                      <h5><a href="#" class="hover:underline">Julius Metyko</a></h5>
+                      <div class="leading-4 md:leading-snug">Lead Developer</div>
+                      <div class="md:hidden leading-4 mt-1"><a href="#" class="block no-underline hover:underline hover:text-ao-lt-blue-700">Affino</a></div>
+                    </div>
+                  </div>
+                </td>
+                <td class="hidden md:table-cell"><a href="#" class="block no-underline hover:underline hover:text-ao-lt-blue-700">Affino</a></td>
+                <td class="text-center">9:24am</td>
+                <td>
+                  <a class="flex justify-center items-center text-ao-mid-blue-500 hover:text-ao-mid-blue-600 dark:text-ao-dk-text-400 dark:hover:text-ao-dk-text-200" href="#">
+                    <svg class="flex-shrink-0 w-4 h-4 " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6.625 2.655A9 9 0 0119 11a1 1 0 11-2 0 7 7 0 00-9.625-6.492 1 1 0 11-.75-1.853zM4.662 4.959A1 1 0 014.75 6.37 6.97 6.97 0 003 11a1 1 0 11-2 0 8.97 8.97 0 012.25-5.953 1 1 0 011.412-.088z" clip-rule="evenodd" />
+                      <path fill-rule="evenodd" d="M5 11a5 5 0 1110 0 1 1 0 11-2 0 3 3 0 10-6 0c0 1.677-.345 3.276-.968 4.729a1 1 0 11-1.838-.789A9.964 9.964 0 005 11zm8.921 2.012a1 1 0 01.831 1.145 19.86 19.86 0 01-.545 2.436 1 1 0 11-1.92-.558c.207-.713.371-1.445.49-2.192a1 1 0 011.144-.83z" clip-rule="evenodd" />
+                      <path fill-rule="evenodd" d="M10 10a1 1 0 011 1c0 2.236-.46 4.368-1.29 6.304a1 1 0 01-1.838-.789A13.952 13.952 0 009 11a1 1 0 011-1z" clip-rule="evenodd" />
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+
+              <!-- User 2 -->
+              <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
+                <td class="p-3">
+                  <div class="flex flex-row md:items-center">
+                    <a href="#" class="flex-shrink-0"><img src="https://source.unsplash.com/n4KewLKFOZw/100x100" alt="Siv Ananthakumar" class="w-10 h-10 rounded-full mr-3 hover:ring-2 hover:ring-ao-mid-blue-400 dark:hover:ring-ao-dk-bg-400"></a>
+                    <div>
+                      <h5><a href="#" class="hover:underline">Siv Ananthakumar</a></h5>
+                      <div class="leading-4 md:leading-snug">Content Management</div>
+                      <div class="md:hidden leading-4 mt-1"><a href="#" class="block no-underline hover:underline hover:text-ao-lt-blue-700">Charity Digital</a></div>
+                    </div>
+                  </div>
+                </td>
+                <td class="hidden md:table-cell"><a href="#" class="block no-underline hover:underline hover:text-ao-lt-blue-700">Charity Digital</a></td>
+                <td class="text-center">11:19am</td>
+                <td>
+                  <a class="flex justify-center items-center text-ao-mid-blue-500 hover:text-ao-mid-blue-600 dark:text-ao-dk-text-400 dark:hover:text-ao-dk-text-200" href="#">
+                    <svg class="flex-shrink-0 w-4 h-4 " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6.625 2.655A9 9 0 0119 11a1 1 0 11-2 0 7 7 0 00-9.625-6.492 1 1 0 11-.75-1.853zM4.662 4.959A1 1 0 014.75 6.37 6.97 6.97 0 003 11a1 1 0 11-2 0 8.97 8.97 0 012.25-5.953 1 1 0 011.412-.088z" clip-rule="evenodd" />
+                      <path fill-rule="evenodd" d="M5 11a5 5 0 1110 0 1 1 0 11-2 0 3 3 0 10-6 0c0 1.677-.345 3.276-.968 4.729a1 1 0 11-1.838-.789A9.964 9.964 0 005 11zm8.921 2.012a1 1 0 01.831 1.145 19.86 19.86 0 01-.545 2.436 1 1 0 11-1.92-.558c.207-.713.371-1.445.49-2.192a1 1 0 011.144-.83z" clip-rule="evenodd" />
+                      <path fill-rule="evenodd" d="M10 10a1 1 0 011 1c0 2.236-.46 4.368-1.29 6.304a1 1 0 01-1.838-.789A13.952 13.952 0 009 11a1 1 0 011-1z" clip-rule="evenodd" />
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+
+              <!-- User 3 -->
+              <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
+                <td class="p-3">
+                  <div class="flex flex-row md:items-center">
+                    <a href="#" class="flex-shrink-0"><img src="https://source.unsplash.com/EhcwOfAn-mA/100x100" alt="Susan Kerrigan" class="w-10 h-10 rounded-full mr-3 hover:ring-2 hover:ring-ao-mid-blue-400 dark:hover:ring-ao-dk-bg-400"></a>
+                    <div>
+                      <h5><a href="#" class="hover:underline">Susan Kerrigan</a></h5>
+                      <div class="leading-4 md:leading-snug">Head of Projects </div>
+                      <div class="md:hidden leading-4 mt-1"><a href="#" class="block no-underline hover:underline hover:text-ao-lt-blue-700">Affino</a></div>
+                    </div>
+                  </div>
+                </td>
+                <td class="hidden md:table-cell"><a href="#" class="block no-underline hover:underline hover:text-ao-lt-blue-700">Affino</a></td>
+                <td class="text-center">11:19am</td>
+                <td>
+                  <a class="flex justify-center items-center text-ao-mid-blue-500 hover:text-ao-mid-blue-600 dark:text-ao-dk-text-400 dark:hover:text-ao-dk-text-200" href="#">
+                    <svg class="flex-shrink-0 w-4 h-4 " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6.625 2.655A9 9 0 0119 11a1 1 0 11-2 0 7 7 0 00-9.625-6.492 1 1 0 11-.75-1.853zM4.662 4.959A1 1 0 014.75 6.37 6.97 6.97 0 003 11a1 1 0 11-2 0 8.97 8.97 0 012.25-5.953 1 1 0 011.412-.088z" clip-rule="evenodd" />
+                      <path fill-rule="evenodd" d="M5 11a5 5 0 1110 0 1 1 0 11-2 0 3 3 0 10-6 0c0 1.677-.345 3.276-.968 4.729a1 1 0 11-1.838-.789A9.964 9.964 0 005 11zm8.921 2.012a1 1 0 01.831 1.145 19.86 19.86 0 01-.545 2.436 1 1 0 11-1.92-.558c.207-.713.371-1.445.49-2.192a1 1 0 011.144-.83z" clip-rule="evenodd" />
+                      <path fill-rule="evenodd" d="M10 10a1 1 0 011 1c0 2.236-.46 4.368-1.29 6.304a1 1 0 01-1.838-.789A13.952 13.952 0 009 11a1 1 0 011-1z" clip-rule="evenodd" />
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+
+              <!-- User 4 -->
+              <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
+                <td class="p-3">
+                  <div class="flex flex-row md:items-center">
+                    <a class="flex-shrink-0" href="#"><img src="https://source.unsplash.com/BUN4bmGI_-w/100x100" alt="James Harley" class="w-10 h-10 rounded-full mr-3 hover:ring-2 hover:ring-ao-mid-blue-400 dark:hover:ring-ao-dk-bg-400"></a>
+                    <div>
+                      <h5><a href="#" class="hover:underline">James Harley</a></h5>
+                      <div class="leading-4 md:leading-snug">Head of Marketing </div>
+                      <div class="md:hidden leading-4 mt-1"><a href="#" class="block no-underline hover:underline hover:text-ao-lt-blue-700">Drewry Shipping Consutlants</a></div>
+                    </div>
+                  </div>
+                </td>
+                <td class="hidden md:table-cell"><a href="#" class="block no-underline hover:underline hover:text-ao-lt-blue-700">Drewry Shipping Consutlants</a></td>
+                <td class="text-center">11:19am</td>
+                <td>
+                  <a class="flex justify-center items-center text-ao-mid-blue-500 hover:text-ao-mid-blue-600 dark:text-ao-dk-text-400 dark:hover:text-ao-dk-text-200" href="#">
+                    <svg class="flex-shrink-0 w-4 h-4 " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6.625 2.655A9 9 0 0119 11a1 1 0 11-2 0 7 7 0 00-9.625-6.492 1 1 0 11-.75-1.853zM4.662 4.959A1 1 0 014.75 6.37 6.97 6.97 0 003 11a1 1 0 11-2 0 8.97 8.97 0 012.25-5.953 1 1 0 011.412-.088z" clip-rule="evenodd" />
+                      <path fill-rule="evenodd" d="M5 11a5 5 0 1110 0 1 1 0 11-2 0 3 3 0 10-6 0c0 1.677-.345 3.276-.968 4.729a1 1 0 11-1.838-.789A9.964 9.964 0 005 11zm8.921 2.012a1 1 0 01.831 1.145 19.86 19.86 0 01-.545 2.436 1 1 0 11-1.92-.558c.207-.713.371-1.445.49-2.192a1 1 0 011.144-.83z" clip-rule="evenodd" />
+                      <path fill-rule="evenodd" d="M10 10a1 1 0 011 1c0 2.236-.46 4.368-1.29 6.304a1 1 0 01-1.838-.789A13.952 13.952 0 009 11a1 1 0 011-1z" clip-rule="evenodd" />
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+
+              <!-- User 5 -->
+              <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
+                <td class="p-3">
+                  <div class="flex flex-row md:items-center">
+                    <a class="flex-shrink-0" href="#"><img src="https://source.unsplash.com/mEZ3PoFGs_k/100x100" alt="Rachel Scott" class="w-10 h-10 rounded-full mr-3 hover:ring-2 hover:ring-ao-mid-blue-400 dark:hover:ring-ao-dk-bg-400"></a>
+                    <div>
+                      <h5><a href="#" class="hover:underline">Rachel Scott</a></h5>
+                      <div class="leading-4 md:leading-snug"></div>
+                      <div class="md:hidden leading-4 mt-1"><a href="#" class="block no-underline hover:underline hover:text-ao-lt-blue-700">The Stage Media Company</a></div>
+                    </div>
+                  </div>
+                </td>
+                <td class="hidden md:table-cell"><a href="#" class="block no-underline hover:underline hover:text-ao-lt-blue-700">The Stage Media Company</a></td>
+                <td class="text-center">13:22pm</td>
+                <td>
+                  <a class="flex justify-center items-center text-ao-mid-blue-500 hover:text-ao-mid-blue-600 dark:text-ao-dk-text-400 dark:hover:text-ao-dk-text-200" href="#">
+                    <svg class="flex-shrink-0 w-4 h-4 " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6.625 2.655A9 9 0 0119 11a1 1 0 11-2 0 7 7 0 00-9.625-6.492 1 1 0 11-.75-1.853zM4.662 4.959A1 1 0 014.75 6.37 6.97 6.97 0 003 11a1 1 0 11-2 0 8.97 8.97 0 012.25-5.953 1 1 0 011.412-.088z" clip-rule="evenodd" />
+                      <path fill-rule="evenodd" d="M5 11a5 5 0 1110 0 1 1 0 11-2 0 3 3 0 10-6 0c0 1.677-.345 3.276-.968 4.729a1 1 0 11-1.838-.789A9.964 9.964 0 005 11zm8.921 2.012a1 1 0 01.831 1.145 19.86 19.86 0 01-.545 2.436 1 1 0 11-1.92-.558c.207-.713.371-1.445.49-2.192a1 1 0 011.144-.83z" clip-rule="evenodd" />
+                      <path fill-rule="evenodd" d="M10 10a1 1 0 011 1c0 2.236-.46 4.368-1.29 6.304a1 1 0 01-1.838-.789A13.952 13.952 0 009 11a1 1 0 011-1z" clip-rule="evenodd" />
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+
+              <!-- User 6 -->
+              <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
+                <td class="p-3">
+                  <div class="flex flex-row md:items-center">
+                    <a class="flex-shrink-0" href="#"><img src="https://source.unsplash.com/dUtizJyby4E/100x100" alt="Sheryl Paul" class="w-10 h-10 rounded-full mr-3 hover:ring-2 hover:ring-ao-mid-blue-400 dark:hover:ring-ao-dk-bg-400"></a>
+                    <div>
+                      <h5><a href="#" class="hover:underline">Sheryl Paul</a></h5>
+                      <div class="leading-4 md:leading-snug">Marketing Consultant</div>
+                      <div class="md:hidden leading-4 mt-1"><a href="#" class="block no-underline hover:underline hover:text-ao-lt-blue-700">AOP</a></div>
+                    </div>
+                  </div>
+                </td>
+                <td class="hidden md:table-cell"><a href="#" class="block no-underline hover:underline hover:text-ao-lt-blue-700">AOP</a></td>
+                <td class="text-center">13:22pm</td>
+                <td>
+                  <a class="flex justify-center items-center text-ao-mid-blue-500 hover:text-ao-mid-blue-600 dark:text-ao-dk-text-400 dark:hover:text-ao-dk-text-200" href="#">
+                    <svg class="flex-shrink-0 w-4 h-4 " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6.625 2.655A9 9 0 0119 11a1 1 0 11-2 0 7 7 0 00-9.625-6.492 1 1 0 11-.75-1.853zM4.662 4.959A1 1 0 014.75 6.37 6.97 6.97 0 003 11a1 1 0 11-2 0 8.97 8.97 0 012.25-5.953 1 1 0 011.412-.088z" clip-rule="evenodd" />
+                      <path fill-rule="evenodd" d="M5 11a5 5 0 1110 0 1 1 0 11-2 0 3 3 0 10-6 0c0 1.677-.345 3.276-.968 4.729a1 1 0 11-1.838-.789A9.964 9.964 0 005 11zm8.921 2.012a1 1 0 01.831 1.145 19.86 19.86 0 01-.545 2.436 1 1 0 11-1.92-.558c.207-.713.371-1.445.49-2.192a1 1 0 011.144-.83z" clip-rule="evenodd" />
+                      <path fill-rule="evenodd" d="M10 10a1 1 0 011 1c0 2.236-.46 4.368-1.29 6.304a1 1 0 01-1.838-.789A13.952 13.952 0 009 11a1 1 0 011-1z" clip-rule="evenodd" />
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+
+
+              <!-- User 7 -->
+              <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
+                <td class="p-3">
+                  <div class="flex flex-row md:items-center">
+                    <a class="flex-shrink-0" href="#"><img src="https://source.unsplash.com/d2MSDujJl2g/100x100" alt="Paul Dominguez" class="w-10 h-10 rounded-full mr-3 hover:ring-2 hover:ring-ao-mid-blue-400 dark:hover:ring-ao-dk-bg-400"></a>
+                    <div>
+                      <h5><a href="#" class="hover:underline">Paul Dominguez</a></h5>
+                      <div class="leading-4 md:leading-snug">Director</div>
+                      <div class="md:hidden leading-4 mt-1">
+                        <a href="#" class="block no-underline hover:underline hover:text-ao-lt-blue-700">Tamed Media</a>
+                        <a href="#" class="block no-underline hover:underline hover:text-ao-lt-blue-700">Ocean Media Group Ltd</a>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td class="hidden md:table-cell">
+                  <a href="#" class="block no-underline hover:underline hover:text-ao-lt-blue-700">Tamed Media</a>
+                  <a href="#" class="block no-underline hover:underline hover:text-ao-lt-blue-700">Ocean Media Group Ltd</a>
+                </td>
+                <td class="text-center">13:22pm</td>
+                <td>
+                  <a class="flex justify-center items-center text-ao-mid-blue-500 hover:text-ao-mid-blue-600 dark:text-ao-dk-text-400 dark:hover:text-ao-dk-text-200" href="#">
+                    <svg class="flex-shrink-0 w-4 h-4 " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6.625 2.655A9 9 0 0119 11a1 1 0 11-2 0 7 7 0 00-9.625-6.492 1 1 0 11-.75-1.853zM4.662 4.959A1 1 0 014.75 6.37 6.97 6.97 0 003 11a1 1 0 11-2 0 8.97 8.97 0 012.25-5.953 1 1 0 011.412-.088z" clip-rule="evenodd" />
+                      <path fill-rule="evenodd" d="M5 11a5 5 0 1110 0 1 1 0 11-2 0 3 3 0 10-6 0c0 1.677-.345 3.276-.968 4.729a1 1 0 11-1.838-.789A9.964 9.964 0 005 11zm8.921 2.012a1 1 0 01.831 1.145 19.86 19.86 0 01-.545 2.436 1 1 0 11-1.92-.558c.207-.713.371-1.445.49-2.192a1 1 0 011.144-.83z" clip-rule="evenodd" />
+                      <path fill-rule="evenodd" d="M10 10a1 1 0 011 1c0 2.236-.46 4.368-1.29 6.304a1 1 0 01-1.838-.789A13.952 13.952 0 009 11a1 1 0 011-1z" clip-rule="evenodd" />
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+
+              <!-- User 1 -->
+              <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
+                <td class="p-3">
+                  <div class="flex flex-row md:items-center">
+                    <a href="#" class="flex-shrink-0"><img src="https://source.unsplash.com/JyVcAIUAcPM/100x100" alt="Julius Metyko" class="w-10 h-10 rounded-full mr-3 hover:ring-2 hover:ring-ao-mid-blue-400 dark:hover:ring-ao-dk-bg-400"></a>
+                    <div>
+                      <h5><a href="#" class="hover:underline">Julius Metyko</a></h5>
+                      <div class="leading-4 md:leading-snug">Lead Developer</div>
+                      <div class="md:hidden leading-4 mt-1"><a href="#" class="block no-underline hover:underline hover:text-ao-lt-blue-700">Affino</a></div>
+                    </div>
+                  </div>
+                </td>
+                <td class="hidden md:table-cell"><a href="#" class="block no-underline hover:underline hover:text-ao-lt-blue-700">Affino</a></td>
+                <td class="text-center">9:24am</td>
+                <td>
+                  <a class="flex justify-center items-center text-ao-mid-blue-500 hover:text-ao-mid-blue-600 dark:text-ao-dk-text-400 dark:hover:text-ao-dk-text-200" href="#">
+                    <svg class="flex-shrink-0 w-4 h-4 " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6.625 2.655A9 9 0 0119 11a1 1 0 11-2 0 7 7 0 00-9.625-6.492 1 1 0 11-.75-1.853zM4.662 4.959A1 1 0 014.75 6.37 6.97 6.97 0 003 11a1 1 0 11-2 0 8.97 8.97 0 012.25-5.953 1 1 0 011.412-.088z" clip-rule="evenodd" />
+                      <path fill-rule="evenodd" d="M5 11a5 5 0 1110 0 1 1 0 11-2 0 3 3 0 10-6 0c0 1.677-.345 3.276-.968 4.729a1 1 0 11-1.838-.789A9.964 9.964 0 005 11zm8.921 2.012a1 1 0 01.831 1.145 19.86 19.86 0 01-.545 2.436 1 1 0 11-1.92-.558c.207-.713.371-1.445.49-2.192a1 1 0 011.144-.83z" clip-rule="evenodd" />
+                      <path fill-rule="evenodd" d="M10 10a1 1 0 011 1c0 2.236-.46 4.368-1.29 6.304a1 1 0 01-1.838-.789A13.952 13.952 0 009 11a1 1 0 011-1z" clip-rule="evenodd" />
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+
+              <!-- User 2 -->
+              <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
+                <td class="p-3">
+                  <div class="flex flex-row md:items-center">
+                    <a href="#" class="flex-shrink-0"><img src="https://source.unsplash.com/n4KewLKFOZw/100x100" alt="Siv Ananthakumar" class="w-10 h-10 rounded-full mr-3 hover:ring-2 hover:ring-ao-mid-blue-400 dark:hover:ring-ao-dk-bg-400"></a>
+                    <div>
+                      <h5><a href="#" class="hover:underline">Siv Ananthakumar</a></h5>
+                      <div class="leading-4 md:leading-snug">Content Management</div>
+                      <div class="md:hidden leading-4 mt-1"><a href="#" class="block no-underline hover:underline hover:text-ao-lt-blue-700">Charity Digital</a></div>
+                    </div>
+                  </div>
+                </td>
+                <td class="hidden md:table-cell"><a href="#" class="block no-underline hover:underline hover:text-ao-lt-blue-700">Charity Digital</a></td>
+                <td class="text-center">11:19am</td>
+                <td>
+                  <a class="flex justify-center items-center text-ao-mid-blue-500 hover:text-ao-mid-blue-600 dark:text-ao-dk-text-400 dark:hover:text-ao-dk-text-200" href="#">
+                    <svg class="flex-shrink-0 w-4 h-4 " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6.625 2.655A9 9 0 0119 11a1 1 0 11-2 0 7 7 0 00-9.625-6.492 1 1 0 11-.75-1.853zM4.662 4.959A1 1 0 014.75 6.37 6.97 6.97 0 003 11a1 1 0 11-2 0 8.97 8.97 0 012.25-5.953 1 1 0 011.412-.088z" clip-rule="evenodd" />
+                      <path fill-rule="evenodd" d="M5 11a5 5 0 1110 0 1 1 0 11-2 0 3 3 0 10-6 0c0 1.677-.345 3.276-.968 4.729a1 1 0 11-1.838-.789A9.964 9.964 0 005 11zm8.921 2.012a1 1 0 01.831 1.145 19.86 19.86 0 01-.545 2.436 1 1 0 11-1.92-.558c.207-.713.371-1.445.49-2.192a1 1 0 011.144-.83z" clip-rule="evenodd" />
+                      <path fill-rule="evenodd" d="M10 10a1 1 0 011 1c0 2.236-.46 4.368-1.29 6.304a1 1 0 01-1.838-.789A13.952 13.952 0 009 11a1 1 0 011-1z" clip-rule="evenodd" />
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+
+              <!-- User 3 -->
+              <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
+                <td class="p-3">
+                  <div class="flex flex-row md:items-center">
+                    <a href="#" class="flex-shrink-0"><img src="https://source.unsplash.com/EhcwOfAn-mA/100x100" alt="Susan Kerrigan" class="w-10 h-10 rounded-full mr-3 hover:ring-2 hover:ring-ao-mid-blue-400 dark:hover:ring-ao-dk-bg-400"></a>
+                    <div>
+                      <h5><a href="#" class="hover:underline">Susan Kerrigan</a></h5>
+                      <div class="leading-4 md:leading-snug">Head of Projects </div>
+                      <div class="md:hidden leading-4 mt-1"><a href="#" class="block no-underline hover:underline hover:text-ao-lt-blue-700">Affino</a></div>
+                    </div>
+                  </div>
+                </td>
+                <td class="hidden md:table-cell"><a href="#" class="block no-underline hover:underline hover:text-ao-lt-blue-700">Affino</a></td>
+                <td class="text-center">11:19am</td>
+                <td>
+                  <a class="flex justify-center items-center text-ao-mid-blue-500 hover:text-ao-mid-blue-600 dark:text-ao-dk-text-400 dark:hover:text-ao-dk-text-200" href="#">
+                    <svg class="flex-shrink-0 w-4 h-4 " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6.625 2.655A9 9 0 0119 11a1 1 0 11-2 0 7 7 0 00-9.625-6.492 1 1 0 11-.75-1.853zM4.662 4.959A1 1 0 014.75 6.37 6.97 6.97 0 003 11a1 1 0 11-2 0 8.97 8.97 0 012.25-5.953 1 1 0 011.412-.088z" clip-rule="evenodd" />
+                      <path fill-rule="evenodd" d="M5 11a5 5 0 1110 0 1 1 0 11-2 0 3 3 0 10-6 0c0 1.677-.345 3.276-.968 4.729a1 1 0 11-1.838-.789A9.964 9.964 0 005 11zm8.921 2.012a1 1 0 01.831 1.145 19.86 19.86 0 01-.545 2.436 1 1 0 11-1.92-.558c.207-.713.371-1.445.49-2.192a1 1 0 011.144-.83z" clip-rule="evenodd" />
+                      <path fill-rule="evenodd" d="M10 10a1 1 0 011 1c0 2.236-.46 4.368-1.29 6.304a1 1 0 01-1.838-.789A13.952 13.952 0 009 11a1 1 0 011-1z" clip-rule="evenodd" />
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+
+              <!-- User 4 -->
+              <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
+                <td class="p-3">
+                  <div class="flex flex-row md:items-center">
+                    <a class="flex-shrink-0" href="#"><img src="https://source.unsplash.com/BUN4bmGI_-w/100x100" alt="James Harley" class="w-10 h-10 rounded-full mr-3 hover:ring-2 hover:ring-ao-mid-blue-400 dark:hover:ring-ao-dk-bg-400"></a>
+                    <div>
+                      <h5><a href="#" class="hover:underline">James Harley</a></h5>
+                      <div class="leading-4 md:leading-snug">Head of Marketing </div>
+                      <div class="md:hidden leading-4 mt-1"><a href="#" class="block no-underline hover:underline hover:text-ao-lt-blue-700">Drewry Shipping Consutlants</a></div>
+                    </div>
+                  </div>
+                </td>
+                <td class="hidden md:table-cell"><a href="#" class="block no-underline hover:underline hover:text-ao-lt-blue-700">Drewry Shipping Consutlants</a></td>
+                <td class="text-center">11:19am</td>
+                <td>
+                  <a class="flex justify-center items-center text-ao-mid-blue-500 hover:text-ao-mid-blue-600 dark:text-ao-dk-text-400 dark:hover:text-ao-dk-text-200" href="#">
+                    <svg class="flex-shrink-0 w-4 h-4 " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6.625 2.655A9 9 0 0119 11a1 1 0 11-2 0 7 7 0 00-9.625-6.492 1 1 0 11-.75-1.853zM4.662 4.959A1 1 0 014.75 6.37 6.97 6.97 0 003 11a1 1 0 11-2 0 8.97 8.97 0 012.25-5.953 1 1 0 011.412-.088z" clip-rule="evenodd" />
+                      <path fill-rule="evenodd" d="M5 11a5 5 0 1110 0 1 1 0 11-2 0 3 3 0 10-6 0c0 1.677-.345 3.276-.968 4.729a1 1 0 11-1.838-.789A9.964 9.964 0 005 11zm8.921 2.012a1 1 0 01.831 1.145 19.86 19.86 0 01-.545 2.436 1 1 0 11-1.92-.558c.207-.713.371-1.445.49-2.192a1 1 0 011.144-.83z" clip-rule="evenodd" />
+                      <path fill-rule="evenodd" d="M10 10a1 1 0 011 1c0 2.236-.46 4.368-1.29 6.304a1 1 0 01-1.838-.789A13.952 13.952 0 009 11a1 1 0 011-1z" clip-rule="evenodd" />
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+
+              <!-- User 5 -->
+              <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
+                <td class="p-3">
+                  <div class="flex flex-row md:items-center">
+                    <a class="flex-shrink-0" href="#"><img src="https://source.unsplash.com/mEZ3PoFGs_k/100x100" alt="Rachel Scott" class="w-10 h-10 rounded-full mr-3 hover:ring-2 hover:ring-ao-mid-blue-400 dark:hover:ring-ao-dk-bg-400"></a>
+                    <div>
+                      <h5><a href="#" class="hover:underline">Rachel Scott</a></h5>
+                      <div class="leading-4 md:leading-snug"></div>
+                      <div class="md:hidden leading-4 mt-1"><a href="#" class="block no-underline hover:underline hover:text-ao-lt-blue-700">The Stage Media Company</a></div>
+                    </div>
+                  </div>
+                </td>
+                <td class="hidden md:table-cell"><a href="#" class="block no-underline hover:underline hover:text-ao-lt-blue-700">The Stage Media Company</a></td>
+                <td class="text-center">13:22pm</td>
+                <td>
+                  <a class="flex justify-center items-center text-ao-mid-blue-500 hover:text-ao-mid-blue-600 dark:text-ao-dk-text-400 dark:hover:text-ao-dk-text-200" href="#">
+                    <svg class="flex-shrink-0 w-4 h-4 " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6.625 2.655A9 9 0 0119 11a1 1 0 11-2 0 7 7 0 00-9.625-6.492 1 1 0 11-.75-1.853zM4.662 4.959A1 1 0 014.75 6.37 6.97 6.97 0 003 11a1 1 0 11-2 0 8.97 8.97 0 012.25-5.953 1 1 0 011.412-.088z" clip-rule="evenodd" />
+                      <path fill-rule="evenodd" d="M5 11a5 5 0 1110 0 1 1 0 11-2 0 3 3 0 10-6 0c0 1.677-.345 3.276-.968 4.729a1 1 0 11-1.838-.789A9.964 9.964 0 005 11zm8.921 2.012a1 1 0 01.831 1.145 19.86 19.86 0 01-.545 2.436 1 1 0 11-1.92-.558c.207-.713.371-1.445.49-2.192a1 1 0 011.144-.83z" clip-rule="evenodd" />
+                      <path fill-rule="evenodd" d="M10 10a1 1 0 011 1c0 2.236-.46 4.368-1.29 6.304a1 1 0 01-1.838-.789A13.952 13.952 0 009 11a1 1 0 011-1z" clip-rule="evenodd" />
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+
+              <!-- User 6 -->
+              <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
+                <td class="p-3">
+                  <div class="flex flex-row md:items-center">
+                    <a class="flex-shrink-0" href="#"><img src="https://source.unsplash.com/dUtizJyby4E/100x100" alt="Sheryl Paul" class="w-10 h-10 rounded-full mr-3 hover:ring-2 hover:ring-ao-mid-blue-400 dark:hover:ring-ao-dk-bg-400"></a>
+                    <div>
+                      <h5><a href="#" class="hover:underline">Sheryl Paul</a></h5>
+                      <div class="leading-4 md:leading-snug">Marketing Consultant</div>
+                      <div class="md:hidden leading-4 mt-1"><a href="#" class="block no-underline hover:underline hover:text-ao-lt-blue-700">AOP</a></div>
+                    </div>
+                  </div>
+                </td>
+                <td class="hidden md:table-cell"><a href="#" class="block no-underline hover:underline hover:text-ao-lt-blue-700">AOP</a></td>
+                <td class="text-center">13:22pm</td>
+                <td>
+                  <a class="flex justify-center items-center text-ao-mid-blue-500 hover:text-ao-mid-blue-600 dark:text-ao-dk-text-400 dark:hover:text-ao-dk-text-200" href="#">
+                    <svg class="flex-shrink-0 w-4 h-4 " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6.625 2.655A9 9 0 0119 11a1 1 0 11-2 0 7 7 0 00-9.625-6.492 1 1 0 11-.75-1.853zM4.662 4.959A1 1 0 014.75 6.37 6.97 6.97 0 003 11a1 1 0 11-2 0 8.97 8.97 0 012.25-5.953 1 1 0 011.412-.088z" clip-rule="evenodd" />
+                      <path fill-rule="evenodd" d="M5 11a5 5 0 1110 0 1 1 0 11-2 0 3 3 0 10-6 0c0 1.677-.345 3.276-.968 4.729a1 1 0 11-1.838-.789A9.964 9.964 0 005 11zm8.921 2.012a1 1 0 01.831 1.145 19.86 19.86 0 01-.545 2.436 1 1 0 11-1.92-.558c.207-.713.371-1.445.49-2.192a1 1 0 011.144-.83z" clip-rule="evenodd" />
+                      <path fill-rule="evenodd" d="M10 10a1 1 0 011 1c0 2.236-.46 4.368-1.29 6.304a1 1 0 01-1.838-.789A13.952 13.952 0 009 11a1 1 0 011-1z" clip-rule="evenodd" />
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+
+
+              <!-- User 7 -->
+              <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
+                <td class="p-3">
+                  <div class="flex flex-row md:items-center">
+                    <a class="flex-shrink-0" href="#"><img src="https://source.unsplash.com/d2MSDujJl2g/100x100" alt="Paul Dominguez" class="w-10 h-10 rounded-full mr-3 hover:ring-2 hover:ring-ao-mid-blue-400 dark:hover:ring-ao-dk-bg-400"></a>
+                    <div>
+                      <h5><a href="#" class="hover:underline">Paul Dominguez</a></h5>
+                      <div class="leading-4 md:leading-snug">Director</div>
+                      <div class="md:hidden leading-4 mt-1">
+                        <a href="#" class="block no-underline hover:underline hover:text-ao-lt-blue-700">Tamed Media</a>
+                        <a href="#" class="block no-underline hover:underline hover:text-ao-lt-blue-700">Ocean Media Group Ltd</a>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td class="hidden md:table-cell">
+                  <a href="#" class="block no-underline hover:underline hover:text-ao-lt-blue-700">Tamed Media</a>
+                  <a href="#" class="block no-underline hover:underline hover:text-ao-lt-blue-700">Ocean Media Group Ltd</a>
+                </td>
+                <td class="text-center">13:22pm</td>
+                <td>
+                  <a class="flex justify-center items-center text-ao-mid-blue-500 hover:text-ao-mid-blue-600 dark:text-ao-dk-text-400 dark:hover:text-ao-dk-text-200" href="#">
+                    <svg class="flex-shrink-0 w-4 h-4 " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M6.625 2.655A9 9 0 0119 11a1 1 0 11-2 0 7 7 0 00-9.625-6.492 1 1 0 11-.75-1.853zM4.662 4.959A1 1 0 014.75 6.37 6.97 6.97 0 003 11a1 1 0 11-2 0 8.97 8.97 0 012.25-5.953 1 1 0 011.412-.088z" clip-rule="evenodd" />
+                      <path fill-rule="evenodd" d="M5 11a5 5 0 1110 0 1 1 0 11-2 0 3 3 0 10-6 0c0 1.677-.345 3.276-.968 4.729a1 1 0 11-1.838-.789A9.964 9.964 0 005 11zm8.921 2.012a1 1 0 01.831 1.145 19.86 19.86 0 01-.545 2.436 1 1 0 11-1.92-.558c.207-.713.371-1.445.49-2.192a1 1 0 011.144-.83z" clip-rule="evenodd" />
+                      <path fill-rule="evenodd" d="M10 10a1 1 0 011 1c0 2.236-.46 4.368-1.29 6.304a1 1 0 01-1.838-.789A13.952 13.952 0 009 11a1 1 0 011-1z" clip-rule="evenodd" />
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+
+            </table>
+           
+            <div class="p-4">
+              <button type="button" class="w-full text-center px-4 py-2 border border-ao-mid-blue-400 rounded shadow-sm text-sm font-medium text-ao-mid-blue-500 bg-white hover:bg-ao-mid-blue-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ao-teal dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200 dark:border-ao-dk-text-500  dark:hover:border-ao-dk-text-200 dark:bg-transparent">
+                Load more
+              </button>
+            </div>
+
+          </div>
+          <!-- Whos Online Ends -->
+
+        </div>
+
+    </div>
+
+
+    <!-- Sidebar Menu -->
+    <div class="hidden w-96 h-screen bg-ao-mid-blue-300"></div>
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
+
+</body>
+
+</html>
