@@ -55,6 +55,10 @@ module.exports = {
       filename: 'favourites.html',
       template: 'src/favourites.html',
     }),
+    new HtmlWebpackPlugin({
+      filename: 'charts.html',
+      template: 'src/charts.html',
+    }),
     new MiniCssExtractPlugin({ filename: 'css/style.css' }),
   ],
 
