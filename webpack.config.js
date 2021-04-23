@@ -59,6 +59,10 @@ module.exports = {
       filename: 'charts.html',
       template: 'src/charts.html',
     }),
+    new HtmlWebpackPlugin({
+      filename: 'article-listing.html',
+      template: 'src/article-listing.html',
+    }),
     new MiniCssExtractPlugin({ filename: 'css/style.css' }),
   ],
 

@@ -19,16 +19,21 @@
       <!-- Breadcrumb & nav -->
       <%= require('html-loader!./_cc-breadcrumb.html').default %>
 
-        <!-- Content -->
-        <div class="flex flex-wrap p-4 md:px-6 lg:px-8 container mx-auto">
+      <!-- Heading -->
+      <div class="w-full p-4 md:p-6 lg:px-8 bg-white shadow dark:bg-ao-dk-bg-400">
+        <h1 class="leading-tight md:leading-none dark:text-ao-dk-text dark:hover:text-ao-dk-text-500">Who's Online</h1>
+      </div>
 
-          <h1 class="w-full mb-2">Who's online</h1> 
+        <!-- Content -->
+        <div class="flex flex-wrap p-4 md:p-6 lg:p-8 container mx-auto">
+
+          <!-- <h1 class="w-full mb-2">Who's online</h1>  -->
 
           <!-- Whos Online -->
-          <div class="flex flex-col w-full mt-3 bg-white rounded shadow-sm overflow-hidden text-sm font-normal text-ao-dk-blue-500 border border-ao-mid-blue-300 border-opacity-90 dark:text-ao-dk-text-500 dark:bg-ao-dk-bg-700 dark:border-ao-dk-bg">
+          <div class="flex flex-col w-full bg-white rounded shadow-sm overflow-hidden text-sm font-normal text-ao-dk-blue-500 border border-ao-mid-blue-300 border-opacity-90 dark:text-ao-dk-text-500 dark:bg-ao-dk-bg-700 dark:border-ao-dk-bg">
             <table class="w-full table-auto border-collapse ">
               <!-- Table Head -->
-              <tr class="bg-ao-mid-blue-200 dark:bg-ao-dk-bg-400 ">
+              <tr class="">
                 <th class="w-8/12 md:w-5/12 p-3 font-normal text-left">User</th>
                 <th class="hidden md:table-cell w-4/12 font-normal text-left">Account</th>
                 <th class="w-2/12 font-normal">Login</th>

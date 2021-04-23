@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Article Listing</title>
+</head>
+
+<body class="flex bg-ao-mid-blue-200 dark:bg-ao-dk-bg dark:text-ao-dk-text-500" data-section="Social" x-data="{ open: false }">
+
+  <!-- Sidebar Nav -->
+  <%= require('html-loader!./_cc-nav.html').default %>
+
+
+    <!-- Main Container -->
+    <div class="w-full">
+
+      <!-- Breadcrumb & nav -->
+      <%= require('html-loader!./_cc-breadcrumb.html').default %>
+
+      <!-- Heading -->
+      <div class="w-full flex items-center justify-between p-4 md:p-5 lg:px-8 bg-white shadow dark:bg-ao-dk-bg-400">
+        <h1 class="leading-tight md:leading-none dark:text-ao-dk-text dark:hover:text-ao-dk-text-500">Articles</h1>
+        <div class="flex">
+          <button type="button" class="inline-flex items-center pl-2 pr-4 py-2.5 border border-transparent rounded shadow-sm text-sm font-medium text-white bg-ao-green hover:bg-ao-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ao-green-600">
+            <svg class="flex-shrink-0 h-6 w-6 text-white mr-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+            </svg>
+            Add
+          </button>
+        </div>
+      </div>
+
+        <!-- Content -->
+        <div class="flex flex-wrap p-4 md:p-6 lg:p-8 container mx-auto">
+
+          <!-- Search -->
+          <div 
+            class="flex flex-col w-full bg-white rounded shadow-sm overflow-hidden text-sm font-normal text-ao-dk-blue-500 border border-ao-mid-blue-300 border-opacity-90 mb-4 lg:mb-8 dark:text-ao-dk-text-500 dark:bg-ao-dk-bg-700 dark:border-ao-dk-bg"
+            x-data="{ selected: false}"
+          >
+
+            <!-- Title -->
+            <div class="flex justify-between items-center pl-4 lg:pl-5 p-3">
+              <h4 class="w-auto">Search</h4>
+              <div>
+                <button 
+                  class="flex h-8 w-8 justify-center items-center bg-ao-mid-blue-200 text-ao-dk-blue-500 rounded border border-ao-mid-blue-300 border-opacity-50 hover:bg-ao-mid-blue-300 hover:text-ao-dk-blue-600"
+                  @click="selected=!selected"
+                >
+                  <svg 
+                    class="flex-shrink-0 h-5 w-5" 
+                    xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"
+                    :class="{'hidden': selected === true}"
+                  >
+                    <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"/>
+                  </svg>
+                  <svg 
+                    class="flex-shrink-0 h-5 w-5" 
+                    xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"
+                    :class="{'hidden': selected === false}"
+                  >
+                    <path fill-rule="evenodd" d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z" clip-rule="evenodd" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+
+            <!-- Start of hidden content -->
+            <div 
+              class="w-full relative overflow-hidden transition-all duration-500 max-h-0"
+              x-ref="search" :style="selected === true ? 'max-height: ' + $refs.search.scrollHeight + 'px' : ''" 
+            >
+
+              <!-- Inputs -->
+              <div class="grid md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6 items-center border-t border-b border-ao-mid-blue-200 p-4 lg:p-5">
+                <div class="">
+                  <label class="font-medium text-sm-md" for="title">Title</label>
+                  <input type="text" name="title" id="title" class="text-ao-dk-blue mt-1 focus:ring-ao-mid-blue-500 focus:border-ao-mid-blue-500 block w-full text-sm rounded shadow-sm border-ao-mid-blue-300">
+                </div>
+                <div class="">
+                  <label class="font-medium text-sm-md" for="zone">Zone</label>
+                  <select id="zone" name="zone" autocomplete="zone" class="text-ao-dk-blue  mt-1 focus:outline-none focus:ring-ao-mid-blue-500 focus:border-ao-mid-blue-500 block w-full text-sm rounded shadow-sm sm:text-sm border-ao-mid-blue-300">
+                    <option>Any</option>
+                    <option>Zone 1</option>
+                    <option>Zone 2</option>
+                  </select>
+                </div>
+                <div class="">
+                  <label class="font-medium text-sm-md" for="channel">Channel</label>
+                  <div class="flex mt-1 rounded shadow-sm">
+                    <input type="text" name="channel" id="channel" class="text-ao-dk-blue focus:ring-ao-mid-blue-500 focus:border-ao-mid-blue-500 block w-full text-sm border-ao-mid-blue-300 rounded-l z-10">
+                    <button class="bg-ao-mid-blue-200 text-ao-dk-blue-500 px-4 rounded-r text-sm-md border border-ao-mid-blue-300 border-l-0 hover:text-ao-dk-blue-600 hover:bg-ao-mid-blue-300">Select</button>
+                  </div>
+                  
+                </div>
+                <div class="">
+                  <label class="font-medium text-sm-md" for="section">Section</label>
+                  <div class="flex mt-1 rounded shadow-sm">
+                    <input type="text" name="section" id="section" class="text-ao-dk-blue focus:ring-ao-mid-blue-500 focus:border-ao-mid-blue-500 block w-full text-sm border-ao-mid-blue-300 rounded-l z-10">
+                    <button class="bg-ao-mid-blue-200 text-ao-dk-blue-500 px-4 rounded-r text-sm-md border border-ao-mid-blue-300 border-l-0 hover:text-ao-dk-blue-600 hover:bg-ao-mid-blue-300">Select</button>
+                  </div>
+                </div>
+                <div class="">
+                  <label class="font-medium text-sm-md" for="style">Style</label>
+                  <select id="zone" name="zone" autocomplete="zone" class="mt-1 focus:outline-none text-ao-dk-blue focus:ring-ao-mid-blue-500 focus:border-ao-mid-blue-500 block w-full rounded shadow-sm text-sm border-ao-mid-blue-300">
+                    <option>Any</option>
+                    <option>Advanced Article</option>
+                    <option>Advanced Event</option>
+                    <option>Advanced Seminar</option>
+                    <option>Blog</option>
+                    <option>Directory</option>
+                    <option>FAQ</option>
+                    <option>Link Article</option>
+                    <option>Product</option>
+                    <option>Recruitment Brief</option>
+                    <option>Review Article</option>
+                    <option>Simple Article</option>
+                    <option>Seminar</option>
+                  </select>
+                </div>
+                <div class="">
+                  <label class="font-medium text-sm-md" for="tag-status">Tag Status</label>
+                  <select id="zone" name="zone" autocomplete="zone" class="mt-1 focus:outline-none text-ao-dk-blue focus:ring-ao-mid-blue-500 focus:border-ao-mid-blue-500 block w-full rounded shadow-sm text-sm border-ao-mid-blue-300">
+                    <option>Any</option>
+                    <option>Tagged</option>
+                    <option>Tagged:Automated</option>
+                    <option>Tagged:Manual</option>
+                  </select>
+                </div>
+                <div class="">
+                  <label class="font-medium text-sm-md" for="publish-from">Publish Start From</label>
+                  <div class="flex mt-1 rounded shadow-sm relative">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-ao-mid-blue-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                      </svg>
+                    </div>
+                    <input type="text" name="publish-from" id="publish-from" class="text-ao-dk-blue focus:ring-ao-mid-blue-500 focus:border-ao-mid-blue-500 block w-full text-sm border-ao-mid-blue-300 rounded">
+                  </div>
+                </div>
+                <div class="">
+                  <label class="font-medium text-sm-md" for="publish-to">Publish Start To</label>
+                  <div class="flex mt-1 rounded shadow-sm relative">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-ao-mid-blue-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                      </svg>
+                    </div>
+                    <input type="text" name="publish-to" id="publish-from" class="text-ao-dk-blue focus:ring-ao-mid-blue-500 focus:border-ao-mid-blue-500 block w-full text-sm border-ao-mid-blue-300 rounded">
+                  </div>
+                </div>
+                <div class="">
+                  <label class="font-medium text-sm-md" for="expires">Expires</label>
+                  <select id="zone" name="zone" autocomplete="zone" class="mt-1 focus:outline-none text-ao-dk-blue focus:ring-ao-mid-blue-500 focus:border-ao-mid-blue-500 block w-full rounded shadow-sm text-sm border-ao-mid-blue-300">
+                    <option>Any</option>
+                    <option>All Expired</option>
+                    <option>Past Month</option>
+                    <option>Past 3 Months</option>
+                    <option>Past 6 Months</option>
+                  </select>
+                </div>
+                <div class="">
+                  <label class="font-medium text-sm-md" for="creator">Creator</label>
+                  <input type="text" name="creator" id="creator" class="mt-1 text-ao-dk-blue focus:ring-ao-mid-blue-500 focus:border-ao-mid-blue-500 block w-full rounded shadow-sm text-sm border-ao-mid-blue-300">
+                </div>
+                <div class="">
+                  <label class="font-medium text-sm-md" for="security">Security</label>
+                  <div class="flex mt-1 rounded shadow-sm">
+                    <input type="text" name="security" id="security" class="text-ao-dk-blue focus:ring-ao-mid-blue-500 focus:border-ao-mid-blue-500 block w-full text-sm border-ao-mid-blue-300 rounded-l z-10">
+                    <button class="bg-ao-mid-blue-200 text-ao-dk-blue-500 px-4 rounded-r text-sm-md border border-ao-mid-blue-300 border-l-0 hover:text-ao-dk-blue-600 hover:bg-ao-mid-blue-300">Select</button>
+                  </div>
+                </div>
+                <div class="">
+                  <label class="font-medium text-sm-md" for="keywords">Keywords</label>
+                  <input type="text" name="keywords" id="keywords" class="mt-1 text-ao-dk-blue focus:ring-ao-mid-blue-500 focus:border-ao-mid-blue-500 block w-full rounded shadow-sm text-sm border-ao-mid-blue-300">
+                </div>
+                <div class="col-span-full rounded shadow-sm border border-ao-mid-blue-300 md:py-4 grid md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 md:gap-6">
+
+                  <div class="flex items-start p-4 md:p-0 md:pl-4 border-b border-ao-mid-blue-300 md:border-0">
+                    <div class="flex items-center h-5">
+                      <input id="archived-content" name="archived-content" type="checkbox" class="focus:ring-ao-mid-blue h-4 w-4 text-ao-mid-blue border-ao-mid-blue-300 rounded">
+                    </div>
+                    <div class="ml-3 text-sm">
+                      <label for="archived-content" class="font-medium text-sm-md">Archived Content</label>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start p-4 md:p-0 border-b border-ao-mid-blue-300 md:border-0">
+                    <div class="flex items-center h-5">
+                      <input id="non-live" name="non-live" type="checkbox" class="focus:ring-ao-mid-blue h-4 w-4 text-ao-mid-blue border-ao-mid-blue-300 rounded">
+                    </div>
+                    <div class="ml-3 text-sm">
+                      <label for="non-live" class="font-medium text-sm-md">Non-live</label>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start p-4 md:p-0">
+                    <div class="flex items-center h-5">
+                      <input id="outdated" name="outdated" type="checkbox" class="focus:ring-ao-mid-blue h-4 w-4 text-ao-mid-blue border-ao-mid-blue-300 rounded">
+                    </div>
+                    <div class="ml-3 text-sm">
+                      <label for="outdated" class="font-medium text-sm-md">Outdated</label>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- CTAs -->
+              <div class="flex justify-end items-center pl-5 p-3">
+                <div>
+                  <button type="button" class="inline-flex items-center px-3 py-2 border border-ao-mid-blue-300 rounded shadow-sm text-sm font-medium text-ao-dk-blue-500 bg-transparent hover:bg-ao-mid-blue-300 hover:text-ao-dk-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ao-mid-blue-400">
+                    Clear
+                  </button>
+                  <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent rounded shadow-sm text-sm font-medium text-white bg-ao-mid-blue hover:bg-ao-mid-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ao-mid-blue-600">
+                    Search
+                  </button>
+                </div>
+              </div>
+
+            </div> <!-- End of hidden content -->
+         
+          </div> <!-- End of Search -->
+
+          <!-- Article Listing -->
+          <div class="flex flex-col w-full bg-white rounded shadow-sm overflow-hidden text-sm font-normal text-ao-dk-blue-500 border border-ao-mid-blue-300 border-opacity-90 dark:text-ao-dk-text-500 dark:bg-ao-dk-bg-700 dark:border-ao-dk-bg">
+
+            <!-- Title -->
+            <div class="flex justify-between items-center px-4 lg:px-5 py-4">
+              <h4 class="w-auto">All Articles</h4>
+              <div>
+                <p class="text-xs tracking-wide">Displaying <strong>1-20</strong>  of <strong>2,894</strong></p>
+              </div>
+            </div>
+
+            <!-- Table -->
+            <table class="w-full table-auto border-collapse border-t border-ao-mid-blue-200">
+
+              <!-- Table Head -->
+              <tr class="">
+                <th class="p-3 text-center"></th>
+                <th class="w-auto py-3 text-left font-medium text-sm-md">Title</th>
+                <th class="w-28 p-3 pl-0 text-left font-medium text-sm-md lg:table-cell hidden">Section</th>
+                <th class="w-36 p-3 pl-0 text-left font-medium text-sm-md lg:table-cell hidden">Template</th>
+                <th class="w-12 text-center font-medium text-sm-md lg:table-cell hidden">Creator</th>
+                <th class="w-24 py-3 text-center font-medium text-sm-md lg:table-cell hidden">Publish</th>
+                <th class="py-3 text-center font-medium text-sm-md lg:table-cell hidden">Views</th>
+                <th class="py-3 px-4 text-center font-medium text-sm-md">Live</th>
+                <th class="py-3 pr-5 text-center font-medium text-sm-md">Edit</th>
+              </tr>
+
+              <!-- Table Body -->
+
+              <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
+
+                <!-- Actions -->
+                <td class="px-4 lg:px-5">
+                  <div class="flex items-center h-5">
+                    <input type="checkbox" class="focus:ring-transparent h-4 w-4 text-ao-mid-blue border-ao-mid-blue-300 rounded">
+                  </div>
+                </td>
+
+                <!-- Title -->
+                <td class="py-4 lg:pr-4">
+                  <h5 class="flex flex-col"><a href="#" class="hover:underline line-clamp-3 xl:line-clamp-2 2xl:line-clamp-1">Affino is Participating alongside AgriBriefing / LAMMA 365 at PPA's Leadership Summit Event on April 28th/29th</a></h5>
+                  <!-- <a href="#" class="flex hover:underline hover:text-ao-dk-blue-400 lg:hidden">Events</div>
+                  <a href="#" class="flex hover:underline hover:text-ao-dk-blue-400 lg:hidden">Advanced Event</a> 
+                  <a class="block flex-shrink-0 w-9 h-9 rounded-full overflow-hidden hover:ring-2 hover:ring-ao-mid-blue-400 dark:hover:ring-ao-dk-bg-400 lg:hidden" href="#"><img class="m-w-full" src="https://source.unsplash.com/d2MSDujJl2g/100x100" alt="Paul Dominguez"></a>
+                  <div class="flex justify-start items-center lg:hidden">29 Mar '21</div>
+                  <div class="flex justify-start items-center lg:hidden">104</div> -->
+                </td>
+
+                <!-- Section -->
+                <td class="py-3 pr-4 lg:table-cell hidden">
+                  <a href="#" class="flex hover:underline hover:text-ao-dk-blue-400">Events</div>
+                </td>
+
+                <!-- Template -->
+                <td class="py-3 lg:pr-4 lg:table-cell hidden">
+                  <a href="#" class="flex hover:underline hover:text-ao-dk-blue-400">Advanced Event</a>
+                </td>
+
+                <!-- Creator -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex flex-row justify-center items-center">
+                    <a class="flex-shrink-0 w-9 h-9 rounded-full overflow-hidden hover:ring-2 hover:ring-ao-mid-blue-400 dark:hover:ring-ao-dk-bg-400" href="#"><img src="https://source.unsplash.com/d2MSDujJl2g/100x100" alt="Paul Dominguez"></a>
+                  </div>
+                </td>
+
+                <!-- Published -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex justify-center items-center">29 Mar '21</div>
+                </td>
+
+                <!-- Views -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex justify-center items-center">104</div>
+                </td>
+
+                <!-- Live -->
+                <td class="py-3">
+                  <div class="flex justify-center items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-ao-green" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                </td>
+
+                <!-- Edit -->
+                <td class="text-right pr-5">
+                  <a href="#" class="flex justify-end items-center text-ao-mid-blue-500 hover:text-ao-mid-blue-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+                      <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
+                    </svg>
+                  </a>
+                </td>
+
+              </tr>
+
+              <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
+
+                <!-- Actions -->
+                <td class="px-4 lg:px-5">
+                  <div class="flex items-center h-5">
+                    <input type="checkbox" class="focus:ring-transparent h-4 w-4 text-ao-mid-blue border-ao-mid-blue-300 rounded">
+                  </div>
+                </td>
+
+                <!-- Title -->
+                <td class="py-4 lg:pr-4">
+                  <h5 class="flex"><a href="#" class="hover:underline line-clamp-3 xl:line-clamp-2 2xl:line-clamp-1">Google's FLoC Federated Learning of Cohorts is really just a masked Non-Consensual attempt at Cookies MKII</a></h5>
+                </td>
+
+                <!-- Section -->
+                <td class="py-3 pr-4 lg:table-cell hidden">
+                  <a href="#" class="flex hover:underline hover:text-ao-dk-blue-400">Latest Insights</div>
+                </td>
+
+                <!-- Template -->
+                <td class="py-3 lg:pr-4 lg:table-cell hidden">
+                  <a href="#" class="flex hover:underline hover:text-ao-dk-blue-400">Advanced Seminar</div>
+                </td>
+
+                <!-- Creator -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex flex-row justify-center items-center">
+                    <a class="flex-shrink-0 w-9 h-9 rounded-full overflow-hidden hover:ring-2 hover:ring-ao-mid-blue-400 dark:hover:ring-ao-dk-bg-400" href="#"><img src="https://source.unsplash.com/dUtizJyby4E/100x100" alt="Sheryl Paul"></a>
+                  </div>
+                </td>
+
+                <!-- Published -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex justify-center items-center">29 Mar '21</div>
+                </td>
+
+                <!-- Views -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex justify-center items-center">77</div>
+                </td>
+
+                <!-- Live -->
+                <td class="py-3">
+                  <div class="flex justify-center items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                </td>
+
+                <!-- Edit -->
+                <td class="text-right pr-5">
+                  <a href="#" class="flex justify-end items-center text-ao-mid-blue-500 hover:text-ao-mid-blue-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+                      <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
+                    </svg>
+                  </a>
+                </td>
+
+              </tr>
+
+
+              
+            </table>
+
+            <div class="w-full bg-ao-mid-blue-200 px-4 lg:px-5 py-4 flex justify-between items-center dark:bg-ao-dk-bg-400">
+              <div class="flex items-center h-5">
+                <input type="checkbox" class="focus:ring-transparent h-4 w-4 text-ao-mid-blue border-ao-mid-blue-300 rounded">
+                <div class="ml-4 lg:ml-5 text-sm">
+                  <label for="outdated" class="font-medium text-sm-md">Select all</label>
+                </div>
+              </div>
+              <div>
+                <p class="text-xs tracking-wide">Displaying <strong>1-20</strong>  of <strong>2,894</strong></p>
+              </div>
+            </div>
+          
+
+          </div><!-- End of Article Listing -->
+
+          <!-- Actions panel -->
+          <div class="w-full flex justify-between mt-3">
+
+            <div class="flex">
+              <select id="actions" name="actions" autocomplete="actions" class="inline-flex items-center text-ao-dk-blue mr-1 py-1 focus:outline-none focus:ring-ao-mid-blue-500 focus:border-ao-mid-blue-500 text-sm rounded shadow-sm sm:text-sm border-ao-mid-blue-300">
+                <option>Delete</option>
+                <option>Copy</option>
+                <option>Move</option>
+                <option>Make Live</option>
+                <option>Make Not Live</option>
+              </select>
+              <button type="button" class="inline-flex items-center h-9 px-2 border rounded shadow-sm text-sm-md font-medium text-ao-dk-blue-500 bg-ao-mid-blue-200 hover:bg-ao-mid-blue-300 hover:text-ao-dk-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ao-mid-blue-400 border-ao-mid-blue-300">
+                Action
+              </button>
+            </div>
+
+            <div class="flex items-center w-max">
+              <label for="pages" class="text-ao-dk-blue-500 font-medium text-sm-md whitespace-nowrap mr-2 lg:flex hidden">Go to</label>
+              <select id="pages" name="pages" autocomplete="pages" class="h-9 text-ao-dk-blue mr-2.5 py-1 focus:outline-none focus:ring-ao-mid-blue-500 focus:border-ao-mid-blue-500 lg:block w-full text-sm rounded shadow-sm sm:text-sm border-ao-mid-blue-300 hidden">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+              <button type="button" class="h-9 w-9 inline-flex flex-shrink-0 items-center justify-center border rounded shadow-sm text-sm-md font-medium text-ao-dk-blue-500 bg-ao-mid-blue-200 hover:bg-ao-mid-blue-300 hover:text-ao-dk-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ao-mid-blue-400 border-ao-mid-blue-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+              </button>
+              <button type="button" class="h-9 w-9 ml-1 inline-flex flex-shrink-0 items-center justify-center border rounded shadow-sm text-sm-md font-medium text-ao-dk-blue-500 bg-ao-mid-blue-200 hover:bg-ao-mid-blue-300 hover:text-ao-dk-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ao-mid-blue-400 border-ao-mid-blue-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Info bar -->
+    <%= require('html-loader!./_cc-infobar.html').default %>
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
+
+</body>
+
+</html>

@@ -246,7 +246,7 @@
               class="flex flex-row w-full p-3 rounded cursor-pointer items-center content-center text-sm font-semibold antialiased text-ao-mid-blue-100 leading-snug hover:bg-ao-mid-blue-700 transition-all dark:text-ao-dk-text-400 dark:hover:bg-ao-dk-bg" 
               @click="selected !== 'promote' ? selected = 'promote' : selected = null" 
               :class="{ 
-                'bg-ao-mid-blue-700 text-white mt-2': selected === 'promote',
+                'bg-ao-mid-blue-700 text-white rounded-b-none': selected === 'promote',
                 'bg-ao-dk-bg bg-opacity-90 text-white rounded-b-none': selected === 'promote' &&  document.documentElement.classList == 'dark',
               }"
             >
@@ -260,13 +260,14 @@
               Promote
             </a>
             <div 
-              class="relative overflow-hidden transition-all max-h-0 duration-700 bg-opacity-70 text-sm-md rounded-b" 
+              class="relative overflow-hidden transition-all max-h-0 duration-700 text-sm-md rounded-b" 
               x-ref="promote" 
               :style="selected == 'promote' ? 'max-height: ' + $refs.promote.scrollHeight + 'px' : ''" 
               :class="{ 
-                'bg-ao-mid-blue mb-2': selected === 'promote',
+                'bg-ao-mid-blue-700 mb-2': selected === 'promote',
                 'bg-ao-dk-bg bg-opacity-90 mb-2': selected === 'promote' &&  document.documentElement.classList == 'dark',
               }"
+              
             >
               <a href="#" class="flex w-full text-ao-mid-blue-300 hover:text-white px-3.5 py-1.5 mt-1.5 dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">
                 <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
@@ -403,7 +404,7 @@
               class="flex flex-row w-full p-3 rounded cursor-pointer items-center content-center text-sm font-semibold antialiased text-ao-mid-blue-100 leading-snug hover:bg-ao-mid-blue-700 transition-all dark:text-ao-dk-text-400 dark:hover:bg-ao-dk-bg" 
               @click="selected !== 'social' ? selected = 'social' : selected = null" 
               :class="{ 
-                'bg-ao-mid-blue-700 text-white mt-2': selected === 'social',
+                'bg-ao-mid-blue-700 text-white rounded-b-none': selected === 'social',
                 'bg-ao-dk-bg bg-opacity-90 text-white rounded-b-none': selected === 'social' &&  document.documentElement.classList == 'dark', 
               }"
             >
@@ -417,11 +418,11 @@
               Social
             </a>
             <div 
-              class="relative overflow-hidden transition-all max-h-0 duration-700 bg-opacity-70 text-sm-md rounded-b" 
+              class="relative overflow-hidden transition-all max-h-0 duration-700 text-sm-md rounded-b" 
               x-ref="social" 
               :style="selected == 'social' ? 'max-height: ' + $refs.social.scrollHeight + 'px' : ''" 
               :class="{ 
-                'bg-ao-mid-blue mb-2': selected === 'social',
+                'bg-ao-mid-blue-700 mb-2': selected === 'social',
                 'bg-ao-dk-bg bg-opacity-90 mb-2': selected === 'social' &&  document.documentElement.classList == 'dark'
                }"
             >
@@ -560,7 +561,7 @@
               class="flex flex-row w-full p-3 rounded cursor-pointer items-center content-center text-sm font-semibold antialiased text-ao-mid-blue-100 leading-snug hover:bg-ao-mid-blue-700 transition-all dark:text-ao-dk-text-400 dark:hover:bg-ao-dk-bg" 
               @click="selected !== 'media' ? selected = 'media' : selected = null" 
               :class="{ 
-                'bg-ao-mid-blue-700 text-white mt-2': selected === 'media',
+                'bg-ao-mid-blue-700 text-white rounded-b-none': selected === 'media',
                 'bg-ao-dk-bg bg-opacity-90 text-white rounded-b-none': selected === 'media' &&  document.documentElement.classList == 'dark', 
                }"
             >
@@ -574,11 +575,11 @@
               Media
             </a>
             <div 
-              class="relative overflow-hidden transition-all max-h-0 duration-700 bg-opacity-70 text-sm-md rounded-b" 
+              class="relative overflow-hidden transition-all max-h-0 duration-700 text-sm-md rounded-b" 
               x-ref="media" 
               :style="selected == 'media' ? 'max-height: ' + $refs.media.scrollHeight + 'px' : ''" 
               :class="{ 
-                'bg-ao-mid-blue mb-2': selected === 'media',
+                'bg-ao-mid-blue-700 mb-2': selected === 'media',
                 'bg-ao-dk-bg bg-opacity-90 mb-2': selected === 'media' &&  document.documentElement.classList == 'dark'
                }"
             >
@@ -719,7 +720,7 @@
               class="flex flex-row w-full p-3 rounded cursor-pointer items-center content-center text-sm font-semibold antialiased text-ao-mid-blue-100 leading-snug hover:bg-ao-mid-blue-700 transition-all dark:text-ao-dk-text-400 dark:hover:bg-ao-dk-bg" 
               @click="selected !== 'structure' ? selected = 'structure' : selected = null" 
               :class="{ 
-                'bg-ao-mid-blue-700 text-white mt-2': selected === 'structure',
+                'bg-ao-mid-blue-700 text-white rounded-b-none': selected === 'structure',
                 'bg-ao-dk-bg bg-opacity-90 text-white rounded-b-none': selected === 'structure' &&  document.documentElement.classList == 'dark', 
               }"
             >
@@ -729,11 +730,11 @@
               Structure
             </a>
             <div 
-              class="relative overflow-hidden transition-all max-h-0 duration-700 bg-opacity-70 text-sm-md rounded-b" 
+              class="relative overflow-hidden transition-all max-h-0 duration-700 text-sm-md rounded-b" 
               x-ref="structure" 
               :style="selected == 'structure' ? 'max-height: ' + $refs.structure.scrollHeight + 'px' : ''" 
               :class="{ 
-                'bg-ao-mid-blue mb-2': selected === 'structure',
+                'bg-ao-mid-blue-700 mb-2': selected === 'structure',
                 'bg-ao-dk-bg bg-opacity-90 mb-2': selected === 'structure' &&  document.documentElement.classList == 'dark'
              }"
             >
@@ -872,7 +873,7 @@
               class="flex flex-row w-full p-3 rounded cursor-pointer items-center content-center text-sm font-semibold antialiased text-ao-mid-blue-100 leading-snug hover:bg-ao-mid-blue-700 transition-all dark:text-ao-dk-text-400 dark:hover:bg-ao-dk-bg" 
               @click="selected !== 'design' ? selected = 'design' : selected = null" 
               :class="{ 
-                'bg-ao-mid-blue-700 text-white mt-2': selected === 'design',
+                'bg-ao-mid-blue-700 text-white rounded-b-none': selected === 'design',
                 'bg-ao-dk-bg bg-opacity-90 text-white rounded-b-none': selected === 'design' &&  document.documentElement.classList == 'dark', 
                }"
             >
@@ -882,11 +883,11 @@
               Design
             </a>
             <div 
-              class="relative overflow-hidden transition-all max-h-0 duration-700 bg-opacity-70 text-sm-md rounded-b" 
+              class="relative overflow-hidden transition-all max-h-0 duration-700 text-sm-md rounded-b" 
               x-ref="design" 
               :style="selected == 'design' ? 'max-height: ' + $refs.design.scrollHeight + 'px' : ''" 
               :class="{ 
-                'bg-ao-mid-blue mb-2': selected === 'design',
+                'bg-ao-mid-blue-700 mb-2': selected === 'design',
                 'bg-ao-dk-bg bg-opacity-90 mb-2': selected === 'design' &&  document.documentElement.classList == 'dark'
                }"
             >
@@ -1025,7 +1026,7 @@
               class="flex flex-row w-full p-3 rounded cursor-pointer items-center content-center text-sm font-semibold antialiased text-ao-mid-blue-100 leading-snug hover:bg-ao-mid-blue-700 transition-all dark:text-ao-dk-text-400 dark:hover:bg-ao-dk-bg" 
               @click="selected !== 'commerce' ? selected = 'commerce' : selected = null" 
               :class="{ 
-                'bg-ao-mid-blue-700 text-white mt-2': selected === 'commerce',
+                'bg-ao-mid-blue-700 text-white rounded-b-none': selected === 'commerce',
                 'bg-ao-dk-bg bg-opacity-90 text-white rounded-b-none': selected === 'commerce' &&  document.documentElement.classList == 'dark', 
                }"
             >
@@ -1035,11 +1036,11 @@
               Commerce
             </a>
             <div 
-              class="relative overflow-hidden transition-all max-h-0 duration-700 bg-opacity-70 text-sm-md rounded-b" 
+              class="relative overflow-hidden transition-all max-h-0 duration-700 text-sm-md rounded-b" 
               x-ref="commerce" 
               :style="selected == 'commerce' ? 'max-height: ' + $refs.commerce.scrollHeight + 'px' : ''" 
               :class="{ 
-                'bg-ao-mid-blue mb-2': selected === 'commerce',
+                'bg-ao-mid-blue-700 mb-2': selected === 'commerce',
                 'bg-ao-dk-bg bg-opacity-90 mb-2': selected === 'commerce' &&  document.documentElement.classList == 'dark'
               }"
             >
@@ -1178,7 +1179,7 @@
               class="flex flex-row w-full p-3 rounded cursor-pointer items-center content-center text-sm font-semibold antialiased text-ao-mid-blue-100 leading-snug hover:bg-ao-mid-blue-700 transition-all dark:text-ao-dk-text-400 dark:hover:bg-ao-dk-bg" 
               @click="selected !== 'analyse' ? selected = 'analyse' : selected = null" 
               :class="{ 
-                'bg-ao-mid-blue-700 text-white mt-2': selected === 'analyse',
+                'bg-ao-mid-blue-700 text-white rounded-b-none': selected === 'analyse',
                 'bg-ao-dk-bg bg-opacity-90 text-white rounded-b-none': selected === 'analyse' &&  document.documentElement.classList == 'dark', 
                }"
             >
@@ -1188,11 +1189,11 @@
               Analyse
             </a>
             <div 
-              class="relative overflow-hidden transition-all max-h-0 duration-700 bg-opacity-70 text-sm-md rounded-b" 
+              class="relative overflow-hidden transition-all max-h-0 duration-700 text-sm-md rounded-b" 
               x-ref="analyse" 
               :style="selected == 'analyse' ? 'max-height: ' + $refs.analyse.scrollHeight + 'px' : ''" 
               :class="{ 
-                'bg-ao-mid-blue mb-2': selected === 'analyse',
+                'bg-ao-mid-blue-700 mb-2': selected === 'analyse',
                 'bg-ao-dk-bg bg-opacity-90 mb-2': selected === 'analyse' &&  document.documentElement.classList == 'dark'
                }"
             >
@@ -1331,7 +1332,7 @@
               class="flex flex-row w-full p-3 rounded cursor-pointer items-center content-center text-sm font-semibold antialiased text-ao-mid-blue-100 leading-snug hover:bg-ao-mid-blue-700 transition-all dark:text-ao-dk-text-400 dark:hover:bg-ao-dk-bg" 
               @click="selected !== 'security' ? selected = 'security' : selected = null" 
               :class="{ 
-                'bg-ao-mid-blue-700 text-white mt-2': selected === 'security',
+                'bg-ao-mid-blue-700 text-white rounded-b-none': selected === 'security',
                 'bg-ao-dk-bg bg-opacity-90 text-white rounded-b-none': selected === 'security' &&  document.documentElement.classList == 'dark', 
                }"
             >
@@ -1341,11 +1342,11 @@
               Security
             </a>
             <div 
-              class="relative overflow-hidden transition-all max-h-0 duration-700 bg-opacity-70 text-sm-md rounded-b" 
+              class="relative overflow-hidden transition-all max-h-0 duration-700 text-sm-md rounded-b" 
               x-ref="security" 
               :style="selected == 'security' ? 'max-height: ' + $refs.security.scrollHeight + 'px' : ''" 
               :class="{ 
-                'bg-ao-mid-blue mb-2': selected === 'security' ,
+                'bg-ao-mid-blue-700 mb-2': selected === 'security' ,
                 'bg-ao-dk-bg bg-opacity-90 mb-2': selected === 'security' &&  document.documentElement.classList == 'dark'
               }"
                 >
@@ -1484,7 +1485,7 @@
               class="flex flex-row w-full p-3 rounded cursor-pointer items-center content-center text-sm font-semibold antialiased text-ao-mid-blue-100 leading-snug hover:bg-ao-mid-blue-700 transition-all dark:text-ao-dk-text-400 dark:hover:bg-ao-dk-bg" 
               @click="selected !== 'settings' ? selected = 'settings' : selected = null" 
               :class="{ 
-                'bg-ao-mid-blue-700 text-white mt-2': selected === 'settings',
+                'bg-ao-mid-blue-700 text-white rounded-b-none': selected === 'settings',
                 'bg-ao-dk-bg bg-opacity-90 text-white rounded-b-none': selected === 'settings' &&  document.documentElement.classList == 'dark', 
                }"
             >
@@ -1494,11 +1495,11 @@
               Settings
             </a>
             <div 
-              class="relative overflow-hidden transition-all max-h-0 duration-700 bg-opacity-70 text-sm-md rounded-b" 
+              class="relative overflow-hidden transition-all max-h-0 duration-700 text-sm-md rounded-b" 
               x-ref="settings" 
               :style="selected == 'settings' ? 'max-height: ' + $refs.settings.scrollHeight + 'px' : ''" 
               :class="{ 
-                'bg-ao-mid-blue mb-2': selected === 'settings',
+                'bg-ao-mid-blue-700 mb-2': selected === 'settings',
                 'bg-ao-dk-bg bg-opacity-90 mb-2': selected === 'settings' &&  document.documentElement.classList == 'dark'
               }"
             >
@@ -1634,8 +1635,209 @@
       </div>
 
       <!-- CRM Content -->
-      <div class="flex p-5" x-show="tab === 'crm'" x-transition:enter="transition ease-out duration-1000" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100">
-        CRM
+      <div class="flex flex-col p-5 pr-4" x-show="tab === 'crm'" x-transition:enter="transition ease-out duration-1000" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100">
+
+        <!-- Search -->
+        <div class="flex flex-row relative w-full flex-wrap items-stretch mb-2">
+          <svg class="z-10 h-full leading-snug font-normal absolute text-center text-ao-mid-blue-400 bg-transparent rounded text-base items-center justify-center w-8 pl-3 py-3 dark:text-ao-dk-text-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+          </svg>
+          <input type="search" id="cc-search" placeholder="Search" class="px-3 py-3 placeholder-ao-mid-blue-400 text-ao-mid-blue-100 relative bg-ao-mid-blue-700 bg-opacity-80 rounded text-sm outline-none focus:outline-none focus:ring-2 focus:ring-ao-mid-blue-600 focus:shadow-md border-0 w-full pl-10 dark:bg-ao-dk-bg dark:focus:ring-ao-dk-bg-400 dark:text-ao-dk-text-500 dark:placeholder-ao-dk-text-200" />
+        </div>
+
+        <ul>
+          <li class="relative">
+            <a 
+              href="#" 
+              class="flex flex-row w-full p-3 rounded cursor-pointer items-center content-center text-sm font-semibold antialiased text-ao-mid-blue-100 leading-snug hover:bg-ao-mid-blue-700 transition-all dark:text-ao-dk-text-400 dark:hover:bg-ao-dk-bg" 
+            >
+              <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-400" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
+              </svg>
+              Contacts
+            </a>
+          </li>
+
+          <li class="relative">
+            <a 
+              href="#" 
+              class="flex flex-row w-full p-3 rounded cursor-pointer items-center content-center text-sm font-semibold antialiased text-ao-mid-blue-100 leading-snug hover:bg-ao-mid-blue-700 transition-all dark:text-ao-dk-text-400 dark:hover:bg-ao-dk-bg" 
+            >
+              <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-400" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clip-rule="evenodd" />
+                <path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z" />
+              </svg>
+              Accounts
+            </a>
+          </li>
+          <li class="relative">
+            <a 
+              href="#" 
+              class="flex flex-row w-full p-3 rounded cursor-pointer items-center content-center text-sm font-semibold antialiased text-ao-mid-blue-100 leading-snug hover:bg-ao-mid-blue-700 transition-all dark:text-ao-dk-text-400 dark:hover:bg-ao-dk-bg" 
+            >
+              <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-400" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
+                <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd" />
+              </svg>
+              Contact Lists
+            </a>
+          </li>
+          <li class="relative">
+            <a 
+              href="#" 
+              class="flex flex-row w-full p-3 rounded cursor-pointer items-center content-center text-sm font-semibold antialiased text-ao-mid-blue-100 leading-snug hover:bg-ao-mid-blue-700 transition-all dark:text-ao-dk-text-400 dark:hover:bg-ao-dk-bg" 
+            >
+              <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-400" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
+              </svg>
+              Contact Notes
+            </a>
+          </li>
+          <li class="relative">
+            <a 
+              href="#" 
+              class="flex flex-row w-full p-3 rounded cursor-pointer items-center content-center text-sm font-semibold antialiased text-ao-mid-blue-100 leading-snug hover:bg-ao-mid-blue-700 transition-all dark:text-ao-dk-text-400 dark:hover:bg-ao-dk-bg" 
+            >
+              <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-400" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              Leads
+            </a>
+          </li>
+          <li class="relative">
+            <a 
+              href="#" 
+              class="flex flex-row w-full p-3 rounded cursor-pointer items-center content-center text-sm font-semibold antialiased text-ao-mid-blue-100 leading-snug hover:bg-ao-mid-blue-700 transition-all dark:text-ao-dk-text-400 dark:hover:bg-ao-dk-bg" 
+            >
+              <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-400" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-14a3 3 0 00-3 3v2H7a1 1 0 000 2h1v1a1 1 0 01-1 1 1 1 0 100 2h6a1 1 0 100-2H9.83c.11-.313.17-.65.17-1v-1h1a1 1 0 100-2h-1V7a1 1 0 112 0 1 1 0 102 0 3 3 0 00-3-3z" clip-rule="evenodd" />
+              </svg>
+              Oppertunities
+            </a>
+          </li>
+          <li class="relative">
+            <a 
+              href="#" 
+              class="flex flex-row w-full p-3 rounded cursor-pointer items-center content-center text-sm font-semibold antialiased text-ao-mid-blue-100 leading-snug hover:bg-ao-mid-blue-700 transition-all dark:text-ao-dk-text-400 dark:hover:bg-ao-dk-bg" 
+            >
+              <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-400" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M7 2a1 1 0 00-.707 1.707L7 4.414v3.758a1 1 0 01-.293.707l-4 4C.817 14.769 2.156 18 4.828 18h10.343c2.673 0 4.012-3.231 2.122-5.121l-4-4A1 1 0 0113 8.172V4.414l.707-.707A1 1 0 0013 2H7zm2 6.172V4h2v4.172a3 3 0 00.879 2.12l1.027 1.028a4 4 0 00-2.171.102l-.47.156a4 4 0 01-2.53 0l-.563-.187a1.993 1.993 0 00-.114-.035l1.063-1.063A3 3 0 009 8.172z" clip-rule="evenodd" />
+              </svg>
+              Projects
+            </a>
+          </li>
+          <li class="relative">
+            <a 
+              href="#" 
+              class="flex flex-row w-full p-3 rounded cursor-pointer items-center content-center text-sm font-semibold antialiased text-ao-mid-blue-100 leading-snug hover:bg-ao-mid-blue-700 transition-all dark:text-ao-dk-text-400 dark:hover:bg-ao-dk-bg" 
+            >
+              <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-400" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd" />
+              </svg>
+              Contracts
+            </a>
+          </li>
+          <li class="relative">
+            <a 
+              href="#" 
+              class="flex flex-row w-full p-3 rounded cursor-pointer items-center content-center text-sm font-semibold antialiased text-ao-mid-blue-100 leading-snug hover:bg-ao-mid-blue-700 transition-all dark:text-ao-dk-text-400 dark:hover:bg-ao-dk-bg" 
+            >
+              <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-400" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+              </svg>
+              Bills
+            </a>
+          </li>
+          <li class="relative">
+            <a 
+              href="#" 
+              class="flex flex-row w-full p-3 rounded cursor-pointer items-center content-center text-sm font-semibold antialiased text-ao-mid-blue-100 leading-snug hover:bg-ao-mid-blue-700 transition-all dark:text-ao-dk-text-400 dark:hover:bg-ao-dk-bg" 
+            >
+              <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-400" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z" />
+              </svg>
+              Tasks
+            </a>
+          </li>
+          <li class="relative">
+            <a 
+              href="#" 
+              class="flex flex-row w-full p-3 rounded cursor-pointer items-center content-center text-sm font-semibold antialiased text-ao-mid-blue-100 leading-snug hover:bg-ao-mid-blue-700 transition-all dark:text-ao-dk-text-400 dark:hover:bg-ao-dk-bg" 
+            >
+              <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-400" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z" clip-rule="evenodd" />
+              </svg>
+              Conversion Funnels
+            </a>
+          </li>
+          <li class="relative">
+            <a 
+              href="#" 
+              class="flex flex-row w-full p-3 rounded cursor-pointer items-center content-center text-sm font-semibold antialiased text-ao-mid-blue-100 leading-snug hover:bg-ao-mid-blue-700 transition-all dark:text-ao-dk-text-400 dark:hover:bg-ao-dk-bg" 
+            >
+              <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-400" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
+              </svg>
+              CRM Analysis
+            </a>
+          </li>
+          <li class="relative">
+            <a 
+              href="#" 
+              class="flex flex-row w-full p-3 rounded cursor-pointer items-center content-center text-sm font-semibold antialiased text-ao-mid-blue-100 leading-snug hover:bg-ao-mid-blue-700 transition-all dark:text-ao-dk-text-400 dark:hover:bg-ao-dk-bg" 
+            >
+              <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-400" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              Bill Analysis
+            </a>
+          </li>
+          <li class="relative">
+            <a 
+              href="#" 
+              class="flex flex-row w-full p-3 rounded cursor-pointer items-center content-center text-sm font-semibold antialiased text-ao-mid-blue-100 leading-snug hover:bg-ao-mid-blue-700 transition-all dark:text-ao-dk-text-400 dark:hover:bg-ao-dk-bg" 
+            >
+              <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-400" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" clip-rule="evenodd" />
+              </svg>
+              Contract Analysis
+            </a>
+          </li>
+          <li class="relative">
+            <a 
+              href="#" 
+              class="flex flex-row w-full p-3 rounded cursor-pointer items-center content-center text-sm font-semibold antialiased text-ao-mid-blue-100 leading-snug hover:bg-ao-mid-blue-700 transition-all dark:text-ao-dk-text-400 dark:hover:bg-ao-dk-bg" 
+            >
+              <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-400" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z" />
+                <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z" />
+              </svg>
+              Customer Ladder Analysis
+            </a>
+          </li>
+          <li class="relative">
+            <a 
+              href="#" 
+              class="flex flex-row w-full p-3 rounded cursor-pointer items-center content-center text-sm font-semibold antialiased text-ao-mid-blue-100 leading-snug hover:bg-ao-mid-blue-700 transition-all dark:text-ao-dk-text-400 dark:hover:bg-ao-dk-bg" 
+            >
+              <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-400" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11 4a1 1 0 10-2 0v4a1 1 0 102 0V7zm-3 1a1 1 0 10-2 0v3a1 1 0 102 0V8zM8 9a1 1 0 00-2 0v2a1 1 0 102 0V9z" clip-rule="evenodd" />
+              </svg>
+              Oppertunity Analysis
+            </a>
+          </li>
+          <li class="relative">
+            <a 
+              href="#" 
+              class="flex flex-row w-full p-3 rounded cursor-pointer items-center content-center text-sm font-semibold antialiased text-ao-mid-blue-100 leading-snug hover:bg-ao-mid-blue-700 transition-all dark:text-ao-dk-text-400 dark:hover:bg-ao-dk-bg" 
+            >
+              <svg class="w-5 h-5 text-ao-mid-blue-500 mr-2 dark:text-ao-dk-text-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
+              </svg>
+              Project Analysis
+            </a>
+          </li>
+        </ul>
       </div>
 
     </div>
@@ -1650,7 +1852,7 @@
 
       <!-- Breadcrumb & nav -->
       <div 
-  class="w-full flex items-center bg-ao-mid-blue lg:bg-ao-mid-blue-700 p-4 md:px-6 lg:px-8 text-ao-mid-blue-200 text-sm justify-between sticky top-0 dark:bg-ao-dk-bg-800"
+  class="z-10 w-full flex items-center bg-ao-mid-blue lg:bg-ao-mid-blue-700 p-4 md:px-6 lg:px-8 text-ao-mid-blue-200 text-sm justify-between sticky top-0 dark:bg-ao-dk-bg-800"
 >
 
   <!-- Breadcrumb-->
@@ -1754,16 +1956,21 @@
 </div>
 
 
-        <!-- Content -->
-        <div class="flex flex-wrap p-4 md:px-6 lg:px-8 container mx-auto">
+      <!-- Heading -->
+      <div class="w-full p-4 md:p-6 lg:px-8 bg-white shadow dark:bg-ao-dk-bg-400">
+        <h1 class="leading-tight md:leading-none dark:text-ao-dk-text dark:hover:text-ao-dk-text-500">Who's Online</h1>
+      </div>
 
-          <h1 class="w-full mb-2">Who's online</h1> 
+        <!-- Content -->
+        <div class="flex flex-wrap p-4 md:p-6 lg:p-8 container mx-auto">
+
+          <!-- <h1 class="w-full mb-2">Who's online</h1>  -->
 
           <!-- Whos Online -->
-          <div class="flex flex-col w-full mt-3 bg-white rounded shadow-sm overflow-hidden text-sm font-normal text-ao-dk-blue-500 border border-ao-mid-blue-300 border-opacity-90 dark:text-ao-dk-text-500 dark:bg-ao-dk-bg-700 dark:border-ao-dk-bg">
+          <div class="flex flex-col w-full bg-white rounded shadow-sm overflow-hidden text-sm font-normal text-ao-dk-blue-500 border border-ao-mid-blue-300 border-opacity-90 dark:text-ao-dk-text-500 dark:bg-ao-dk-bg-700 dark:border-ao-dk-bg">
             <table class="w-full table-auto border-collapse ">
               <!-- Table Head -->
-              <tr class="bg-ao-mid-blue-200 dark:bg-ao-dk-bg-400 ">
+              <tr class="">
                 <th class="w-8/12 md:w-5/12 p-3 font-normal text-left">User</th>
                 <th class="hidden md:table-cell w-4/12 font-normal text-left">Account</th>
                 <th class="w-2/12 font-normal">Login</th>
