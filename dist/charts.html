@@ -40,7 +40,7 @@
   <div class="flex flex-col overflow-y-auto overscroll-contain nav-scroll" x-data="{ tab: 'control' }">
 
     <!-- Tabs Nav -->
-    <nav class="flex flex-row flex-shrink-0 text-sm w-full items-start text-ao-mid-blue-300 sticky lg:top-0 z-50 bg-ao-mid-blue-700 dark:text-ao-dk-text-500 dark:bg-ao-dk-bg">
+    <nav class="flex flex-row flex-shrink-0 text-sm w-full items-start text-ao-mid-blue-300 sticky lg:top-0 z-50 bg-ao-mid-blue-700 dark:text-ao-dk-text-500 dark:bg-ao-dk-bg dark:bg-opacity-70">
       <button class="flex flex-1 items-center justify-center  hover:text-white p-5 dark:bg-ao-dk-bg" @click="tab = 'control'" :class="{ 'bg-ao-mid-blue text-white menu-tab-selected': tab === 'control' }">
         <svg class="text-ao-mid-blue-400 flex-shrink-0 w-5 h-5 mr-2 dark:text-ao-dk-text-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
           <path d="M5 4a1 1 0 00-2 0v7.268a2 2 0 000 3.464V16a1 1 0 102 0v-1.268a2 2 0 000-3.464V4zM11 4a1 1 0 10-2 0v1.268a2 2 0 000 3.464V16a1 1 0 102 0V8.732a2 2 0 000-3.464V4zM16 3a1 1 0 011 1v7.268a2 2 0 010 3.464V16a1 1 0 11-2 0v-1.268a2 2 0 010-3.464V4a1 1 0 011-1z" />
@@ -1852,7 +1852,7 @@
 
       <!-- Breadcrumb & nav -->
       <div 
-  class="z-10 w-full flex items-center bg-ao-mid-blue lg:bg-ao-mid-blue-700 p-4 md:px-6 lg:px-8 text-ao-mid-blue-200 text-sm justify-between sticky top-0 dark:bg-ao-dk-bg-800"
+  class="z-20 w-full flex items-center bg-ao-mid-blue lg:bg-ao-mid-blue-700 p-4 md:px-6 lg:px-8 text-ao-mid-blue-200 text-sm justify-between sticky top-0 dark:bg-ao-dk-bg-800 dark:bg-opacity-80"
 >
 
   <!-- Breadcrumb-->
@@ -2038,7 +2038,7 @@
   
 <!-- Sidebar container -->
 <div 
-  class="fixed flex-shrink-0 w-0 lg:w-16 z-10 h-screen bg-ao-mid-blue-300 overflow-y-visible overflow-hidden overscroll-contain lg:sticky top-0 right-0  dark:bg-ao-dk-bg-700" 
+  class="fixed flex-shrink-0 w-0 lg:w-16 z-30 h-screen bg-ao-mid-blue-300 overflow-y-visible overflow-hidden overscroll-contain lg:sticky top-0 right-0  dark:bg-ao-dk-bg-700" 
   :class="{ 'w-72 lg:w-72': info == true }"
   @click.away="info = false"
   x-data="{ 
@@ -2095,7 +2095,7 @@ class="fixed rounded-full bg-ao-mid-blue text-white p-5 bottom-40 right-4 lg:hid
 
   <!-- Information Icon -->
   <a href="#" 
-    class="fixed rounded-full bg-ao-mid-blue text-white p-5 bottom-56 right-4 lg:relative lg:text-ao-mid-blue-500 lg:flex lg:w-full lg:bg-transparent lg:bottom-auto lg:right-auto items-center justify-center dark:bg-ao-aqua lg:dark:bg-transparent lg:dark:text-ao-dk-text-500 lg:dark:hover:text-ao-dk-text-200 hidden"
+    class="fixed rounded-full bg-ao-mid-blue text-white p-5 bottom-56 right-4 lg:relative lg:text-ao-mid-blue-500 lg:hover:text-ao-mid-blue-600 lg:flex lg:w-full lg:bg-transparent lg:bottom-auto lg:right-auto items-center justify-center dark:bg-ao-aqua lg:dark:bg-transparent lg:dark:text-ao-dk-text-500 lg:dark:hover:text-ao-dk-text-200 hidden"
     @click="info = !info"
     :class="{ 
       'lg:hidden': info == true
@@ -2110,7 +2110,7 @@ class="fixed rounded-full bg-ao-mid-blue text-white p-5 bottom-40 right-4 lg:hid
 
   <!-- Favourite Icon -->
   <a href="#" 
-    class="fixed rounded-full bg-ao-mid-blue text-white p-5 bottom-40 right-4 lg:relative lg:text-ao-mid-blue-500 lg:flex lg:w-full lg:bg-transparent lg:bottom-auto lg:right-auto items-center justify-center lg:pt-0 dark:bg-ao-aqua lg:dark:bg-transparent lg:dark:text-ao-dk-text-500 lg:dark:hover:text-ao-dk-text-200 hidden"
+    class="fixed rounded-full bg-ao-mid-blue text-white p-5 bottom-40 right-4 lg:relative lg:text-ao-mid-blue-500 lg:hover:text-ao-mid-blue-600 lg:flex lg:w-full lg:bg-transparent lg:bottom-auto lg:right-auto items-center justify-center lg:pt-0 dark:bg-ao-aqua lg:dark:bg-transparent lg:dark:text-ao-dk-text-500 lg:dark:hover:text-ao-dk-text-200 hidden"
     :class="{ 
       'lg:hidden': info == true
       

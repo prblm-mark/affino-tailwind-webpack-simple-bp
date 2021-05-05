@@ -7,6 +7,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'main.js',
+    assetModuleFilename: 'img/[name][ext][query]',
   },
 
   module: {
@@ -20,6 +21,11 @@ module.exports = {
             presets: ['@babel/preset-env'],
           },
         },
+      },
+
+      {
+        test: /\.png/,
+        type: 'asset/resource',
       },
 
       {
@@ -62,6 +68,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'article-listing.html',
       template: 'src/article-listing.html',
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'article-form.html',
+      template: 'src/article-form.html',
     }),
     new MiniCssExtractPlugin({ filename: 'css/style.css' }),
   ],

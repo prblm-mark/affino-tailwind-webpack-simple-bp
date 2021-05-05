@@ -15,6 +15,8 @@ module.exports = {
       blue: colors.lightBlue,
       white: colors.white,
       red: colors.red,
+      yellow: colors.amber,
+      orange: colors.orange,
       'ao-mid-blue': {
         100: '#F3F6F7',
         200: '#E7EDF0',
@@ -89,6 +91,7 @@ module.exports = {
       },
       'ao-dk-bg': {
         400: '#383838',
+        600: '#2C2C2C',
         DEFAULT: '#121212',
         700: '#232323',
         800: '#1E1E1E',
@@ -113,6 +116,12 @@ module.exports = {
       fontSize: {
         'sm-md': '.825rem',
         md: '.925rem',
+      },
+      minHeight: {
+        16: '4rem',
+      },
+      maxWidth: {
+        200: '200px',
       },
     },
   },

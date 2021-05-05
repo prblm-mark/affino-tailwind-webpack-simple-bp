@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Recent History</title>
+  <title>Article Listing</title>
 <script defer src="main.js"></script><link href="css/style.css" rel="stylesheet"></head>
 
 <body class="flex bg-ao-mid-blue-200 dark:bg-ao-dk-bg dark:text-ao-dk-text-500" data-section="Social" x-data="{ open: false }">
@@ -40,7 +40,7 @@
   <div class="flex flex-col overflow-y-auto overscroll-contain nav-scroll" x-data="{ tab: 'control' }">
 
     <!-- Tabs Nav -->
-    <nav class="flex flex-row flex-shrink-0 text-sm w-full items-start text-ao-mid-blue-300 sticky lg:top-0 z-50 bg-ao-mid-blue-700 dark:text-ao-dk-text-500 dark:bg-ao-dk-bg">
+    <nav class="flex flex-row flex-shrink-0 text-sm w-full items-start text-ao-mid-blue-300 sticky lg:top-0 z-50 bg-ao-mid-blue-700 dark:text-ao-dk-text-500 dark:bg-ao-dk-bg dark:bg-opacity-70">
       <button class="flex flex-1 items-center justify-center  hover:text-white p-5 dark:bg-ao-dk-bg" @click="tab = 'control'" :class="{ 'bg-ao-mid-blue text-white menu-tab-selected': tab === 'control' }">
         <svg class="text-ao-mid-blue-400 flex-shrink-0 w-5 h-5 mr-2 dark:text-ao-dk-text-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
           <path d="M5 4a1 1 0 00-2 0v7.268a2 2 0 000 3.464V16a1 1 0 102 0v-1.268a2 2 0 000-3.464V4zM11 4a1 1 0 10-2 0v1.268a2 2 0 000 3.464V16a1 1 0 102 0V8.732a2 2 0 000-3.464V4zM16 3a1 1 0 011 1v7.268a2 2 0 010 3.464V16a1 1 0 11-2 0v-1.268a2 2 0 010-3.464V4a1 1 0 011-1z" />
@@ -1852,7 +1852,7 @@
 
       <!-- Breadcrumb & nav -->
       <div 
-  class="z-10 w-full flex items-center bg-ao-mid-blue lg:bg-ao-mid-blue-700 p-4 md:px-6 lg:px-8 text-ao-mid-blue-200 text-sm justify-between sticky top-0 dark:bg-ao-dk-bg-800"
+  class="z-20 w-full flex items-center bg-ao-mid-blue lg:bg-ao-mid-blue-700 p-4 md:px-6 lg:px-8 text-ao-mid-blue-200 text-sm justify-between sticky top-0 dark:bg-ao-dk-bg-800 dark:bg-opacity-80"
 >
 
   <!-- Breadcrumb-->
@@ -1957,253 +1957,424 @@
 
 
       <!-- Heading -->
-      <div class="w-full flex justify-between p-4 md:p-6 lg:px-8 bg-white shadow dark:bg-ao-dk-bg-400">
+      <div class="w-full flex items-center justify-between p-4 md:p-5 lg:px-8 bg-white shadow dark:bg-ao-dk-bg-400">
         <h1 class="leading-tight md:leading-none dark:text-ao-dk-text dark:hover:text-ao-dk-text-500">Articles</h1>
         <div class="flex">
-          
+          <button type="button" class="inline-flex items-center pl-2 pr-4 py-2.5 border border-transparent rounded shadow-sm text-sm font-medium text-white bg-ao-green hover:bg-ao-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ao-green-600">
+            <svg class="flex-shrink-0 h-6 w-6 text-white mr-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+            </svg>
+            Add
+          </button>
         </div>
       </div>
 
         <!-- Content -->
         <div class="flex flex-wrap p-4 md:p-6 lg:p-8 container mx-auto">
 
-          <!-- Recent -->
+          <!-- Search -->
+          <div 
+            class="flex flex-col w-full bg-white rounded shadow-sm overflow-hidden text-sm font-normal text-ao-dk-blue-500 border border-ao-mid-blue-300 border-opacity-90 mb-4 lg:mb-8 dark:text-ao-dk-text-500 dark:bg-ao-dk-bg-700 dark:border-ao-dk-bg"
+            x-data="{ selected: false}"
+          >
+
+            <!-- Title -->
+            <div class="flex justify-between items-center pl-4 lg:pl-5 p-3">
+              <h4 class="w-auto">Search</h4>
+              <div>
+                <button 
+                  class="flex h-8 w-8 justify-center items-center bg-ao-mid-blue-200 text-ao-dk-blue-500 rounded border border-ao-mid-blue-300 border-opacity-50 hover:bg-ao-mid-blue-300 hover:text-ao-dk-blue-600 dark:border-transparent dark:text-ao-dk-text-200 dark:hover:text-ao-dk-text-400 dark:bg-ao-dk-bg-400 dark:hover:bg-ao-dk-bg-600"
+                  @click="selected=!selected"
+                >
+                  <svg 
+                    class="flex-shrink-0 h-5 w-5" 
+                    xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"
+                    :class="{'hidden': selected === true}"
+                  >
+                    <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"/>
+                  </svg>
+                  <svg 
+                    class="flex-shrink-0 h-5 w-5" 
+                    xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"
+                    :class="{'hidden': selected === false}"
+                  >
+                    <path fill-rule="evenodd" d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z" clip-rule="evenodd" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+
+            <!-- Start of hidden content -->
+            <div 
+              class="w-full relative overflow-hidden transition-all duration-500 max-h-0"
+              x-ref="search" :style="selected === true ? 'max-height: ' + $refs.search.scrollHeight + 'px' : ''" 
+            >
+
+              <!-- Inputs -->
+              <div class="grid md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6 items-center border-t border-b border-ao-mid-blue-200 p-4 lg:p-5 dark:border-ao-dk-bg-800">
+                <div class="">
+                  <label class="font-medium text-sm-md" for="title">Title</label>
+                  <input type="text" name="title" id="title" class="text-ao-dk-blue mt-1 focus:ring-ao-mid-blue-500 focus:border-ao-mid-blue-500 block w-full text-sm rounded shadow-sm border-ao-mid-blue-300 dark:bg-ao-dk-bg dark:border-transparent dark:focus:ring-ao-dk-bg-400 dark:focus:border-ao-dk-bg-400 dark:text-ao-dk-text">
+                </div>
+                <div class="">
+                  <label class="font-medium text-sm-md" for="zone">Zone</label>
+                  <select id="zone" name="zone" autocomplete="zone" class="text-ao-dk-blue  mt-1 focus:outline-none focus:ring-ao-mid-blue-500 focus:border-ao-mid-blue-500 block w-full text-sm rounded shadow-sm sm:text-sm border-ao-mid-blue-300 dark:bg-ao-dk-bg dark:border-transparent dark:focus:ring-ao-dk-bg-400 dark:focus:border-ao-dk-bg-400 dark:text-ao-dk-text">
+                    <option>Any</option>
+                    <option>Zone 1</option>
+                    <option>Zone 2</option>
+                  </select>
+                </div>
+                <div class="">
+                  <label class="font-medium text-sm-md" for="channel">Channel</label>
+                  <div class="flex mt-1 rounded shadow-sm">
+                    <input type="text" name="channel" id="channel" class="text-ao-dk-blue focus:ring-ao-mid-blue-500 focus:border-ao-mid-blue-500 block w-full text-sm border-ao-mid-blue-300 rounded-l z-10 dark:bg-ao-dk-bg dark:border-transparent dark:focus:ring-ao-dk-bg-400 dark:focus:border-ao-dk-bg-400 dark:text-ao-dk-text">
+                    <button class="bg-ao-mid-blue-200 text-ao-dk-blue-500 px-4 rounded-r text-sm-md border border-ao-mid-blue-300 border-l-0 hover:text-ao-dk-blue-600 hover:bg-ao-mid-blue-300 dark:bg-ao-dk-bg-600 dark:border-transparent dark:focus:ring-ao-dk-bg-400 dark:focus:border-ao-dk-bg-400 dark:text-ao-dk-text-400 dark:hover:text-ao-dk-text-500 dark:hover:bg-ao-dk-bg-800">Select</button>
+                  </div>
+                  
+                </div>
+                <div class="">
+                  <label class="font-medium text-sm-md" for="section">Section</label>
+                  <div class="flex mt-1 rounded shadow-sm">
+                    <input type="text" name="section" id="section" class="text-ao-dk-blue focus:ring-ao-mid-blue-500 focus:border-ao-mid-blue-500 block w-full text-sm border-ao-mid-blue-300 rounded-l z-10 dark:bg-ao-dk-bg dark:border-transparent dark:focus:ring-ao-dk-bg-400 dark:focus:border-ao-dk-bg-400 dark:text-ao-dk-text">
+                    <button class="bg-ao-mid-blue-200 text-ao-dk-blue-500 px-4 rounded-r text-sm-md border border-ao-mid-blue-300 border-l-0 hover:text-ao-dk-blue-600 hover:bg-ao-mid-blue-300 dark:bg-ao-dk-bg-600 dark:border-transparent dark:focus:ring-ao-dk-bg-400 dark:focus:border-ao-dk-bg-400 dark:text-ao-dk-text-400 dark:hover:text-ao-dk-text-500 dark:hover:bg-ao-dk-bg-800">Select</button>
+                  </div>
+                </div>
+                <div class="">
+                  <label class="font-medium text-sm-md" for="style">Style</label>
+                  <select id="zone" name="zone" autocomplete="zone" class="mt-1 focus:outline-none text-ao-dk-blue focus:ring-ao-mid-blue-500 focus:border-ao-mid-blue-500 block w-full rounded shadow-sm text-sm border-ao-mid-blue-300 dark:bg-ao-dk-bg dark:border-transparent dark:focus:ring-ao-dk-bg-400 dark:focus:border-ao-dk-bg-400 dark:text-ao-dk-text">
+                    <option>Any</option>
+                    <option>Advanced Article</option>
+                    <option>Advanced Event</option>
+                    <option>Advanced Seminar</option>
+                    <option>Blog</option>
+                    <option>Directory</option>
+                    <option>FAQ</option>
+                    <option>Link Article</option>
+                    <option>Product</option>
+                    <option>Recruitment Brief</option>
+                    <option>Review Article</option>
+                    <option>Simple Article</option>
+                    <option>Seminar</option>
+                  </select>
+                </div>
+                <div class="">
+                  <label class="font-medium text-sm-md" for="tag-status">Tag Status</label>
+                  <select id="zone" name="zone" autocomplete="zone" class="mt-1 focus:outline-none text-ao-dk-blue focus:ring-ao-mid-blue-500 focus:border-ao-mid-blue-500 block w-full rounded shadow-sm text-sm border-ao-mid-blue-300 dark:bg-ao-dk-bg dark:border-transparent dark:focus:ring-ao-dk-bg-400 dark:focus:border-ao-dk-bg-400 dark:text-ao-dk-text">
+                    <option>Any</option>
+                    <option>Tagged</option>
+                    <option>Tagged:Automated</option>
+                    <option>Tagged:Manual</option>
+                  </select>
+                </div>
+                <div class="">
+                  <label class="font-medium text-sm-md" for="publish-from">Publish Start From</label>
+                  <div class="flex mt-1 rounded shadow-sm relative">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-ao-mid-blue-400 dark:text-ao-dk-text-100" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                      </svg>
+                    </div>
+                    <input type="text" name="publish-from" id="publish-from" class="text-ao-dk-blue focus:ring-ao-mid-blue-500 focus:border-ao-mid-blue-500 block w-full text-sm border-ao-mid-blue-300 rounded dark:bg-ao-dk-bg dark:border-transparent dark:focus:ring-ao-dk-bg-400 dark:focus:border-ao-dk-bg-400 dark:text-ao-dk-text">
+                  </div>
+                </div>
+                <div class="">
+                  <label class="font-medium text-sm-md" for="publish-to">Publish Start To</label>
+                  <div class="flex mt-1 rounded shadow-sm relative">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-ao-mid-blue-400 dark:text-ao-dk-text-100" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                      </svg>
+                    </div>
+                    <input type="text" name="publish-to" id="publish-from" class="text-ao-dk-blue focus:ring-ao-mid-blue-500 focus:border-ao-mid-blue-500 block w-full text-sm border-ao-mid-blue-300 rounded dark:bg-ao-dk-bg dark:border-transparent dark:focus:ring-ao-dk-bg-400 dark:focus:border-ao-dk-bg-400 dark:text-ao-dk-text">
+                  </div>
+                </div>
+                <div class="">
+                  <label class="font-medium text-sm-md" for="expires">Expires</label>
+                  <select id="zone" name="zone" autocomplete="zone" class="mt-1 focus:outline-none text-ao-dk-blue focus:ring-ao-mid-blue-500 focus:border-ao-mid-blue-500 block w-full rounded shadow-sm text-sm border-ao-mid-blue-300 dark:bg-ao-dk-bg dark:border-transparent dark:focus:ring-ao-dk-bg-400 dark:focus:border-ao-dk-bg-400 dark:text-ao-dk-text">
+                    <option>Any</option>
+                    <option>All Expired</option>
+                    <option>Past Month</option>
+                    <option>Past 3 Months</option>
+                    <option>Past 6 Months</option>
+                  </select>
+                </div>
+                <div class="">
+                  <label class="font-medium text-sm-md" for="creator">Creator</label>
+                  <input type="text" name="creator" id="creator" class="mt-1 text-ao-dk-blue focus:ring-ao-mid-blue-500 focus:border-ao-mid-blue-500 block w-full rounded shadow-sm text-sm border-ao-mid-blue-300 dark:bg-ao-dk-bg dark:border-transparent dark:focus:ring-ao-dk-bg-400 dark:focus:border-ao-dk-bg-400 dark:text-ao-dk-text">
+                </div>
+                <div class="">
+                  <label class="font-medium text-sm-md" for="security">Security</label>
+                  <div class="flex mt-1 rounded shadow-sm">
+                    <input type="text" name="security" id="security" class="text-ao-dk-blue focus:ring-ao-mid-blue-500 focus:border-ao-mid-blue-500 block w-full text-sm border-ao-mid-blue-300 rounded-l z-10 dark:bg-ao-dk-bg dark:border-transparent dark:focus:ring-ao-dk-bg-400 dark:focus:border-ao-dk-bg-400 dark:text-ao-dk-text">
+                    <button class="bg-ao-mid-blue-200 text-ao-dk-blue-500 px-4 rounded-r text-sm-md border border-ao-mid-blue-300 border-l-0 hover:text-ao-dk-blue-600 hover:bg-ao-mid-blue-300 dark:bg-ao-dk-bg-600 dark:border-transparent dark:focus:ring-ao-dk-bg-400 dark:focus:border-ao-dk-bg-400 dark:text-ao-dk-text-400 dark:hover:text-ao-dk-text-500 dark:hover:bg-ao-dk-bg-800">Select</button>
+                  </div>
+                </div>
+                <div class="">
+                  <label class="font-medium text-sm-md" for="keywords">Keywords</label>
+                  <input type="text" name="keywords" id="keywords" class="mt-1 text-ao-dk-blue focus:ring-ao-mid-blue-500 focus:border-ao-mid-blue-500 block w-full rounded shadow-sm text-sm border-ao-mid-blue-300 dark:bg-ao-dk-bg dark:border-transparent dark:focus:ring-ao-dk-bg-400 dark:focus:border-ao-dk-bg-400 dark:text-ao-dk-text">
+                </div>
+                <div class="col-span-full rounded shadow-sm border border-ao-mid-blue-300 md:py-4 grid md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 md:gap-6 dark:border-ao-dk-bg-800">
+
+                  <div class="flex items-start p-4 md:p-0 md:pl-4 border-b border-ao-mid-blue-300 md:border-0">
+                    <div class="flex items-center h-5">
+                      <input id="archived-content" name="archived-content" type="checkbox" class="focus:ring-transparent h-4 w-4 text-ao-mid-blue border-ao-mid-blue-300 rounded dark:bg-ao-dk-bg dark:border-transparent dark:checked:bg-ao-dk-bg dark:text-ao-dk-bg">
+                    </div>
+                    <div class="ml-3 text-sm">
+                      <label for="archived-content" class="font-medium text-sm-md">Archived Content</label>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start p-4 md:p-0 border-b border-ao-mid-blue-300 md:border-0">
+                    <div class="flex items-center h-5">
+                      <input id="non-live" name="non-live" type="checkbox" class="focus:ring-transparent h-4 w-4 text-ao-mid-blue border-ao-mid-blue-300 rounded dark:bg-ao-dk-bg dark:border-transparent dark:checked:bg-ao-dk-bg dark:text-ao-dk-bg">
+                    </div>
+                    <div class="ml-3 text-sm">
+                      <label for="non-live" class="font-medium text-sm-md">Non-live</label>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start p-4 md:p-0">
+                    <div class="flex items-center h-5">
+                      <input id="outdated" name="outdated" type="checkbox" class="focus:ring-transparent h-4 w-4 text-ao-mid-blue border-ao-mid-blue-300 rounded dark:bg-ao-dk-bg dark:border-transparent dark:checked:bg-ao-dk-bg dark:text-ao-dk-bg">
+                    </div>
+                    <div class="ml-3 text-sm">
+                      <label for="outdated" class="font-medium text-sm-md">Outdated</label>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- CTAs -->
+              <div class="flex justify-end items-center pl-5 p-3">
+                <div>
+                  <button type="button" class="inline-flex items-center px-3 py-2 border border-ao-mid-blue-300 rounded shadow-sm text-sm font-medium text-ao-dk-blue-500 bg-transparent hover:bg-ao-mid-blue-300 hover:text-ao-dk-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ao-mid-blue-400 dark:bg-ao-dk-bg-600 dark:border-transparent dark:text-ao-dk-text-200 dark:hover:text-ao-dk-text-400 dark:hover:bg-ao-dk-bg-400">
+                    Clear
+                  </button>
+                  <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent rounded shadow-sm text-sm font-medium text-white bg-ao-mid-blue hover:bg-ao-mid-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ao-mid-blue-600 dark:hover:bg-ao-dk-bg-600 dark:border-transparent dark:hover:text-ao-dk-text-500 dark:text-ao-dk-text-400 dark:bg-ao-dk-bg-400">
+                    Search
+                  </button>
+                </div>
+              </div>
+
+            </div> <!-- End of hidden content -->
+         
+          </div> <!-- End of Search -->
+
+          <!-- Article Listing -->
           <div class="flex flex-col w-full bg-white rounded shadow-sm overflow-hidden text-sm font-normal text-ao-dk-blue-500 border border-ao-mid-blue-300 border-opacity-90 dark:text-ao-dk-text-500 dark:bg-ao-dk-bg-700 dark:border-ao-dk-bg">
-            <table class="w-full table-auto border-collapse ">
+
+            <!-- Title -->
+            <div class="flex justify-between items-center px-4 lg:px-5 py-4">
+              <h4 class="w-auto">All Articles</h4>
+              <div>
+                <p class="text-xs tracking-wide">Displaying <strong>1-20</strong>  of <strong>2,894</strong></p>
+              </div>
+            </div>
+
+            <!-- Table -->
+            <table class="w-full table-auto border-collapse border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
+
               <!-- Table Head -->
               <tr class="">
-                <th class="w-9/12 p-3 font-normal text-left">Item</th>
-                <th class="w-3/12 font-normal pr-3 text-right">Last Visited</th>
+                <th class="p-3 text-center"></th>
+                <th class="w-auto py-3 text-left font-medium text-sm-md">Title</th>
+                <th class="w-28 p-3 pl-0 text-left font-medium text-sm-md lg:table-cell hidden">Section</th>
+                <th class="w-36 p-3 pl-0 text-left font-medium text-sm-md lg:table-cell hidden">Template</th>
+                <th class="w-12 text-center font-medium text-sm-md lg:table-cell hidden">Creator</th>
+                <th class="w-24 py-3 text-center font-medium text-sm-md lg:table-cell hidden">Publish</th>
+                <th class="py-3 text-center font-medium text-sm-md lg:table-cell hidden">Views</th>
+                <th class="py-3 px-4 text-center font-medium text-sm-md">Live</th>
+                <th class="py-3 pr-5 text-center font-medium text-sm-md">Edit</th>
               </tr>
+
+              <!-- Table Body -->
+
               <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
-                <td class="p-3">
-                  <div class="flex items-center">
-                    <svg class="text-ao-mid-blue-500 flex-shrink-0 w-4 h-4 mr-2 dark:text-ao-dk-text-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                      <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd" />
-                    </svg>
-                    <a href="#" class="text-ao-dk-blue-500 line-clamp-1 no-underline hover:text-ao-dk-blue-600 hover:underline dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">Data is the new capital, but does technology have to trump humanity?</a> 
+
+                <!-- Actions -->
+                <td class="px-4 lg:px-5">
+                  <div class="flex items-center h-5">
+                    <input type="checkbox" class="form-checkbox focus:outline-none focus:ring-transparent h-4 w-4 text-ao-mid-blue border-ao-mid-blue-300 rounded dark:bg-ao-dk-bg dark:border-transparent dark:checked:bg-ao-dk-bg dark:text-ao-dk-bg" checked="">
                   </div>
                 </td>
-                <td class="text-right pr-3">Feb 12, 2021</td>
-              </tr>
-              <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
-                <td class="p-3">
-                  <div class="flex items-center">
-                    <svg class="text-ao-mid-blue-500 flex-shrink-0 w-4 h-4 mr-2 dark:text-ao-dk-text-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                      <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd" />
-                    </svg>
-                    <a href="#" class="text-ao-dk-blue-500 line-clamp-1 no-underline hover:text-ao-dk-blue-600 hover:underline dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">Asset Manager CEO Breakfast: In a low return/high volatility environment</a> 
+
+                <!-- Title -->
+                <td class="py-4 lg:pr-4">
+                  <h5 class="flex flex-col"><a href="#" class="hover:underline line-clamp-3 xl:line-clamp-2 2xl:line-clamp-1">Affino is Participating alongside AgriBriefing / LAMMA 365 at PPA's Leadership Summit Event on April 28th/29th</a></h5>
+                  <!-- <a href="#" class="flex hover:underline hover:text-ao-dk-blue-400 lg:hidden">Events</div>
+                  <a href="#" class="flex hover:underline hover:text-ao-dk-blue-400 lg:hidden">Advanced Event</a> 
+                  <a class="block flex-shrink-0 w-9 h-9 rounded-full overflow-hidden hover:ring-2 hover:ring-ao-mid-blue-400 dark:hover:ring-ao-dk-bg-400 lg:hidden" href="#"><img class="m-w-full" src="https://source.unsplash.com/d2MSDujJl2g/100x100" alt="Paul Dominguez"></a>
+                  <div class="flex justify-start items-center lg:hidden">29 Mar '21</div>
+                  <div class="flex justify-start items-center lg:hidden">104</div> -->
+                </td>
+
+                <!-- Section -->
+                <td class="py-3 pr-4 lg:table-cell hidden">
+                  <a href="#" class="flex hover:underline hover:text-ao-dk-blue-400 dark:hover:text-ao-dk-text-200">Events</div>
+                </td>
+
+                <!-- Template -->
+                <td class="py-3 lg:pr-4 lg:table-cell hidden">
+                  <a href="#" class="flex hover:underline hover:text-ao-dk-blue-400 dark:hover:text-ao-dk-text-200">Advanced Event</a>
+                </td>
+
+                <!-- Creator -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex flex-row justify-center items-center">
+                    <a class="flex-shrink-0 w-9 h-9 rounded-full overflow-hidden hover:ring-2 hover:ring-ao-mid-blue-400 dark:hover:ring-ao-dk-bg-400" href="#"><img src="https://source.unsplash.com/d2MSDujJl2g/100x100" alt="Paul Dominguez"></a>
                   </div>
                 </td>
-                <td class="text-right pr-3">Feb 12, 2021</td>
-              </tr>
-              <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
-                <td class="p-3">
-                  <div class="flex items-center">
-                    <svg class="text-ao-mid-blue-500 flex-shrink-0 w-4 h-4 mr-2 dark:text-ao-dk-text-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                      <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" />
+
+                <!-- Published -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex justify-center items-center">29 Mar '21</div>
+                </td>
+
+                <!-- Views -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex justify-center items-center">104</div>
+                </td>
+
+                <!-- Live -->
+                <td class="py-3">
+                  <div class="flex justify-center items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-ao-green" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
                     </svg>
-                    <a href="#" class="text-ao-dk-blue-500 line-clamp-1 no-underline hover:text-ao-dk-blue-600 hover:underline dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">Event Assets</a> 
                   </div>
                 </td>
-                <td class="text-right pr-3">Feb 12, 2021</td>
-              </tr>
-              <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
-                <td class="p-3">
-                  <div class="flex items-center">
-                    <svg class="text-ao-mid-blue-500 flex-shrink-0 w-4 h-4 mr-2 dark:text-ao-dk-text-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                      <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" />
+
+                <!-- Edit -->
+                <td class="text-right pr-5">
+                  <a href="#" class="flex justify-end items-center text-ao-mid-blue-500 hover:text-ao-mid-blue-400 dark:text-ao-dk-text-400 dark:hover:text-ao-dk-text-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+                      <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
                     </svg>
-                    <a href="#" class="text-ao-dk-blue-500 line-clamp-1 no-underline hover:text-ao-dk-blue-600 hover:underline dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">Seminar Event Sponsors</a> 
+                  </a>
+                </td>
+
+              </tr>
+
+              <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
+
+                <!-- Actions -->
+                <td class="px-4 lg:px-5">
+                  <div class="flex items-center h-5">
+                    <input type="checkbox" class="form-checkbox focus:outline-none focus:ring-transparent h-4 w-4 text-ao-mid-blue border-ao-mid-blue-300 rounded dark:bg-ao-dk-bg dark:border-transparent dark:checked:bg-ao-dk-bg dark:text-ao-dk-bg">
                   </div>
                 </td>
-                <td class="text-right pr-3">Feb 11, 2021</td>
-              </tr>
-              <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
-                <td class="p-3">
-                  <div class="flex items-center">
-                    <svg class="text-ao-mid-blue-500 flex-shrink-0 w-4 h-4 mr-2 dark:text-ao-dk-text-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                      <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd" />
-                    </svg>
-                    <a href="#" class="text-ao-dk-blue-500 line-clamp-1 no-underline hover:text-ao-dk-blue-600 hover:underline dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">Welcome and Introduction to the Affino Innovation Briefing 2021</a> 
+
+                <!-- Title -->
+                <td class="py-4 lg:pr-4">
+                  <h5 class="flex"><a href="#" class="hover:underline line-clamp-3 xl:line-clamp-2 2xl:line-clamp-1">Google's FLoC Federated Learning of Cohorts is really just a masked Non-Consensual attempt at Cookies MKII</a></h5>
+                </td>
+
+                <!-- Section -->
+                <td class="py-3 pr-4 lg:table-cell hidden">
+                  <a href="#" class="flex hover:underline hover:text-ao-dk-blue-400 dark:hover:text-ao-dk-text-200">Latest Insights</div>
+                </td>
+
+                <!-- Template -->
+                <td class="py-3 lg:pr-4 lg:table-cell hidden">
+                  <a href="#" class="flex hover:underline hover:text-ao-dk-blue-400 dark:hover:text-ao-dk-text-200">Advanced Seminar</div>
+                </td>
+
+                <!-- Creator -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex flex-row justify-center items-center">
+                    <a class="flex-shrink-0 w-9 h-9 rounded-full overflow-hidden hover:ring-2 hover:ring-ao-mid-blue-400 dark:hover:ring-ao-dk-bg-400" href="#"><img src="https://source.unsplash.com/dUtizJyby4E/100x100" alt="Sheryl Paul"></a>
                   </div>
                 </td>
-                <td class="text-right pr-3">Feb 11, 2021</td>
-              </tr>
-              <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
-                <td class="p-3">
-                  <div class="flex items-center">
-                    <svg class="text-ao-mid-blue-500 flex-shrink-0 w-4 h-4 mr-2 dark:text-ao-dk-text-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                      <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" />
+
+                <!-- Published -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex justify-center items-center">29 Mar '21</div>
+                </td>
+
+                <!-- Views -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex justify-center items-center">77</div>
+                </td>
+
+                <!-- Live -->
+                <td class="py-3">
+                  <div class="flex justify-center items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
                     </svg>
-                    <a href="#" class="text-ao-dk-blue-500 line-clamp-1 no-underline hover:text-ao-dk-blue-600 hover:underline dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">Affino Innovation Briefing 2021</a> 
                   </div>
                 </td>
-                <td class="text-right pr-3">Feb 11, 2021</td>
-              </tr>
-              <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
-                <td class="p-3">
-                  <div class="flex items-center">
-                    <svg class="text-ao-mid-blue-500 flex-shrink-0 w-4 h-4 mr-2 dark:text-ao-dk-text-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                      <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd" />
+
+                <!-- Edit -->
+                <td class="text-right pr-5">
+                  <a href="#" class="flex justify-end items-center text-ao-mid-blue-500 hover:text-ao-mid-blue-400 dark:text-ao-dk-text-400 dark:hover:text-ao-dk-text-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+                      <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
                     </svg>
-                    <a href="#" class="text-ao-dk-blue-500 line-clamp-1 no-underline hover:text-ao-dk-blue-600 hover:underline dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">2020 Seminar Theme Sponsor</a> 
-                  </div>
+                  </a>
                 </td>
-                <td class="text-right pr-3">Feb 11, 2021</td>
+
               </tr>
-              <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
-                <td class="p-3">
-                  <div class="flex items-center">
-                    <svg class="text-ao-mid-blue-500 flex-shrink-0 w-4 h-4 mr-2 dark:text-ao-dk-text-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                      <path fill-rule="evenodd" d="M4.083 9h1.946c.089-1.546.383-2.97.837-4.118A6.004 6.004 0 004.083 9zM10 2a8 8 0 100 16 8 8 0 000-16zm0 2c-.076 0-.232.032-.465.262-.238.234-.497.623-.737 1.182-.389.907-.673 2.142-.766 3.556h3.936c-.093-1.414-.377-2.649-.766-3.556-.24-.56-.5-.948-.737-1.182C10.232 4.032 10.076 4 10 4zm3.971 5c-.089-1.546-.383-2.97-.837-4.118A6.004 6.004 0 0115.917 9h-1.946zm-2.003 2H8.032c.093 1.414.377 2.649.766 3.556.24.56.5.948.737 1.182.233.23.389.262.465.262.076 0 .232-.032.465-.262.238-.234.498-.623.737-1.182.389-.907.673-2.142.766-3.556zm1.166 4.118c.454-1.147.748-2.572.837-4.118h1.946a6.004 6.004 0 01-2.783 4.118zm-6.268 0C6.412 13.97 6.118 12.546 6.03 11H4.083a6.004 6.004 0 002.783 4.118z" clip-rule="evenodd" />
-                    </svg>
-                    <a href="#" class="text-ao-dk-blue-500 line-clamp-1 no-underline hover:text-ao-dk-blue-600 hover:underline dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">Affino for Membership Organisations</a> 
-                  </div>
-                </td>
-                <td class="text-right pr-3">Feb 11, 2021</td>
-              </tr>
-              <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
-                <td class="p-3">
-                  <div class="flex items-center">
-                    <svg class="text-ao-mid-blue-500 flex-shrink-0 w-4 h-4 mr-2 dark:text-ao-dk-text-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                      <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd" />
-                    </svg>
-                    <a href="#" class="text-ao-dk-blue-500 line-clamp-1 no-underline hover:text-ao-dk-blue-600 hover:underline dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">Data is the new capital, but does technology have to trump humanity?</a> 
-                  </div>
-                </td>
-                <td class="text-right pr-3">Feb 12, 2021</td>
-              </tr>
-              <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
-                <td class="p-3">
-                  <div class="flex items-center">
-                    <svg class="text-ao-mid-blue-500 flex-shrink-0 w-4 h-4 mr-2 dark:text-ao-dk-text-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                      <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd" />
-                    </svg>
-                    <a href="#" class="text-ao-dk-blue-500 line-clamp-1 no-underline hover:text-ao-dk-blue-600 hover:underline dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">Asset Manager CEO Breakfast: In a low return/high volatility environment</a> 
-                  </div>
-                </td>
-                <td class="text-right pr-3">Feb 12, 2021</td>
-              </tr>
-              <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
-                <td class="p-3">
-                  <div class="flex items-center">
-                    <svg class="text-ao-mid-blue-500 flex-shrink-0 w-4 h-4 mr-2 dark:text-ao-dk-text-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                      <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd" />
-                    </svg>
-                    <a href="#" class="text-ao-dk-blue-500 line-clamp-1 no-underline hover:text-ao-dk-blue-600 hover:underline dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">Data is the new capital, but does technology have to trump humanity?</a> 
-                  </div>
-                </td>
-                <td class="text-right pr-3">Feb 12, 2021</td>
-              </tr>
-              <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
-                <td class="p-3">
-                  <div class="flex items-center">
-                    <svg class="text-ao-mid-blue-500 flex-shrink-0 w-4 h-4 mr-2 dark:text-ao-dk-text-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                      <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd" />
-                    </svg>
-                    <a href="#" class="text-ao-dk-blue-500 line-clamp-1 no-underline hover:text-ao-dk-blue-600 hover:underline dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">Asset Manager CEO Breakfast: In a low return/high volatility environment</a> 
-                  </div>
-                </td>
-                <td class="text-right pr-3">Feb 12, 2021</td>
-              </tr>
-              <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
-                <td class="p-3">
-                  <div class="flex items-center">
-                    <svg class="text-ao-mid-blue-500 flex-shrink-0 w-4 h-4 mr-2 dark:text-ao-dk-text-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                      <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" />
-                    </svg>
-                    <a href="#" class="text-ao-dk-blue-500 line-clamp-1 no-underline hover:text-ao-dk-blue-600 hover:underline dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">Event Assets</a> 
-                  </div>
-                </td>
-                <td class="text-right pr-3">Feb 12, 2021</td>
-              </tr>
-              <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
-                <td class="p-3">
-                  <div class="flex items-center">
-                    <svg class="text-ao-mid-blue-500 flex-shrink-0 w-4 h-4 mr-2 dark:text-ao-dk-text-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                      <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" />
-                    </svg>
-                    <a href="#" class="text-ao-dk-blue-500 line-clamp-1 no-underline hover:text-ao-dk-blue-600 hover:underline dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">Seminar Event Sponsors</a> 
-                  </div>
-                </td>
-                <td class="text-right pr-3">Feb 10, 2021</td>
-              </tr>
-              <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
-                <td class="p-3">
-                  <div class="flex items-center">
-                    <svg class="text-ao-mid-blue-500 flex-shrink-0 w-4 h-4 mr-2 dark:text-ao-dk-text-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                      <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd" />
-                    </svg>
-                    <a href="#" class="text-ao-dk-blue-500 line-clamp-1 no-underline hover:text-ao-dk-blue-600 hover:underline dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">Welcome and Introduction to the Affino Innovation Briefing 2021</a> 
-                  </div>
-                </td>
-                <td class="text-right pr-3">Feb 10, 2021</td>
-              </tr>
-              <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
-                <td class="p-3">
-                  <div class="flex items-center">
-                    <svg class="text-ao-mid-blue-500 flex-shrink-0 w-4 h-4 mr-2 dark:text-ao-dk-text-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                      <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" />
-                    </svg>
-                    <a href="#" class="text-ao-dk-blue-500 line-clamp-1 no-underline hover:text-ao-dk-blue-600 hover:underline dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">Affino Innovation Briefing 2021</a> 
-                  </div>
-                </td>
-                <td class="text-right pr-3">Feb 10, 2021</td>
-              </tr>
-              <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
-                <td class="p-3">
-                  <div class="flex items-center">
-                    <svg class="text-ao-mid-blue-500 flex-shrink-0 w-4 h-4 mr-2 dark:text-ao-dk-text-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                      <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd" />
-                    </svg>
-                    <a href="#" class="text-ao-dk-blue-500 line-clamp-1 no-underline hover:text-ao-dk-blue-600 hover:underline dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">2020 Seminar Theme Sponsor</a> 
-                  </div>
-                </td>
-                <td class="text-right pr-3">Feb 10, 2021</td>
-              </tr>
-              <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
-                <td class="p-3">
-                  <div class="flex items-center">
-                    <svg class="text-ao-mid-blue-500 flex-shrink-0 w-4 h-4 mr-2 dark:text-ao-dk-text-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                      <path fill-rule="evenodd" d="M4.083 9h1.946c.089-1.546.383-2.97.837-4.118A6.004 6.004 0 004.083 9zM10 2a8 8 0 100 16 8 8 0 000-16zm0 2c-.076 0-.232.032-.465.262-.238.234-.497.623-.737 1.182-.389.907-.673 2.142-.766 3.556h3.936c-.093-1.414-.377-2.649-.766-3.556-.24-.56-.5-.948-.737-1.182C10.232 4.032 10.076 4 10 4zm3.971 5c-.089-1.546-.383-2.97-.837-4.118A6.004 6.004 0 0115.917 9h-1.946zm-2.003 2H8.032c.093 1.414.377 2.649.766 3.556.24.56.5.948.737 1.182.233.23.389.262.465.262.076 0 .232-.032.465-.262.238-.234.498-.623.737-1.182.389-.907.673-2.142.766-3.556zm1.166 4.118c.454-1.147.748-2.572.837-4.118h1.946a6.004 6.004 0 01-2.783 4.118zm-6.268 0C6.412 13.97 6.118 12.546 6.03 11H4.083a6.004 6.004 0 002.783 4.118z" clip-rule="evenodd" />
-                    </svg>
-                    <a href="#" class="text-ao-dk-blue-500 line-clamp-1 no-underline hover:text-ao-dk-blue-600 hover:underline dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">Affino for Membership Organisations</a> 
-                  </div>
-                </td>
-                <td class="text-right pr-3">Feb 10, 2021</td>
-              </tr>
-              <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
-                <td class="p-3">
-                  <div class="flex items-center">
-                    <svg class="text-ao-mid-blue-500 flex-shrink-0 w-4 h-4 mr-2 dark:text-ao-dk-text-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                      <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd" />
-                    </svg>
-                    <a href="#" class="text-ao-dk-blue-500 line-clamp-1 no-underline hover:text-ao-dk-blue-600 hover:underline dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">Data is the new capital, but does technology have to trump humanity?</a> 
-                  </div>
-                </td>
-                <td class="text-right pr-3">Feb 09, 2021</td>
-              </tr>
-              <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
-                <td class="p-3">
-                  <div class="flex items-center">
-                    <svg class="text-ao-mid-blue-500 flex-shrink-0 w-4 h-4 mr-2 dark:text-ao-dk-text-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                      <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd" />
-                    </svg>
-                    <a href="#" class="text-ao-dk-blue-500 line-clamp-1 no-underline hover:text-ao-dk-blue-600 hover:underline dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200">Asset Manager CEO Breakfast: In a low return/high volatility environment</a> 
-                  </div>
-                </td>
-                <td class="text-right pr-3">Feb 09, 2021</td>
-              </tr>
+
+
+              
             </table>
 
-           
-            <div class="p-4">
-              <button type="button" class="w-full text-center px-4 py-2 border border-ao-mid-blue-400 rounded shadow-sm text-sm font-medium text-ao-mid-blue-500 bg-white hover:bg-ao-mid-blue-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ao-teal dark:text-ao-dk-text-500 dark:hover:text-ao-dk-text-200 dark:border-ao-dk-text-500  dark:hover:border-ao-dk-text-200 dark:bg-transparent">
-                Load more
+            <div class="w-full bg-ao-mid-blue-200 px-4 lg:px-5 py-4 flex justify-between items-center dark:bg-ao-dk-bg-600">
+              <div class="flex items-center h-5">
+                <input type="checkbox" class="form-checkbox focus:outline-none focus:ring-transparent h-4 w-4 text-ao-mid-blue border-ao-mid-blue-300 rounded dark:bg-ao-dk-bg dark:border-transparent dark:checked:bg-ao-dk-bg dark:text-ao-dk-bg">
+                <div class="ml-4 lg:ml-5 text-sm">
+                  <label for="outdated" class="font-medium text-sm-md">Select all</label>
+                </div>
+              </div>
+              <div>
+                <p class="text-xs tracking-wide">Displaying <strong>1-20</strong>  of <strong>2,894</strong></p>
+              </div>
+            </div>
+          
+
+          </div><!-- End of Article Listing -->
+
+          <!-- Actions panel -->
+          <div class="w-full flex justify-between mt-3">
+
+            <div class="flex">
+              <select id="actions" name="actions" autocomplete="actions" class="inline-flex items-center text-ao-dk-blue mr-1 py-1 focus:outline-none focus:ring-ao-mid-blue-500 focus:border-ao-mid-blue-500 text-sm rounded shadow-sm sm:text-sm border-ao-mid-blue-300 dark:bg-ao-dk-bg-800 dark:text-ao-dk-text-200 dark:border-transparent dark:focus:ring-ao-dk-text-200">
+                <option>Delete</option>
+                <option>Copy</option>
+                <option>Move</option>
+                <option>Make Live</option>
+                <option>Make Not Live</option>
+              </select>
+              <button type="button" class="inline-flex items-center h-9 px-2 border rounded shadow-sm text-sm-md font-medium text-ao-dk-blue-500 bg-ao-mid-blue-200 hover:bg-ao-mid-blue-300 hover:text-ao-dk-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ao-mid-blue-400 border-ao-mid-blue-300 dark:bg-ao-dk-bg-600 dark:border-transparent dark:text-ao-dk-text-200 dark:hover:text-ao-dk-text-400 dark:hover:bg-ao-dk-bg-400">
+                Action
               </button>
             </div>
 
+            <div class="flex items-center w-max">
+              <label for="pages" class="text-ao-dk-blue-500 font-medium text-sm-md whitespace-nowrap mr-2 lg:flex dark:text-ao-dk-text-200 hidden">Go to</label>
+              <select id="pages" name="pages" autocomplete="pages" class="h-9 text-ao-dk-blue mr-2.5 py-1 focus:outline-none focus:ring-ao-mid-blue-500 focus:border-ao-mid-blue-500 lg:block w-full text-sm rounded shadow-sm sm:text-sm border-ao-mid-blue-300 dark:bg-ao-dk-bg-800 dark:text-ao-dk-text-200 dark:border-transparent dark:focus:ring-ao-dk-text-200 hidden">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+              <button type="button" class="h-9 w-9 inline-flex flex-shrink-0 items-center justify-center border rounded shadow-sm text-sm-md font-medium text-ao-dk-blue-500 bg-ao-mid-blue-200 hover:bg-ao-mid-blue-300 hover:text-ao-dk-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ao-mid-blue-400 border-ao-mid-blue-300 dark:bg-ao-dk-bg-600 dark:border-transparent dark:text-ao-dk-text-200 dark:hover:text-ao-dk-text-400 dark:hover:bg-ao-dk-bg-400">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+              </button>
+              <button type="button" class="h-9 w-9 ml-1 inline-flex flex-shrink-0 items-center justify-center border rounded shadow-sm text-sm-md font-medium text-ao-dk-blue-500 bg-ao-mid-blue-200 hover:bg-ao-mid-blue-300 hover:text-ao-dk-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ao-mid-blue-400 border-ao-mid-blue-300 dark:bg-ao-dk-bg-600 dark:border-transparent dark:text-ao-dk-text-200 dark:hover:text-ao-dk-text-400 dark:hover:bg-ao-dk-bg-400">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
           </div>
 
         </div>
@@ -2216,7 +2387,7 @@
   
 <!-- Sidebar container -->
 <div 
-  class="fixed flex-shrink-0 w-0 lg:w-16 z-10 h-screen bg-ao-mid-blue-300 overflow-y-visible overflow-hidden overscroll-contain lg:sticky top-0 right-0  dark:bg-ao-dk-bg-700" 
+  class="fixed flex-shrink-0 w-0 lg:w-16 z-30 h-screen bg-ao-mid-blue-300 overflow-y-visible overflow-hidden overscroll-contain lg:sticky top-0 right-0  dark:bg-ao-dk-bg-700" 
   :class="{ 'w-72 lg:w-72': info == true }"
   @click.away="info = false"
   x-data="{ 
@@ -2273,7 +2444,7 @@ class="fixed rounded-full bg-ao-mid-blue text-white p-5 bottom-40 right-4 lg:hid
 
   <!-- Information Icon -->
   <a href="#" 
-    class="fixed rounded-full bg-ao-mid-blue text-white p-5 bottom-56 right-4 lg:relative lg:text-ao-mid-blue-500 lg:flex lg:w-full lg:bg-transparent lg:bottom-auto lg:right-auto items-center justify-center dark:bg-ao-aqua lg:dark:bg-transparent lg:dark:text-ao-dk-text-500 lg:dark:hover:text-ao-dk-text-200 hidden"
+    class="fixed rounded-full bg-ao-mid-blue text-white p-5 bottom-56 right-4 lg:relative lg:text-ao-mid-blue-500 lg:hover:text-ao-mid-blue-600 lg:flex lg:w-full lg:bg-transparent lg:bottom-auto lg:right-auto items-center justify-center dark:bg-ao-aqua lg:dark:bg-transparent lg:dark:text-ao-dk-text-500 lg:dark:hover:text-ao-dk-text-200 hidden"
     @click="info = !info"
     :class="{ 
       'lg:hidden': info == true
@@ -2288,7 +2459,7 @@ class="fixed rounded-full bg-ao-mid-blue text-white p-5 bottom-40 right-4 lg:hid
 
   <!-- Favourite Icon -->
   <a href="#" 
-    class="fixed rounded-full bg-ao-mid-blue text-white p-5 bottom-40 right-4 lg:relative lg:text-ao-mid-blue-500 lg:flex lg:w-full lg:bg-transparent lg:bottom-auto lg:right-auto items-center justify-center lg:pt-0 dark:bg-ao-aqua lg:dark:bg-transparent lg:dark:text-ao-dk-text-500 lg:dark:hover:text-ao-dk-text-200 hidden"
+    class="fixed rounded-full bg-ao-mid-blue text-white p-5 bottom-40 right-4 lg:relative lg:text-ao-mid-blue-500 lg:hover:text-ao-mid-blue-600 lg:flex lg:w-full lg:bg-transparent lg:bottom-auto lg:right-auto items-center justify-center lg:pt-0 dark:bg-ao-aqua lg:dark:bg-transparent lg:dark:text-ao-dk-text-500 lg:dark:hover:text-ao-dk-text-200 hidden"
     :class="{ 
       'lg:hidden': info == true
       
