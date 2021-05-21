@@ -5,7 +5,7 @@ module.exports = {
     content: ['./src/**/*.html', './src/**/*.js'],
 
     options: {
-      safelist: [/type/],
+      safelist: [/type/, /type='text'/, /type="text"/, /\[type='w+'\]/],
     },
   },
   //   './src/**/*.html',
