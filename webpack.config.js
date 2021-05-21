@@ -73,6 +73,10 @@ module.exports = {
       filename: 'article-form.html',
       template: 'src/article-form.html',
     }),
+    new HtmlWebpackPlugin({
+      filename: 'article-edit.html',
+      template: 'src/article-edit.html',
+    }),
     new MiniCssExtractPlugin({ filename: 'css/style.css' }),
   ],
 

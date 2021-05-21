@@ -119,6 +119,7 @@ module.exports = {
       },
       minHeight: {
         16: '4rem',
+        24: '6rem',
       },
       maxWidth: {
         200: '200px',

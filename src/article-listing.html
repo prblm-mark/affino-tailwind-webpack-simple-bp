@@ -23,12 +23,12 @@
       <div class="w-full flex items-center justify-between p-4 md:p-5 lg:px-8 bg-white shadow dark:bg-ao-dk-bg-400">
         <h1 class="leading-tight md:leading-none dark:text-ao-dk-text dark:hover:text-ao-dk-text-500">Articles</h1>
         <div class="flex">
-          <button type="button" class="inline-flex items-center pl-2 pr-4 py-2.5 border border-transparent rounded shadow-sm text-sm font-medium text-white bg-ao-green hover:bg-ao-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ao-green-600">
+          <a href="article-edit.html" class="inline-flex items-center pl-2 pr-4 py-2.5 border border-transparent rounded shadow-sm text-sm font-medium text-white bg-ao-green hover:bg-ao-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ao-green-600 transition ease-in-out duration-300">
             <svg class="flex-shrink-0 h-6 w-6 text-white mr-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
             </svg>
             Add
-          </button>
+          </a>
         </div>
       </div>
 
@@ -46,7 +46,7 @@
               <h4 class="w-auto">Search</h4>
               <div>
                 <button 
-                  class="flex h-8 w-8 justify-center items-center bg-ao-mid-blue-200 text-ao-dk-blue-500 rounded border border-ao-mid-blue-300 border-opacity-50 hover:bg-ao-mid-blue-300 hover:text-ao-dk-blue-600 dark:border-transparent dark:text-ao-dk-text-200 dark:hover:text-ao-dk-text-400 dark:bg-ao-dk-bg-400 dark:hover:bg-ao-dk-bg-600"
+                  class="flex h-8 w-8 justify-center items-center rounded text-ao-dk-blue-600 bg-ao-mid-blue-300 border border-ao-mid-blue-300 hover:bg-ao-mid-blue-200 hover:text-ao-dk-blue-500 dark:border-transparent dark:text-ao-dk-text-200 dark:hover:text-ao-dk-text-400 dark:bg-ao-dk-bg-400 dark:hover:bg-ao-dk-bg-600 transition ease-in-out duration-300"
                   @click="selected=!selected"
                 >
                   <svg 
@@ -77,11 +77,11 @@
               <!-- Inputs -->
               <div class="grid md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6 items-center border-t border-b border-ao-mid-blue-200 p-4 lg:p-5 dark:border-ao-dk-bg-800">
                 <div class="">
-                  <label class="font-medium text-sm-md" for="title">Title</label>
+                  <label class="font-medium text-sm-md text-ao-dk-blue-600" for="title">Title</label>
                   <input type="text" name="title" id="title" class="text-ao-dk-blue mt-1 focus:ring-ao-mid-blue-500 focus:border-ao-mid-blue-500 block w-full text-sm rounded shadow-sm border-ao-mid-blue-300 dark:bg-ao-dk-bg dark:border-transparent dark:focus:ring-ao-dk-bg-400 dark:focus:border-ao-dk-bg-400 dark:text-ao-dk-text">
                 </div>
                 <div class="">
-                  <label class="font-medium text-sm-md" for="zone">Zone</label>
+                  <label class="font-medium text-sm-md text-ao-dk-blue-600" for="zone">Zone</label>
                   <select id="zone" name="zone" autocomplete="zone" class="text-ao-dk-blue  mt-1 focus:outline-none focus:ring-ao-mid-blue-500 focus:border-ao-mid-blue-500 block w-full text-sm rounded shadow-sm sm:text-sm border-ao-mid-blue-300 dark:bg-ao-dk-bg dark:border-transparent dark:focus:ring-ao-dk-bg-400 dark:focus:border-ao-dk-bg-400 dark:text-ao-dk-text">
                     <option>Any</option>
                     <option>Zone 1</option>
@@ -89,22 +89,22 @@
                   </select>
                 </div>
                 <div class="">
-                  <label class="font-medium text-sm-md" for="channel">Channel</label>
+                  <label class="font-medium text-sm-md text-ao-dk-blue-600" for="channel">Channel</label>
                   <div class="flex mt-1 rounded shadow-sm">
                     <input type="text" name="channel" id="channel" class="text-ao-dk-blue focus:ring-ao-mid-blue-500 focus:border-ao-mid-blue-500 block w-full text-sm border-ao-mid-blue-300 rounded-l z-10 dark:bg-ao-dk-bg dark:border-transparent dark:focus:ring-ao-dk-bg-400 dark:focus:border-ao-dk-bg-400 dark:text-ao-dk-text">
-                    <button class="bg-ao-mid-blue-200 text-ao-dk-blue-500 px-4 rounded-r text-sm-md border border-ao-mid-blue-300 border-l-0 hover:text-ao-dk-blue-600 hover:bg-ao-mid-blue-300 dark:bg-ao-dk-bg-600 dark:border-transparent dark:focus:ring-ao-dk-bg-400 dark:focus:border-ao-dk-bg-400 dark:text-ao-dk-text-400 dark:hover:text-ao-dk-text-500 dark:hover:bg-ao-dk-bg-800">Select</button>
+                    <button class="px-4 rounded-r text-sm-md border-l-0 text-ao-dk-blue-600 bg-ao-mid-blue-300 border border-ao-mid-blue-300 hover:bg-ao-mid-blue-200 hover:text-ao-dk-blue-500 dark:bg-ao-dk-bg-600 dark:border-transparent dark:focus:ring-ao-dk-bg-400 dark:focus:border-ao-dk-bg-400 dark:text-ao-dk-text-400 dark:hover:text-ao-dk-text-500 dark:hover:bg-ao-dk-bg-800 transition ease-in-out duration-300">Select</button>
                   </div>
                   
                 </div>
                 <div class="">
-                  <label class="font-medium text-sm-md" for="section">Section</label>
+                  <label class="font-medium text-sm-md text-ao-dk-blue-600" for="section">Section</label>
                   <div class="flex mt-1 rounded shadow-sm">
                     <input type="text" name="section" id="section" class="text-ao-dk-blue focus:ring-ao-mid-blue-500 focus:border-ao-mid-blue-500 block w-full text-sm border-ao-mid-blue-300 rounded-l z-10 dark:bg-ao-dk-bg dark:border-transparent dark:focus:ring-ao-dk-bg-400 dark:focus:border-ao-dk-bg-400 dark:text-ao-dk-text">
-                    <button class="bg-ao-mid-blue-200 text-ao-dk-blue-500 px-4 rounded-r text-sm-md border border-ao-mid-blue-300 border-l-0 hover:text-ao-dk-blue-600 hover:bg-ao-mid-blue-300 dark:bg-ao-dk-bg-600 dark:border-transparent dark:focus:ring-ao-dk-bg-400 dark:focus:border-ao-dk-bg-400 dark:text-ao-dk-text-400 dark:hover:text-ao-dk-text-500 dark:hover:bg-ao-dk-bg-800">Select</button>
+                    <button class="px-4 rounded-r text-sm-md border-l-0 text-ao-dk-blue-600 bg-ao-mid-blue-300 border border-ao-mid-blue-300 hover:bg-ao-mid-blue-200 hover:text-ao-dk-blue-500 dark:bg-ao-dk-bg-600 dark:border-transparent dark:focus:ring-ao-dk-bg-400 dark:focus:border-ao-dk-bg-400 dark:text-ao-dk-text-400 dark:hover:text-ao-dk-text-500 dark:hover:bg-ao-dk-bg-800 transition ease-in-out duration-300">Select</button>
                   </div>
                 </div>
                 <div class="">
-                  <label class="font-medium text-sm-md" for="style">Style</label>
+                  <label class="font-medium text-sm-md text-ao-dk-blue-600" for="style">Style</label>
                   <select id="zone" name="zone" autocomplete="zone" class="mt-1 focus:outline-none text-ao-dk-blue focus:ring-ao-mid-blue-500 focus:border-ao-mid-blue-500 block w-full rounded shadow-sm text-sm border-ao-mid-blue-300 dark:bg-ao-dk-bg dark:border-transparent dark:focus:ring-ao-dk-bg-400 dark:focus:border-ao-dk-bg-400 dark:text-ao-dk-text">
                     <option>Any</option>
                     <option>Advanced Article</option>
@@ -122,7 +122,7 @@
                   </select>
                 </div>
                 <div class="">
-                  <label class="font-medium text-sm-md" for="tag-status">Tag Status</label>
+                  <label class="font-medium text-sm-md text-ao-dk-blue-600" for="tag-status">Tag Status</label>
                   <select id="zone" name="zone" autocomplete="zone" class="mt-1 focus:outline-none text-ao-dk-blue focus:ring-ao-mid-blue-500 focus:border-ao-mid-blue-500 block w-full rounded shadow-sm text-sm border-ao-mid-blue-300 dark:bg-ao-dk-bg dark:border-transparent dark:focus:ring-ao-dk-bg-400 dark:focus:border-ao-dk-bg-400 dark:text-ao-dk-text">
                     <option>Any</option>
                     <option>Tagged</option>
@@ -131,7 +131,7 @@
                   </select>
                 </div>
                 <div class="">
-                  <label class="font-medium text-sm-md" for="publish-from">Publish Start From</label>
+                  <label class="font-medium text-sm-md text-ao-dk-blue-600" for="publish-from">Publish Start From</label>
                   <div class="flex mt-1 rounded shadow-sm relative">
                     <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                       <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-ao-mid-blue-400 dark:text-ao-dk-text-100" viewBox="0 0 20 20" fill="currentColor">
@@ -142,7 +142,7 @@
                   </div>
                 </div>
                 <div class="">
-                  <label class="font-medium text-sm-md" for="publish-to">Publish Start To</label>
+                  <label class="font-medium text-sm-md text-ao-dk-blue-600" for="publish-to">Publish Start To</label>
                   <div class="flex mt-1 rounded shadow-sm relative">
                     <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                       <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-ao-mid-blue-400 dark:text-ao-dk-text-100" viewBox="0 0 20 20" fill="currentColor">
@@ -153,7 +153,7 @@
                   </div>
                 </div>
                 <div class="">
-                  <label class="font-medium text-sm-md" for="expires">Expires</label>
+                  <label class="font-medium text-sm-md text-ao-dk-blue-600" for="expires">Expires</label>
                   <select id="zone" name="zone" autocomplete="zone" class="mt-1 focus:outline-none text-ao-dk-blue focus:ring-ao-mid-blue-500 focus:border-ao-mid-blue-500 block w-full rounded shadow-sm text-sm border-ao-mid-blue-300 dark:bg-ao-dk-bg dark:border-transparent dark:focus:ring-ao-dk-bg-400 dark:focus:border-ao-dk-bg-400 dark:text-ao-dk-text">
                     <option>Any</option>
                     <option>All Expired</option>
@@ -163,18 +163,18 @@
                   </select>
                 </div>
                 <div class="">
-                  <label class="font-medium text-sm-md" for="creator">Creator</label>
+                  <label class="font-medium text-sm-md text-ao-dk-blue-600" for="creator">Creator</label>
                   <input type="text" name="creator" id="creator" class="mt-1 text-ao-dk-blue focus:ring-ao-mid-blue-500 focus:border-ao-mid-blue-500 block w-full rounded shadow-sm text-sm border-ao-mid-blue-300 dark:bg-ao-dk-bg dark:border-transparent dark:focus:ring-ao-dk-bg-400 dark:focus:border-ao-dk-bg-400 dark:text-ao-dk-text">
                 </div>
                 <div class="">
-                  <label class="font-medium text-sm-md" for="security">Security</label>
+                  <label class="font-medium text-sm-md text-ao-dk-blue-600" for="security">Security</label>
                   <div class="flex mt-1 rounded shadow-sm">
                     <input type="text" name="security" id="security" class="text-ao-dk-blue focus:ring-ao-mid-blue-500 focus:border-ao-mid-blue-500 block w-full text-sm border-ao-mid-blue-300 rounded-l z-10 dark:bg-ao-dk-bg dark:border-transparent dark:focus:ring-ao-dk-bg-400 dark:focus:border-ao-dk-bg-400 dark:text-ao-dk-text">
-                    <button class="bg-ao-mid-blue-200 text-ao-dk-blue-500 px-4 rounded-r text-sm-md border border-ao-mid-blue-300 border-l-0 hover:text-ao-dk-blue-600 hover:bg-ao-mid-blue-300 dark:bg-ao-dk-bg-600 dark:border-transparent dark:focus:ring-ao-dk-bg-400 dark:focus:border-ao-dk-bg-400 dark:text-ao-dk-text-400 dark:hover:text-ao-dk-text-500 dark:hover:bg-ao-dk-bg-800">Select</button>
+                    <button class="px-4 rounded-r text-sm-md border-l-0 text-ao-dk-blue-600 bg-ao-mid-blue-300 border border-ao-mid-blue-300 hover:bg-ao-mid-blue-200 hover:text-ao-dk-blue-500 dark:bg-ao-dk-bg-600 dark:border-transparent dark:focus:ring-ao-dk-bg-400 dark:focus:border-ao-dk-bg-400 dark:text-ao-dk-text-400 dark:hover:text-ao-dk-text-500 dark:hover:bg-ao-dk-bg-800 transition ease-in-out duration-300">Select</button>
                   </div>
                 </div>
                 <div class="">
-                  <label class="font-medium text-sm-md" for="keywords">Keywords</label>
+                  <label class="font-medium text-sm-md text-ao-dk-blue-600" for="keywords">Keywords</label>
                   <input type="text" name="keywords" id="keywords" class="mt-1 text-ao-dk-blue focus:ring-ao-mid-blue-500 focus:border-ao-mid-blue-500 block w-full rounded shadow-sm text-sm border-ao-mid-blue-300 dark:bg-ao-dk-bg dark:border-transparent dark:focus:ring-ao-dk-bg-400 dark:focus:border-ao-dk-bg-400 dark:text-ao-dk-text">
                 </div>
                 <div class="col-span-full rounded shadow-sm border border-ao-mid-blue-300 md:py-4 grid md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 md:gap-6 dark:border-ao-dk-bg-800">
@@ -184,7 +184,7 @@
                       <input id="archived-content" name="archived-content" type="checkbox" class="focus:ring-transparent h-4 w-4 text-ao-mid-blue border-ao-mid-blue-300 rounded dark:bg-ao-dk-bg dark:border-transparent dark:checked:bg-ao-dk-bg dark:text-ao-dk-bg">
                     </div>
                     <div class="ml-3 text-sm">
-                      <label for="archived-content" class="font-medium text-sm-md">Archived Content</label>
+                      <label for="archived-content" class="font-medium text-sm-md text-ao-dk-blue-600">Archived Content</label>
                     </div>
                   </div>
 
@@ -193,7 +193,7 @@
                       <input id="non-live" name="non-live" type="checkbox" class="focus:ring-transparent h-4 w-4 text-ao-mid-blue border-ao-mid-blue-300 rounded dark:bg-ao-dk-bg dark:border-transparent dark:checked:bg-ao-dk-bg dark:text-ao-dk-bg">
                     </div>
                     <div class="ml-3 text-sm">
-                      <label for="non-live" class="font-medium text-sm-md">Non-live</label>
+                      <label for="non-live" class="font-medium text-sm-md text-ao-dk-blue-600">Non-live</label>
                     </div>
                   </div>
 
@@ -202,7 +202,7 @@
                       <input id="outdated" name="outdated" type="checkbox" class="focus:ring-transparent h-4 w-4 text-ao-mid-blue border-ao-mid-blue-300 rounded dark:bg-ao-dk-bg dark:border-transparent dark:checked:bg-ao-dk-bg dark:text-ao-dk-bg">
                     </div>
                     <div class="ml-3 text-sm">
-                      <label for="outdated" class="font-medium text-sm-md">Outdated</label>
+                      <label for="outdated" class="font-medium text-sm-md text-ao-dk-blue-600">Outdated</label>
                     </div>
                   </div>
 
@@ -212,10 +212,10 @@
               <!-- CTAs -->
               <div class="flex justify-end items-center pl-5 p-3">
                 <div>
-                  <button type="button" class="inline-flex items-center px-3 py-2 border border-ao-mid-blue-300 rounded shadow-sm text-sm font-medium text-ao-dk-blue-500 bg-transparent hover:bg-ao-mid-blue-300 hover:text-ao-dk-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ao-mid-blue-400 dark:bg-ao-dk-bg-600 dark:border-transparent dark:text-ao-dk-text-200 dark:hover:text-ao-dk-text-400 dark:hover:bg-ao-dk-bg-400">
+                  <button type="button" class="inline-flex items-center px-3 py-2 mr-1 rounded text-sm font-medium text-ao-dk-blue-600 bg-ao-mid-blue-300 border border-ao-mid-blue-300 hover:bg-ao-mid-blue-200 hover:shadow-sm hover:text-ao-dk-blue-500 dark:bg-ao-dk-bg-400 dark:text-ao-dk-text-500 dark:hover:bg-ao-dk-bg-800 dark:hover:text-ao-dk-text-200 dark:border-transparent transition duration-300 ease-in-out">
                     Clear
                   </button>
-                  <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent rounded shadow-sm text-sm font-medium text-white bg-ao-mid-blue hover:bg-ao-mid-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ao-mid-blue-600 dark:hover:bg-ao-dk-bg-600 dark:border-transparent dark:hover:text-ao-dk-text-500 dark:text-ao-dk-text-400 dark:bg-ao-dk-bg-400">
+                  <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent rounded hover:shadow-sm text-sm font-medium text-white bg-ao-mid-blue hover:bg-ao-mid-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ao-mid-blue-600 dark:hover:bg-ao-dk-bg-600 dark:border-transparent dark:hover:text-ao-dk-text-500 dark:text-ao-dk-text-400 dark:bg-ao-dk-bg-400 transition duration-300 ease-in-out">
                     Search
                   </button>
                 </div>
@@ -259,18 +259,13 @@
                 <!-- Actions -->
                 <td class="px-4 lg:px-5">
                   <div class="flex items-center h-5">
-                    <input type="checkbox" class="form-checkbox focus:outline-none focus:ring-transparent h-4 w-4 text-ao-mid-blue border-ao-mid-blue-300 rounded dark:bg-ao-dk-bg dark:border-transparent dark:checked:bg-ao-dk-bg dark:text-ao-dk-bg" checked="">
+                    <input type="checkbox" class="form-checkbox focus:outline-none focus:ring-transparent h-4 w-4 text-ao-mid-blue border-ao-mid-blue-300 rounded dark:bg-ao-dk-bg dark:border-transparent dark:checked:bg-ao-dk-bg dark:text-ao-dk-bg">
                   </div>
                 </td>
 
                 <!-- Title -->
                 <td class="py-4 lg:pr-4">
                   <h5 class="flex flex-col"><a href="#" class="hover:underline line-clamp-3 xl:line-clamp-2 2xl:line-clamp-1">Affino is Participating alongside AgriBriefing / LAMMA 365 at PPA's Leadership Summit Event on April 28th/29th</a></h5>
-                  <!-- <a href="#" class="flex hover:underline hover:text-ao-dk-blue-400 lg:hidden">Events</div>
-                  <a href="#" class="flex hover:underline hover:text-ao-dk-blue-400 lg:hidden">Advanced Event</a> 
-                  <a class="block flex-shrink-0 w-9 h-9 rounded-full overflow-hidden hover:ring-2 hover:ring-ao-mid-blue-400 dark:hover:ring-ao-dk-bg-400 lg:hidden" href="#"><img class="m-w-full" src="https://source.unsplash.com/d2MSDujJl2g/100x100" alt="Paul Dominguez"></a>
-                  <div class="flex justify-start items-center lg:hidden">29 Mar '21</div>
-                  <div class="flex justify-start items-center lg:hidden">104</div> -->
                 </td>
 
                 <!-- Section -->
@@ -286,7 +281,7 @@
                 <!-- Creator -->
                 <td class="py-3 lg:table-cell hidden">
                   <div class="flex flex-row justify-center items-center">
-                    <a class="flex-shrink-0 w-9 h-9 rounded-full overflow-hidden hover:ring-2 hover:ring-ao-mid-blue-400 dark:hover:ring-ao-dk-bg-400" href="#"><img src="https://source.unsplash.com/d2MSDujJl2g/100x100" alt="Paul Dominguez"></a>
+                    <a class="flex-shrink-0 w-8 h-8 rounded-full overflow-hidden hover:ring-2 hover:ring-ao-mid-blue-400 dark:hover:ring-ao-dk-bg-400 transition duration-300 ease-in-out" href="#"><img src="https://source.unsplash.com/d2MSDujJl2g/100x100" alt="Paul Dominguez"></a>
                   </div>
                 </td>
 
@@ -311,7 +306,7 @@
 
                 <!-- Edit -->
                 <td class="text-right pr-5">
-                  <a href="#" class="flex justify-end items-center text-ao-mid-blue-500 hover:text-ao-mid-blue-400 dark:text-ao-dk-text-400 dark:hover:text-ao-dk-text-200">
+                  <a href="article-edit.html" class="flex justify-end items-center text-ao-mid-blue-500 hover:text-ao-mid-blue-400 dark:text-ao-dk-text-400 dark:hover:text-ao-dk-text-200">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                       <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
                       <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
@@ -332,7 +327,7 @@
 
                 <!-- Title -->
                 <td class="py-4 lg:pr-4">
-                  <h5 class="flex"><a href="#" class="hover:underline line-clamp-3 xl:line-clamp-2 2xl:line-clamp-1">Google's FLoC Federated Learning of Cohorts is really just a masked Non-Consensual attempt at Cookies MKII</a></h5>
+                  <h5 class="flex"><a href="article-form.html" class="hover:underline line-clamp-3 xl:line-clamp-2 2xl:line-clamp-1">Google's FLoC Federated Learning of Cohorts is really just a masked Non-Consensual attempt at Cookies MKII</a></h5>
                 </td>
 
                 <!-- Section -->
@@ -348,7 +343,7 @@
                 <!-- Creator -->
                 <td class="py-3 lg:table-cell hidden">
                   <div class="flex flex-row justify-center items-center">
-                    <a class="flex-shrink-0 w-9 h-9 rounded-full overflow-hidden hover:ring-2 hover:ring-ao-mid-blue-400 dark:hover:ring-ao-dk-bg-400" href="#"><img src="https://source.unsplash.com/dUtizJyby4E/100x100" alt="Sheryl Paul"></a>
+                    <a class="flex-shrink-0 w-8 h-8 rounded-full overflow-hidden hover:ring-2 hover:ring-ao-mid-blue-400 dark:hover:ring-ao-dk-bg-400 transition duration-300 ease-in-out" href="#"><img src="https://source.unsplash.com/dUtizJyby4E/100x100" alt="Sheryl Paul"></a>
                   </div>
                 </td>
 
@@ -373,7 +368,1123 @@
 
                 <!-- Edit -->
                 <td class="text-right pr-5">
-                  <a href="#" class="flex justify-end items-center text-ao-mid-blue-500 hover:text-ao-mid-blue-400 dark:text-ao-dk-text-400 dark:hover:text-ao-dk-text-200">
+                  <a href="article-edit.html" class="flex justify-end items-center text-ao-mid-blue-500 hover:text-ao-mid-blue-400 dark:text-ao-dk-text-400 dark:hover:text-ao-dk-text-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+                      <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
+                    </svg>
+                  </a>
+                </td>
+
+              </tr>
+
+              <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
+
+                <!-- Actions -->
+                <td class="px-4 lg:px-5">
+                  <div class="flex items-center h-5">
+                    <input type="checkbox" class="form-checkbox focus:outline-none focus:ring-transparent h-4 w-4 text-ao-mid-blue border-ao-mid-blue-300 rounded dark:bg-ao-dk-bg dark:border-transparent dark:checked:bg-ao-dk-bg dark:text-ao-dk-bg">
+                  </div>
+                </td>
+
+                <!-- Title -->
+                <td class="py-4 lg:pr-4">
+                  <h5 class="flex"><a href="article-form.html" class="hover:underline line-clamp-3 xl:line-clamp-2 2xl:line-clamp-1">ACC Commends EPA on Release of TSCA Final Scoping Documents and Fees Lists </a></h5>
+                </td>
+
+                <!-- Section -->
+                <td class="py-3 pr-4 lg:table-cell hidden">
+                  <a href="#" class="flex hover:underline hover:text-ao-dk-blue-400 dark:hover:text-ao-dk-text-200">News</div>
+                </td>
+
+                <!-- Template -->
+                <td class="py-3 lg:pr-4 lg:table-cell hidden">
+                  <a href="#" class="flex hover:underline hover:text-ao-dk-blue-400 dark:hover:text-ao-dk-text-200">Advanced Article</div>
+                </td>
+
+                <!-- Creator -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex flex-row justify-center items-center">
+                    <a class="flex-shrink-0 w-8 h-8 rounded-full overflow-hidden hover:ring-2 hover:ring-ao-mid-blue-400 dark:hover:ring-ao-dk-bg-400 transition duration-300 ease-in-out" href="#"><img src="https://source.unsplash.com/JyVcAIUAcPM/100x100" alt="Julius Metyko"></a>
+                  </div>
+                </td>
+
+                <!-- Published -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex justify-center items-center">29 Mar '21</div>
+                </td>
+
+                <!-- Views -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex justify-center items-center">325</div>
+                </td>
+
+                <!-- Live -->
+                <td class="py-3">
+                  <div class="flex justify-center items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-ao-green" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                </td>
+
+                <!-- Edit -->
+                <td class="text-right pr-5">
+                  <a href="article-edit.html" class="flex justify-end items-center text-ao-mid-blue-500 hover:text-ao-mid-blue-400 dark:text-ao-dk-text-400 dark:hover:text-ao-dk-text-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+                      <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
+                    </svg>
+                  </a>
+                </td>
+
+              </tr>
+
+              <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
+
+                <!-- Actions -->
+                <td class="px-4 lg:px-5">
+                  <div class="flex items-center h-5">
+                    <input type="checkbox" class="form-checkbox focus:outline-none focus:ring-transparent h-4 w-4 text-ao-mid-blue border-ao-mid-blue-300 rounded dark:bg-ao-dk-bg dark:border-transparent dark:checked:bg-ao-dk-bg dark:text-ao-dk-bg">
+                  </div>
+                </td>
+
+                <!-- Title -->
+                <td class="py-4 lg:pr-4">
+                  <h5 class="flex"><a href="article-form.html" class="hover:underline line-clamp-3 xl:line-clamp-2 2xl:line-clamp-1">The unseen of spending three years at Pixelgrade</a></h5>
+                </td>
+
+                <!-- Section -->
+                <td class="py-3 pr-4 lg:table-cell hidden">
+                  <a href="#" class="flex hover:underline hover:text-ao-dk-blue-400 dark:hover:text-ao-dk-text-200">Insights</div>
+                </td>
+
+                <!-- Template -->
+                <td class="py-3 lg:pr-4 lg:table-cell hidden">
+                  <a href="#" class="flex hover:underline hover:text-ao-dk-blue-400 dark:hover:text-ao-dk-text-200">Feature Article</div>
+                </td>
+
+                <!-- Creator -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex flex-row justify-center items-center">
+                    <a class="flex-shrink-0 w-8 h-8 rounded-full overflow-hidden hover:ring-2 hover:ring-ao-mid-blue-400 dark:hover:ring-ao-dk-bg-400 transition duration-300 ease-in-out" href="#"><img src="https://source.unsplash.com/n4KewLKFOZw/100x100" alt="Tom Jones"></a>
+                  </div>
+                </td>
+
+                <!-- Published -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex justify-center items-center">29 Mar '21</div>
+                </td>
+
+                <!-- Views -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex justify-center items-center">1098</div>
+                </td>
+
+                <!-- Live -->
+                <td class="py-3">
+                  <div class="flex justify-center items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-ao-green" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                </td>
+
+                <!-- Edit -->
+                <td class="text-right pr-5">
+                  <a href="article-edit.html" class="flex justify-end items-center text-ao-mid-blue-500 hover:text-ao-mid-blue-400 dark:text-ao-dk-text-400 dark:hover:text-ao-dk-text-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+                      <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
+                    </svg>
+                  </a>
+                </td>
+
+              </tr>
+
+              <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
+
+                <!-- Actions -->
+                <td class="px-4 lg:px-5">
+                  <div class="flex items-center h-5">
+                    <input type="checkbox" class="form-checkbox focus:outline-none focus:ring-transparent h-4 w-4 text-ao-mid-blue border-ao-mid-blue-300 rounded dark:bg-ao-dk-bg dark:border-transparent dark:checked:bg-ao-dk-bg dark:text-ao-dk-bg">
+                  </div>
+                </td>
+
+                <!-- Title -->
+                <td class="py-4 lg:pr-4">
+                  <h5 class="flex"><a href="article-form.html" class="hover:underline line-clamp-3 xl:line-clamp-2 2xl:line-clamp-1">Chemical Activity Barometer Shows Gain In August </a></h5>
+                </td>
+
+                <!-- Section -->
+                <td class="py-3 pr-4 lg:table-cell hidden">
+                  <a href="#" class="flex hover:underline hover:text-ao-dk-blue-400 dark:hover:text-ao-dk-text-200">Blogs</div>
+                </td>
+
+                <!-- Template -->
+                <td class="py-3 lg:pr-4 lg:table-cell hidden">
+                  <a href="#" class="flex hover:underline hover:text-ao-dk-blue-400 dark:hover:text-ao-dk-text-200">Blog</div>
+                </td>
+
+                <!-- Creator -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex flex-row justify-center items-center">
+                    <a class="flex-shrink-0 w-8 h-8 rounded-full overflow-hidden hover:ring-2 hover:ring-ao-mid-blue-400 dark:hover:ring-ao-dk-bg-400 transition duration-300 ease-in-out" href="#"><img src="https://source.unsplash.com/n4KewLKFOZw/100x100" alt="Tom Jones"></a>
+                  </div>
+                </td>
+
+                <!-- Published -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex justify-center items-center">28 Mar '21</div>
+                </td>
+
+                <!-- Views -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex justify-center items-center">25</div>
+                </td>
+
+                <!-- Live -->
+                <td class="py-3">
+                  <div class="flex justify-center items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-ao-green" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                </td>
+
+                <!-- Edit -->
+                <td class="text-right pr-5">
+                  <a href="article-edit.html" class="flex justify-end items-center text-ao-mid-blue-500 hover:text-ao-mid-blue-400 dark:text-ao-dk-text-400 dark:hover:text-ao-dk-text-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+                      <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
+                    </svg>
+                  </a>
+                </td>
+
+              </tr>
+
+              <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
+
+                <!-- Actions -->
+                <td class="px-4 lg:px-5">
+                  <div class="flex items-center h-5">
+                    <input type="checkbox" class="form-checkbox focus:outline-none focus:ring-transparent h-4 w-4 text-ao-mid-blue border-ao-mid-blue-300 rounded dark:bg-ao-dk-bg dark:border-transparent dark:checked:bg-ao-dk-bg dark:text-ao-dk-bg">
+                  </div>
+                </td>
+
+                <!-- Title -->
+                <td class="py-4 lg:pr-4">
+                  <h5 class="flex"><a href="article-form.html" class="hover:underline line-clamp-3 xl:line-clamp-2 2xl:line-clamp-1">Apple opens another megastore in China amid William Barr criticism </a></h5>
+                </td>
+
+                <!-- Section -->
+                <td class="py-3 pr-4 lg:table-cell hidden">
+                  <a href="#" class="flex hover:underline hover:text-ao-dk-blue-400 dark:hover:text-ao-dk-text-200">Insights</div>
+                </td>
+
+                <!-- Template -->
+                <td class="py-3 lg:pr-4 lg:table-cell hidden">
+                  <a href="#" class="flex hover:underline hover:text-ao-dk-blue-400 dark:hover:text-ao-dk-text-200">FAQ</div>
+                </td>
+
+                <!-- Creator -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex flex-row justify-center items-center">
+                    <a class="flex-shrink-0 w-8 h-8 rounded-full overflow-hidden hover:ring-2 hover:ring-ao-mid-blue-400 dark:hover:ring-ao-dk-bg-400 transition duration-300 ease-in-out" href="#"><img src="https://source.unsplash.com/EhcwOfAn-mA/100x100" alt="Susan Kerrigan"></a>
+                  </div>
+                </td>
+
+                <!-- Published -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex justify-center items-center">28 Mar '21</div>
+                </td>
+
+                <!-- Views -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex justify-center items-center">427</div>
+                </td>
+
+                <!-- Live -->
+                <td class="py-3">
+                  <div class="flex justify-center items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-ao-green" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                </td>
+
+                <!-- Edit -->
+                <td class="text-right pr-5">
+                  <a href="article-edit.html" class="flex justify-end items-center text-ao-mid-blue-500 hover:text-ao-mid-blue-400 dark:text-ao-dk-text-400 dark:hover:text-ao-dk-text-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+                      <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
+                    </svg>
+                  </a>
+                </td>
+
+              </tr>
+
+              <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
+
+                <!-- Actions -->
+                <td class="px-4 lg:px-5">
+                  <div class="flex items-center h-5">
+                    <input type="checkbox" class="form-checkbox focus:outline-none focus:ring-transparent h-4 w-4 text-ao-mid-blue border-ao-mid-blue-300 rounded dark:bg-ao-dk-bg dark:border-transparent dark:checked:bg-ao-dk-bg dark:text-ao-dk-bg">
+                  </div>
+                </td>
+
+                <!-- Title -->
+                <td class="py-4 lg:pr-4">
+                  <h5 class="flex"><a href="article-form.html" class="hover:underline line-clamp-3 xl:line-clamp-2 2xl:line-clamp-1">Apple opens another megastore in China amid William Barr criticism </a></h5>
+                </td>
+
+                <!-- Section -->
+                <td class="py-3 pr-4 lg:table-cell hidden">
+                  <a href="#" class="flex hover:underline hover:text-ao-dk-blue-400 dark:hover:text-ao-dk-text-200">Features</div>
+                </td>
+
+                <!-- Template -->
+                <td class="py-3 lg:pr-4 lg:table-cell hidden">
+                  <a href="#" class="flex hover:underline hover:text-ao-dk-blue-400 dark:hover:text-ao-dk-text-200">Review Article</div>
+                </td>
+
+                <!-- Creator -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex flex-row justify-center items-center">
+                    <a class="flex-shrink-0 w-8 h-8 rounded-full overflow-hidden hover:ring-2 hover:ring-ao-mid-blue-400 dark:hover:ring-ao-dk-bg-400 transition duration-300 ease-in-out" href="#"><img src="https://source.unsplash.com/BUN4bmGI_-w/100x100" alt="James Harley"></a>
+                  </div>
+                </td>
+
+                <!-- Published -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex justify-center items-center">28 Mar '21</div>
+                </td>
+
+                <!-- Views -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex justify-center items-center">112</div>
+                </td>
+
+                <!-- Live -->
+                <td class="py-3">
+                  <div class="flex justify-center items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-ao-green" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                </td>
+
+                <!-- Edit -->
+                <td class="text-right pr-5">
+                  <a href="article-edit.html" class="flex justify-end items-center text-ao-mid-blue-500 hover:text-ao-mid-blue-400 dark:text-ao-dk-text-400 dark:hover:text-ao-dk-text-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+                      <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
+                    </svg>
+                  </a>
+                </td>
+
+              </tr>
+
+              <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
+
+                <!-- Actions -->
+                <td class="px-4 lg:px-5">
+                  <div class="flex items-center h-5">
+                    <input type="checkbox" class="form-checkbox focus:outline-none focus:ring-transparent h-4 w-4 text-ao-mid-blue border-ao-mid-blue-300 rounded dark:bg-ao-dk-bg dark:border-transparent dark:checked:bg-ao-dk-bg dark:text-ao-dk-bg">
+                  </div>
+                </td>
+
+                <!-- Title -->
+                <td class="py-4 lg:pr-4">
+                  <h5 class="flex"><a href="article-form.html" class="hover:underline line-clamp-3 xl:line-clamp-2 2xl:line-clamp-1">Immersive chat startups have a very different vision for the future of voice </a></h5>
+                </td>
+
+                <!-- Section -->
+                <td class="py-3 pr-4 lg:table-cell hidden">
+                  <a href="#" class="flex hover:underline hover:text-ao-dk-blue-400 dark:hover:text-ao-dk-text-200">Events</div>
+                </td>
+
+                <!-- Template -->
+                <td class="py-3 lg:pr-4 lg:table-cell hidden">
+                  <a href="#" class="flex hover:underline hover:text-ao-dk-blue-400 dark:hover:text-ao-dk-text-200">Advanced Event</div>
+                </td>
+
+                <!-- Creator -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex flex-row justify-center items-center">
+                    <a class="flex-shrink-0 w-8 h-8 rounded-full overflow-hidden hover:ring-2 hover:ring-ao-mid-blue-400 dark:hover:ring-ao-dk-bg-400 transition duration-300 ease-in-out" href="#"><img src="https://source.unsplash.com/mEZ3PoFGs_k/100x100" alt="Rachel Scott"></a>
+                  </div>
+                </td>
+
+                <!-- Published -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex justify-center items-center">28 Mar '21</div>
+                </td>
+
+                <!-- Views -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex justify-center items-center">398</div>
+                </td>
+
+                <!-- Live -->
+                <td class="py-3">
+                  <div class="flex justify-center items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-ao-green" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                </td>
+
+                <!-- Edit -->
+                <td class="text-right pr-5">
+                  <a href="article-edit.html" class="flex justify-end items-center text-ao-mid-blue-500 hover:text-ao-mid-blue-400 dark:text-ao-dk-text-400 dark:hover:text-ao-dk-text-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+                      <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
+                    </svg>
+                  </a>
+                </td>
+
+              </tr>
+
+              <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
+
+                <!-- Actions -->
+                <td class="px-4 lg:px-5">
+                  <div class="flex items-center h-5">
+                    <input type="checkbox" class="form-checkbox focus:outline-none focus:ring-transparent h-4 w-4 text-ao-mid-blue border-ao-mid-blue-300 rounded dark:bg-ao-dk-bg dark:border-transparent dark:checked:bg-ao-dk-bg dark:text-ao-dk-bg">
+                  </div>
+                </td>
+
+                <!-- Title -->
+                <td class="py-4 lg:pr-4">
+                  <h5 class="flex"><a href="article-form.html" class="hover:underline line-clamp-3 xl:line-clamp-2 2xl:line-clamp-1">Understanding color theory: the color wheel and finding complementary colors </a></h5>
+                </td>
+
+                <!-- Section -->
+                <td class="py-3 pr-4 lg:table-cell hidden">
+                  <a href="#" class="flex hover:underline hover:text-ao-dk-blue-400 dark:hover:text-ao-dk-text-200">News</div>
+                </td>
+
+                <!-- Template -->
+                <td class="py-3 lg:pr-4 lg:table-cell hidden">
+                  <a href="#" class="flex hover:underline hover:text-ao-dk-blue-400 dark:hover:text-ao-dk-text-200">Simple Article</div>
+                </td>
+
+                <!-- Creator -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex flex-row justify-center items-center">
+                    <a class="flex-shrink-0 w-8 h-8 rounded-full overflow-hidden hover:ring-2 hover:ring-ao-mid-blue-400 dark:hover:ring-ao-dk-bg-400 transition duration-300 ease-in-out" href="#"><img src="https://source.unsplash.com/dUtizJyby4E/100x100" alt="Sheryl Paul"></a>
+                  </div>
+                </td>
+
+                <!-- Published -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex justify-center items-center">28 Mar '21</div>
+                </td>
+
+                <!-- Views -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex justify-center items-center">10</div>
+                </td>
+
+                <!-- Live -->
+                <td class="py-3">
+                  <div class="flex justify-center items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                </td>
+
+                <!-- Edit -->
+                <td class="text-right pr-5">
+                  <a href="article-edit.html" class="flex justify-end items-center text-ao-mid-blue-500 hover:text-ao-mid-blue-400 dark:text-ao-dk-text-400 dark:hover:text-ao-dk-text-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+                      <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
+                    </svg>
+                  </a>
+                </td>
+
+              </tr>
+
+              <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
+
+                <!-- Actions -->
+                <td class="px-4 lg:px-5">
+                  <div class="flex items-center h-5">
+                    <input type="checkbox" class="form-checkbox focus:outline-none focus:ring-transparent h-4 w-4 text-ao-mid-blue border-ao-mid-blue-300 rounded dark:bg-ao-dk-bg dark:border-transparent dark:checked:bg-ao-dk-bg dark:text-ao-dk-bg">
+                  </div>
+                </td>
+
+                <!-- Title -->
+                <td class="py-4 lg:pr-4">
+                  <h5 class="flex"><a href="article-form.html" class="hover:underline line-clamp-3 xl:line-clamp-2 2xl:line-clamp-1">Learn what it takes to hire and inspire your talent with an employee-centric organizational model.</a></h5>
+                </td>
+
+                <!-- Section -->
+                <td class="py-3 pr-4 lg:table-cell hidden">
+                  <a href="#" class="flex hover:underline hover:text-ao-dk-blue-400 dark:hover:text-ao-dk-text-200">Insights</div>
+                </td>
+
+                <!-- Template -->
+                <td class="py-3 lg:pr-4 lg:table-cell hidden">
+                  <a href="#" class="flex hover:underline hover:text-ao-dk-blue-400 dark:hover:text-ao-dk-text-200">Advanced Article</div>
+                </td>
+
+                <!-- Creator -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex flex-row justify-center items-center">
+                    <a class="flex-shrink-0 w-8 h-8 rounded-full overflow-hidden hover:ring-2 hover:ring-ao-mid-blue-400 dark:hover:ring-ao-dk-bg-400 transition duration-300 ease-in-out" href="#"><img src="https://source.unsplash.com/d2MSDujJl2g/100x100" alt="Paul Dominguez"></a>
+                  </div>
+                </td>
+
+                <!-- Published -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex justify-center items-center">27 Mar '21</div>
+                </td>
+
+                <!-- Views -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex justify-center items-center">210</div>
+                </td>
+
+                <!-- Live -->
+                <td class="py-3">
+                  <div class="flex justify-center items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-ao-green" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                </td>
+
+                <!-- Edit -->
+                <td class="text-right pr-5">
+                  <a href="article-edit.html" class="flex justify-end items-center text-ao-mid-blue-500 hover:text-ao-mid-blue-400 dark:text-ao-dk-text-400 dark:hover:text-ao-dk-text-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+                      <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
+                    </svg>
+                  </a>
+                </td>
+
+              </tr>
+
+              <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
+
+                <!-- Actions -->
+                <td class="px-4 lg:px-5">
+                  <div class="flex items-center h-5">
+                    <input type="checkbox" class="form-checkbox focus:outline-none focus:ring-transparent h-4 w-4 text-ao-mid-blue border-ao-mid-blue-300 rounded dark:bg-ao-dk-bg dark:border-transparent dark:checked:bg-ao-dk-bg dark:text-ao-dk-bg">
+                  </div>
+                </td>
+
+                <!-- Title -->
+                <td class="py-4 lg:pr-4">
+                  <h5 class="flex flex-col"><a href="#" class="hover:underline line-clamp-3 xl:line-clamp-2 2xl:line-clamp-1">Affino is Participating alongside AgriBriefing / LAMMA 365 at PPA's Leadership Summit Event on April 28th/29th</a></h5>
+                </td>
+
+                <!-- Section -->
+                <td class="py-3 pr-4 lg:table-cell hidden">
+                  <a href="#" class="flex hover:underline hover:text-ao-dk-blue-400 dark:hover:text-ao-dk-text-200">Events</div>
+                </td>
+
+                <!-- Template -->
+                <td class="py-3 lg:pr-4 lg:table-cell hidden">
+                  <a href="#" class="flex hover:underline hover:text-ao-dk-blue-400 dark:hover:text-ao-dk-text-200">Advanced Event</a>
+                </td>
+
+                <!-- Creator -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex flex-row justify-center items-center">
+                    <a class="flex-shrink-0 w-8 h-8 rounded-full overflow-hidden hover:ring-2 hover:ring-ao-mid-blue-400 dark:hover:ring-ao-dk-bg-400 transition duration-300 ease-in-out" href="#"><img src="https://source.unsplash.com/d2MSDujJl2g/100x100" alt="Paul Dominguez"></a>
+                  </div>
+                </td>
+
+                <!-- Published -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex justify-center items-center">29 Mar '21</div>
+                </td>
+
+                <!-- Views -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex justify-center items-center">104</div>
+                </td>
+
+                <!-- Live -->
+                <td class="py-3">
+                  <div class="flex justify-center items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-ao-green" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                </td>
+
+                <!-- Edit -->
+                <td class="text-right pr-5">
+                  <a href="article-edit.html" class="flex justify-end items-center text-ao-mid-blue-500 hover:text-ao-mid-blue-400 dark:text-ao-dk-text-400 dark:hover:text-ao-dk-text-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+                      <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
+                    </svg>
+                  </a>
+                </td>
+
+              </tr>
+
+              <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
+
+                <!-- Actions -->
+                <td class="px-4 lg:px-5">
+                  <div class="flex items-center h-5">
+                    <input type="checkbox" class="form-checkbox focus:outline-none focus:ring-transparent h-4 w-4 text-ao-mid-blue border-ao-mid-blue-300 rounded dark:bg-ao-dk-bg dark:border-transparent dark:checked:bg-ao-dk-bg dark:text-ao-dk-bg">
+                  </div>
+                </td>
+
+                <!-- Title -->
+                <td class="py-4 lg:pr-4">
+                  <h5 class="flex"><a href="article-form.html" class="hover:underline line-clamp-3 xl:line-clamp-2 2xl:line-clamp-1">Google's FLoC Federated Learning of Cohorts is really just a masked Non-Consensual attempt at Cookies MKII</a></h5>
+                </td>
+
+                <!-- Section -->
+                <td class="py-3 pr-4 lg:table-cell hidden">
+                  <a href="#" class="flex hover:underline hover:text-ao-dk-blue-400 dark:hover:text-ao-dk-text-200">Latest Insights</div>
+                </td>
+
+                <!-- Template -->
+                <td class="py-3 lg:pr-4 lg:table-cell hidden">
+                  <a href="#" class="flex hover:underline hover:text-ao-dk-blue-400 dark:hover:text-ao-dk-text-200">Advanced Seminar</div>
+                </td>
+
+                <!-- Creator -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex flex-row justify-center items-center">
+                    <a class="flex-shrink-0 w-8 h-8 rounded-full overflow-hidden hover:ring-2 hover:ring-ao-mid-blue-400 dark:hover:ring-ao-dk-bg-400 transition duration-300 ease-in-out" href="#"><img src="https://source.unsplash.com/dUtizJyby4E/100x100" alt="Sheryl Paul"></a>
+                  </div>
+                </td>
+
+                <!-- Published -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex justify-center items-center">29 Mar '21</div>
+                </td>
+
+                <!-- Views -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex justify-center items-center">77</div>
+                </td>
+
+                <!-- Live -->
+                <td class="py-3">
+                  <div class="flex justify-center items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                </td>
+
+                <!-- Edit -->
+                <td class="text-right pr-5">
+                  <a href="article-edit.html" class="flex justify-end items-center text-ao-mid-blue-500 hover:text-ao-mid-blue-400 dark:text-ao-dk-text-400 dark:hover:text-ao-dk-text-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+                      <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
+                    </svg>
+                  </a>
+                </td>
+
+              </tr>
+
+              <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
+
+                <!-- Actions -->
+                <td class="px-4 lg:px-5">
+                  <div class="flex items-center h-5">
+                    <input type="checkbox" class="form-checkbox focus:outline-none focus:ring-transparent h-4 w-4 text-ao-mid-blue border-ao-mid-blue-300 rounded dark:bg-ao-dk-bg dark:border-transparent dark:checked:bg-ao-dk-bg dark:text-ao-dk-bg">
+                  </div>
+                </td>
+
+                <!-- Title -->
+                <td class="py-4 lg:pr-4">
+                  <h5 class="flex"><a href="article-form.html" class="hover:underline line-clamp-3 xl:line-clamp-2 2xl:line-clamp-1">ACC Commends EPA on Release of TSCA Final Scoping Documents and Fees Lists </a></h5>
+                </td>
+
+                <!-- Section -->
+                <td class="py-3 pr-4 lg:table-cell hidden">
+                  <a href="#" class="flex hover:underline hover:text-ao-dk-blue-400 dark:hover:text-ao-dk-text-200">News</div>
+                </td>
+
+                <!-- Template -->
+                <td class="py-3 lg:pr-4 lg:table-cell hidden">
+                  <a href="#" class="flex hover:underline hover:text-ao-dk-blue-400 dark:hover:text-ao-dk-text-200">Advanced Article</div>
+                </td>
+
+                <!-- Creator -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex flex-row justify-center items-center">
+                    <a class="flex-shrink-0 w-8 h-8 rounded-full overflow-hidden hover:ring-2 hover:ring-ao-mid-blue-400 dark:hover:ring-ao-dk-bg-400 transition duration-300 ease-in-out" href="#"><img src="https://source.unsplash.com/JyVcAIUAcPM/100x100" alt="Julius Metyko"></a>
+                  </div>
+                </td>
+
+                <!-- Published -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex justify-center items-center">29 Mar '21</div>
+                </td>
+
+                <!-- Views -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex justify-center items-center">325</div>
+                </td>
+
+                <!-- Live -->
+                <td class="py-3">
+                  <div class="flex justify-center items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-ao-green" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                </td>
+
+                <!-- Edit -->
+                <td class="text-right pr-5">
+                  <a href="article-edit.html" class="flex justify-end items-center text-ao-mid-blue-500 hover:text-ao-mid-blue-400 dark:text-ao-dk-text-400 dark:hover:text-ao-dk-text-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+                      <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
+                    </svg>
+                  </a>
+                </td>
+
+              </tr>
+
+              <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
+
+                <!-- Actions -->
+                <td class="px-4 lg:px-5">
+                  <div class="flex items-center h-5">
+                    <input type="checkbox" class="form-checkbox focus:outline-none focus:ring-transparent h-4 w-4 text-ao-mid-blue border-ao-mid-blue-300 rounded dark:bg-ao-dk-bg dark:border-transparent dark:checked:bg-ao-dk-bg dark:text-ao-dk-bg">
+                  </div>
+                </td>
+
+                <!-- Title -->
+                <td class="py-4 lg:pr-4">
+                  <h5 class="flex"><a href="article-form.html" class="hover:underline line-clamp-3 xl:line-clamp-2 2xl:line-clamp-1">The unseen of spending three years at Pixelgrade</a></h5>
+                </td>
+
+                <!-- Section -->
+                <td class="py-3 pr-4 lg:table-cell hidden">
+                  <a href="#" class="flex hover:underline hover:text-ao-dk-blue-400 dark:hover:text-ao-dk-text-200">Insights</div>
+                </td>
+
+                <!-- Template -->
+                <td class="py-3 lg:pr-4 lg:table-cell hidden">
+                  <a href="#" class="flex hover:underline hover:text-ao-dk-blue-400 dark:hover:text-ao-dk-text-200">Feature Article</div>
+                </td>
+
+                <!-- Creator -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex flex-row justify-center items-center">
+                    <a class="flex-shrink-0 w-8 h-8 rounded-full overflow-hidden hover:ring-2 hover:ring-ao-mid-blue-400 dark:hover:ring-ao-dk-bg-400 transition duration-300 ease-in-out" href="#"><img src="https://source.unsplash.com/n4KewLKFOZw/100x100" alt="Tom Jones"></a>
+                  </div>
+                </td>
+
+                <!-- Published -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex justify-center items-center">29 Mar '21</div>
+                </td>
+
+                <!-- Views -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex justify-center items-center">1098</div>
+                </td>
+
+                <!-- Live -->
+                <td class="py-3">
+                  <div class="flex justify-center items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-ao-green" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                </td>
+
+                <!-- Edit -->
+                <td class="text-right pr-5">
+                  <a href="article-edit.html" class="flex justify-end items-center text-ao-mid-blue-500 hover:text-ao-mid-blue-400 dark:text-ao-dk-text-400 dark:hover:text-ao-dk-text-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+                      <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
+                    </svg>
+                  </a>
+                </td>
+
+              </tr>
+
+              <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
+
+                <!-- Actions -->
+                <td class="px-4 lg:px-5">
+                  <div class="flex items-center h-5">
+                    <input type="checkbox" class="form-checkbox focus:outline-none focus:ring-transparent h-4 w-4 text-ao-mid-blue border-ao-mid-blue-300 rounded dark:bg-ao-dk-bg dark:border-transparent dark:checked:bg-ao-dk-bg dark:text-ao-dk-bg">
+                  </div>
+                </td>
+
+                <!-- Title -->
+                <td class="py-4 lg:pr-4">
+                  <h5 class="flex"><a href="article-form.html" class="hover:underline line-clamp-3 xl:line-clamp-2 2xl:line-clamp-1">Chemical Activity Barometer Shows Gain In August </a></h5>
+                </td>
+
+                <!-- Section -->
+                <td class="py-3 pr-4 lg:table-cell hidden">
+                  <a href="#" class="flex hover:underline hover:text-ao-dk-blue-400 dark:hover:text-ao-dk-text-200">Blogs</div>
+                </td>
+
+                <!-- Template -->
+                <td class="py-3 lg:pr-4 lg:table-cell hidden">
+                  <a href="#" class="flex hover:underline hover:text-ao-dk-blue-400 dark:hover:text-ao-dk-text-200">Blog</div>
+                </td>
+
+                <!-- Creator -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex flex-row justify-center items-center">
+                    <a class="flex-shrink-0 w-8 h-8 rounded-full overflow-hidden hover:ring-2 hover:ring-ao-mid-blue-400 dark:hover:ring-ao-dk-bg-400 transition duration-300 ease-in-out" href="#"><img src="https://source.unsplash.com/n4KewLKFOZw/100x100" alt="Tom Jones"></a>
+                  </div>
+                </td>
+
+                <!-- Published -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex justify-center items-center">28 Mar '21</div>
+                </td>
+
+                <!-- Views -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex justify-center items-center">25</div>
+                </td>
+
+                <!-- Live -->
+                <td class="py-3">
+                  <div class="flex justify-center items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-ao-green" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                </td>
+
+                <!-- Edit -->
+                <td class="text-right pr-5">
+                  <a href="article-edit.html" class="flex justify-end items-center text-ao-mid-blue-500 hover:text-ao-mid-blue-400 dark:text-ao-dk-text-400 dark:hover:text-ao-dk-text-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+                      <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
+                    </svg>
+                  </a>
+                </td>
+
+              </tr>
+
+              <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
+
+                <!-- Actions -->
+                <td class="px-4 lg:px-5">
+                  <div class="flex items-center h-5">
+                    <input type="checkbox" class="form-checkbox focus:outline-none focus:ring-transparent h-4 w-4 text-ao-mid-blue border-ao-mid-blue-300 rounded dark:bg-ao-dk-bg dark:border-transparent dark:checked:bg-ao-dk-bg dark:text-ao-dk-bg">
+                  </div>
+                </td>
+
+                <!-- Title -->
+                <td class="py-4 lg:pr-4">
+                  <h5 class="flex"><a href="article-form.html" class="hover:underline line-clamp-3 xl:line-clamp-2 2xl:line-clamp-1">Apple opens another megastore in China amid William Barr criticism </a></h5>
+                </td>
+
+                <!-- Section -->
+                <td class="py-3 pr-4 lg:table-cell hidden">
+                  <a href="#" class="flex hover:underline hover:text-ao-dk-blue-400 dark:hover:text-ao-dk-text-200">Insights</div>
+                </td>
+
+                <!-- Template -->
+                <td class="py-3 lg:pr-4 lg:table-cell hidden">
+                  <a href="#" class="flex hover:underline hover:text-ao-dk-blue-400 dark:hover:text-ao-dk-text-200">FAQ</div>
+                </td>
+
+                <!-- Creator -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex flex-row justify-center items-center">
+                    <a class="flex-shrink-0 w-8 h-8 rounded-full overflow-hidden hover:ring-2 hover:ring-ao-mid-blue-400 dark:hover:ring-ao-dk-bg-400 transition duration-300 ease-in-out" href="#"><img src="https://source.unsplash.com/EhcwOfAn-mA/100x100" alt="Susan Kerrigan"></a>
+                  </div>
+                </td>
+
+                <!-- Published -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex justify-center items-center">28 Mar '21</div>
+                </td>
+
+                <!-- Views -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex justify-center items-center">427</div>
+                </td>
+
+                <!-- Live -->
+                <td class="py-3">
+                  <div class="flex justify-center items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-ao-green" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                </td>
+
+                <!-- Edit -->
+                <td class="text-right pr-5">
+                  <a href="article-edit.html" class="flex justify-end items-center text-ao-mid-blue-500 hover:text-ao-mid-blue-400 dark:text-ao-dk-text-400 dark:hover:text-ao-dk-text-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+                      <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
+                    </svg>
+                  </a>
+                </td>
+
+              </tr>
+
+              <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
+
+                <!-- Actions -->
+                <td class="px-4 lg:px-5">
+                  <div class="flex items-center h-5">
+                    <input type="checkbox" class="form-checkbox focus:outline-none focus:ring-transparent h-4 w-4 text-ao-mid-blue border-ao-mid-blue-300 rounded dark:bg-ao-dk-bg dark:border-transparent dark:checked:bg-ao-dk-bg dark:text-ao-dk-bg">
+                  </div>
+                </td>
+
+                <!-- Title -->
+                <td class="py-4 lg:pr-4">
+                  <h5 class="flex"><a href="article-form.html" class="hover:underline line-clamp-3 xl:line-clamp-2 2xl:line-clamp-1">Apple opens another megastore in China amid William Barr criticism </a></h5>
+                </td>
+
+                <!-- Section -->
+                <td class="py-3 pr-4 lg:table-cell hidden">
+                  <a href="#" class="flex hover:underline hover:text-ao-dk-blue-400 dark:hover:text-ao-dk-text-200">Features</div>
+                </td>
+
+                <!-- Template -->
+                <td class="py-3 lg:pr-4 lg:table-cell hidden">
+                  <a href="#" class="flex hover:underline hover:text-ao-dk-blue-400 dark:hover:text-ao-dk-text-200">Review Article</div>
+                </td>
+
+                <!-- Creator -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex flex-row justify-center items-center">
+                    <a class="flex-shrink-0 w-8 h-8 rounded-full overflow-hidden hover:ring-2 hover:ring-ao-mid-blue-400 dark:hover:ring-ao-dk-bg-400 transition duration-300 ease-in-out" href="#"><img src="https://source.unsplash.com/BUN4bmGI_-w/100x100" alt="James Harley"></a>
+                  </div>
+                </td>
+
+                <!-- Published -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex justify-center items-center">28 Mar '21</div>
+                </td>
+
+                <!-- Views -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex justify-center items-center">112</div>
+                </td>
+
+                <!-- Live -->
+                <td class="py-3">
+                  <div class="flex justify-center items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-ao-green" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                </td>
+
+                <!-- Edit -->
+                <td class="text-right pr-5">
+                  <a href="article-edit.html" class="flex justify-end items-center text-ao-mid-blue-500 hover:text-ao-mid-blue-400 dark:text-ao-dk-text-400 dark:hover:text-ao-dk-text-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+                      <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
+                    </svg>
+                  </a>
+                </td>
+
+              </tr>
+
+              <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
+
+                <!-- Actions -->
+                <td class="px-4 lg:px-5">
+                  <div class="flex items-center h-5">
+                    <input type="checkbox" class="form-checkbox focus:outline-none focus:ring-transparent h-4 w-4 text-ao-mid-blue border-ao-mid-blue-300 rounded dark:bg-ao-dk-bg dark:border-transparent dark:checked:bg-ao-dk-bg dark:text-ao-dk-bg">
+                  </div>
+                </td>
+
+                <!-- Title -->
+                <td class="py-4 lg:pr-4">
+                  <h5 class="flex"><a href="article-form.html" class="hover:underline line-clamp-3 xl:line-clamp-2 2xl:line-clamp-1">Immersive chat startups have a very different vision for the future of voice </a></h5>
+                </td>
+
+                <!-- Section -->
+                <td class="py-3 pr-4 lg:table-cell hidden">
+                  <a href="#" class="flex hover:underline hover:text-ao-dk-blue-400 dark:hover:text-ao-dk-text-200">Events</div>
+                </td>
+
+                <!-- Template -->
+                <td class="py-3 lg:pr-4 lg:table-cell hidden">
+                  <a href="#" class="flex hover:underline hover:text-ao-dk-blue-400 dark:hover:text-ao-dk-text-200">Advanced Event</div>
+                </td>
+
+                <!-- Creator -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex flex-row justify-center items-center">
+                    <a class="flex-shrink-0 w-8 h-8 rounded-full overflow-hidden hover:ring-2 hover:ring-ao-mid-blue-400 dark:hover:ring-ao-dk-bg-400 transition duration-300 ease-in-out" href="#"><img src="https://source.unsplash.com/mEZ3PoFGs_k/100x100" alt="Rachel Scott"></a>
+                  </div>
+                </td>
+
+                <!-- Published -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex justify-center items-center">28 Mar '21</div>
+                </td>
+
+                <!-- Views -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex justify-center items-center">398</div>
+                </td>
+
+                <!-- Live -->
+                <td class="py-3">
+                  <div class="flex justify-center items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-ao-green" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                </td>
+
+                <!-- Edit -->
+                <td class="text-right pr-5">
+                  <a href="article-edit.html" class="flex justify-end items-center text-ao-mid-blue-500 hover:text-ao-mid-blue-400 dark:text-ao-dk-text-400 dark:hover:text-ao-dk-text-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+                      <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
+                    </svg>
+                  </a>
+                </td>
+
+              </tr>
+
+              <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
+
+                <!-- Actions -->
+                <td class="px-4 lg:px-5">
+                  <div class="flex items-center h-5">
+                    <input type="checkbox" class="form-checkbox focus:outline-none focus:ring-transparent h-4 w-4 text-ao-mid-blue border-ao-mid-blue-300 rounded dark:bg-ao-dk-bg dark:border-transparent dark:checked:bg-ao-dk-bg dark:text-ao-dk-bg">
+                  </div>
+                </td>
+
+                <!-- Title -->
+                <td class="py-4 lg:pr-4">
+                  <h5 class="flex"><a href="article-form.html" class="hover:underline line-clamp-3 xl:line-clamp-2 2xl:line-clamp-1">Understanding color theory: the color wheel and finding complementary colors </a></h5>
+                </td>
+
+                <!-- Section -->
+                <td class="py-3 pr-4 lg:table-cell hidden">
+                  <a href="#" class="flex hover:underline hover:text-ao-dk-blue-400 dark:hover:text-ao-dk-text-200">News</div>
+                </td>
+
+                <!-- Template -->
+                <td class="py-3 lg:pr-4 lg:table-cell hidden">
+                  <a href="#" class="flex hover:underline hover:text-ao-dk-blue-400 dark:hover:text-ao-dk-text-200">Simple Article</div>
+                </td>
+
+                <!-- Creator -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex flex-row justify-center items-center">
+                    <a class="flex-shrink-0 w-8 h-8 rounded-full overflow-hidden hover:ring-2 hover:ring-ao-mid-blue-400 dark:hover:ring-ao-dk-bg-400 transition duration-300 ease-in-out" href="#"><img src="https://source.unsplash.com/dUtizJyby4E/100x100" alt="Sheryl Paul"></a>
+                  </div>
+                </td>
+
+                <!-- Published -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex justify-center items-center">28 Mar '21</div>
+                </td>
+
+                <!-- Views -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex justify-center items-center">10</div>
+                </td>
+
+                <!-- Live -->
+                <td class="py-3">
+                  <div class="flex justify-center items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                </td>
+
+                <!-- Edit -->
+                <td class="text-right pr-5">
+                  <a href="article-edit.html" class="flex justify-end items-center text-ao-mid-blue-500 hover:text-ao-mid-blue-400 dark:text-ao-dk-text-400 dark:hover:text-ao-dk-text-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+                      <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
+                    </svg>
+                  </a>
+                </td>
+
+              </tr>
+
+              <tr class="border-t border-ao-mid-blue-200 dark:border-ao-dk-bg-800">
+
+                <!-- Actions -->
+                <td class="px-4 lg:px-5">
+                  <div class="flex items-center h-5">
+                    <input type="checkbox" class="form-checkbox focus:outline-none focus:ring-transparent h-4 w-4 text-ao-mid-blue border-ao-mid-blue-300 rounded dark:bg-ao-dk-bg dark:border-transparent dark:checked:bg-ao-dk-bg dark:text-ao-dk-bg">
+                  </div>
+                </td>
+
+                <!-- Title -->
+                <td class="py-4 lg:pr-4">
+                  <h5 class="flex"><a href="article-form.html" class="hover:underline line-clamp-3 xl:line-clamp-2 2xl:line-clamp-1">Learn what it takes to hire and inspire your talent with an employee-centric organizational model.</a></h5>
+                </td>
+
+                <!-- Section -->
+                <td class="py-3 pr-4 lg:table-cell hidden">
+                  <a href="#" class="flex hover:underline hover:text-ao-dk-blue-400 dark:hover:text-ao-dk-text-200">Insights</div>
+                </td>
+
+                <!-- Template -->
+                <td class="py-3 lg:pr-4 lg:table-cell hidden">
+                  <a href="#" class="flex hover:underline hover:text-ao-dk-blue-400 dark:hover:text-ao-dk-text-200">Advanced Article</div>
+                </td>
+
+                <!-- Creator -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex flex-row justify-center items-center">
+                    <a class="flex-shrink-0 w-8 h-8 rounded-full overflow-hidden hover:ring-2 hover:ring-ao-mid-blue-400 dark:hover:ring-ao-dk-bg-400 transition duration-300 ease-in-out" href="#"><img src="https://source.unsplash.com/d2MSDujJl2g/100x100" alt="Paul Dominguez"></a>
+                  </div>
+                </td>
+
+                <!-- Published -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex justify-center items-center">27 Mar '21</div>
+                </td>
+
+                <!-- Views -->
+                <td class="py-3 lg:table-cell hidden">
+                  <div class="flex justify-center items-center">210</div>
+                </td>
+
+                <!-- Live -->
+                <td class="py-3">
+                  <div class="flex justify-center items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-ao-green" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                </td>
+
+                <!-- Edit -->
+                <td class="text-right pr-5">
+                  <a href="article-edit.html" class="flex justify-end items-center text-ao-mid-blue-500 hover:text-ao-mid-blue-400 dark:text-ao-dk-text-400 dark:hover:text-ao-dk-text-200">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                       <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
                       <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
@@ -413,7 +1524,7 @@
                 <option>Make Live</option>
                 <option>Make Not Live</option>
               </select>
-              <button type="button" class="inline-flex items-center h-9 px-2 border rounded shadow-sm text-sm-md font-medium text-ao-dk-blue-500 bg-ao-mid-blue-200 hover:bg-ao-mid-blue-300 hover:text-ao-dk-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ao-mid-blue-400 border-ao-mid-blue-300 dark:bg-ao-dk-bg-600 dark:border-transparent dark:text-ao-dk-text-200 dark:hover:text-ao-dk-text-400 dark:hover:bg-ao-dk-bg-400">
+              <button type="button" class="inline-flex items-center h-9 px-2 rounded shadow-sm text-sm-md font-medium text-ao-dk-blue-600 bg-ao-mid-blue-300 border border-ao-mid-blue-300 hover:bg-ao-mid-blue-200 hover:shadow-sm hover:text-ao-dk-blue-500 dark:bg-ao-dk-bg-400 dark:text-ao-dk-text-500 dark:hover:bg-ao-dk-bg-800 dark:hover:text-ao-dk-text-200 dark:border-transparent transition duration-300 ease-in-out">
                 Action
               </button>
             </div>
@@ -427,12 +1538,12 @@
                 <option>4</option>
                 <option>5</option>
               </select>
-              <button type="button" class="h-9 w-9 inline-flex flex-shrink-0 items-center justify-center border rounded shadow-sm text-sm-md font-medium text-ao-dk-blue-500 bg-ao-mid-blue-200 hover:bg-ao-mid-blue-300 hover:text-ao-dk-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ao-mid-blue-400 border-ao-mid-blue-300 dark:bg-ao-dk-bg-600 dark:border-transparent dark:text-ao-dk-text-200 dark:hover:text-ao-dk-text-400 dark:hover:bg-ao-dk-bg-400">
+              <button type="button" class="h-9 w-9 inline-flex flex-shrink-0 items-center justify-center rounded shadow-sm text-sm-md font-medium text-ao-dk-blue-600 bg-ao-mid-blue-300 border border-ao-mid-blue-300 hover:bg-ao-mid-blue-200 hover:shadow-sm hover:text-ao-dk-blue-500 dark:bg-ao-dk-bg-400 dark:text-ao-dk-text-500 dark:hover:bg-ao-dk-bg-800 dark:hover:text-ao-dk-text-200 dark:border-transparent transition duration-300 ease-in-out">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                   <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
                 </svg>
               </button>
-              <button type="button" class="h-9 w-9 ml-1 inline-flex flex-shrink-0 items-center justify-center border rounded shadow-sm text-sm-md font-medium text-ao-dk-blue-500 bg-ao-mid-blue-200 hover:bg-ao-mid-blue-300 hover:text-ao-dk-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ao-mid-blue-400 border-ao-mid-blue-300 dark:bg-ao-dk-bg-600 dark:border-transparent dark:text-ao-dk-text-200 dark:hover:text-ao-dk-text-400 dark:hover:bg-ao-dk-bg-400">
+              <button type="button" class="h-9 w-9 ml-1 inline-flex flex-shrink-0 items-center justify-center rounded shadow-sm text-sm-md font-medium text-ao-dk-blue-600 bg-ao-mid-blue-300 border border-ao-mid-blue-300 hover:bg-ao-mid-blue-200 hover:shadow-sm hover:text-ao-dk-blue-500 dark:bg-ao-dk-bg-400 dark:text-ao-dk-text-500 dark:hover:bg-ao-dk-bg-800 dark:hover:text-ao-dk-text-200 dark:border-transparent transition duration-300 ease-in-out">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                   <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                 </svg>

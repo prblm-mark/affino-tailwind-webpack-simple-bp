@@ -70,7 +70,9 @@ function expandResize() {
 
 document.addEventListener('DOMContentLoaded', (event) => {
   // Set theme mode to localStorage
-  localStorage.setItem('theme', 'light');
+  if (!localStorage.theme) {
+    localStorage.setItem('theme', 'light');
+  }
 
   // Set theme mode to document
   setMode();
