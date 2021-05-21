@@ -68,19 +68,22 @@ function expandResize() {
   });
 }
 
+// Dark Mode
+
+// Set theme mode to localStorage
+if (!localStorage.theme) {
+  localStorage.setItem('theme', 'light');
+}
+
+// Set theme mode to document
+setMode();
+
+// Get mode toggle and add
+const modeToggle = document.querySelector('#mode');
+modeToggle.addEventListener('click', switchMode);
+
+// On content load
 document.addEventListener('DOMContentLoaded', (event) => {
-  // Set theme mode to localStorage
-  if (!localStorage.theme) {
-    localStorage.setItem('theme', 'light');
-  }
-
-  // Set theme mode to document
-  setMode();
-
-  // Get mode toggle and add
-  const modeToggle = document.querySelector('#mode');
-  modeToggle.addEventListener('click', switchMode);
-
   // Set breadcrumb name
   setBreadcrumbSection();
 
@@ -97,6 +100,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   });
 });
 
+// On resize
 window.addEventListener('resize', (event) => {
   expandResize();
 });
