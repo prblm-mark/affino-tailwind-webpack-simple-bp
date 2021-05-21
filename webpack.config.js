@@ -48,34 +48,58 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: 'src/index.html',
+      minify: {
+        removeRedundantAttributes: false,
+      },
     }), // Generates default index.html
     new HtmlWebpackPlugin({
       filename: 'online-users.html',
       template: 'src/online-users.html',
+      minify: {
+        removeRedundantAttributes: false,
+      },
     }),
     new HtmlWebpackPlugin({
       filename: 'recent.html',
       template: 'src/recent.html',
+      minify: {
+        removeRedundantAttributes: false,
+      },
     }),
     new HtmlWebpackPlugin({
       filename: 'favourites.html',
       template: 'src/favourites.html',
+      minify: {
+        removeRedundantAttributes: false,
+      },
     }),
     new HtmlWebpackPlugin({
       filename: 'charts.html',
       template: 'src/charts.html',
+      minify: {
+        removeRedundantAttributes: false,
+      },
     }),
     new HtmlWebpackPlugin({
       filename: 'article-listing.html',
       template: 'src/article-listing.html',
+      minify: {
+        removeRedundantAttributes: false,
+      },
     }),
     new HtmlWebpackPlugin({
       filename: 'article-form.html',
       template: 'src/article-form.html',
+      minify: {
+        removeRedundantAttributes: false,
+      },
     }),
     new HtmlWebpackPlugin({
       filename: 'article-edit.html',
       template: 'src/article-edit.html',
+      minify: {
+        removeRedundantAttributes: false,
+      },
     }),
     new MiniCssExtractPlugin({ filename: 'css/style.css' }),
   ],
