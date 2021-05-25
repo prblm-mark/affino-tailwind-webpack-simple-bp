@@ -116,7 +116,7 @@ module.exports = {
       },
       fontSize: {
         'sm-md': '.825rem',
-        md: '.925rem',
+        md: '.9rem',
       },
       minHeight: {
         16: '4rem',
